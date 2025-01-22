@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+
+        <!-- CSS link -->
+        <link rel="stylesheet" href="test.css">
+        
+        <title>nielsengg</title>
+    </head>
+
+    <body>
+        <div id="textContainer"></div>
+       
+        <script>
+            const textContainer = document.getElementById("textContainer");
+            let easeFactor = 0.02;
+            let scene, camera, renderer, planeMesh;
+            let mousePosition = { x: 0.5, y: 0.5 };
+            let targetMousePosition = { x: 0.5, y: 0.5 };
+            let prevPosition = { x: 0.5, y: 0.5 }
+
+            const vertexShade = `
+                varying vec2 vUv;
+                void main(){
+                vUv = uv
+                fl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1,0);
+            }
+            `;
+
+            
+        </script>
+    </body>
+
+</html>

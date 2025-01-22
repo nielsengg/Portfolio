@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+
+        <!-- CSS link -->
+        <link rel="stylesheet" href="style.css">
+
+        <!-- Font link -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+
+        <title>nielsengg</title>
+    </head>
+
+    <body>
+        <div id="topPage">
+            <nav class="hContainer" id="navBar">
+                <div class="hElement">
+                    <button onclick="setScrollPercentage(0)" id="topTitle">Nielsen</button>
+                </div>
+                <div id="topLinks" class="hElement">
+                    <button onclick="setScrollPercentage(24)" id="linkProjects" class="link">
+                        Projects
+                    </button>
+                    <button onclick="setScrollPercentage(49)" id="linkSkills" class="link">
+                        Skills
+                    </button>
+                    <button onclick="setScrollPercentage(74)" id="linkAbout" class="link">
+                        About
+                    </button>
+                    <button onclick="setScrollPercentage(96)" id="linkContact" class="link">
+                        Contact
+                    </button>
+                </div>
+            </nav>
+            <hr>
+        </div>  
+
+        
+        <div id="imageContainer">
+            <img src='Images/all.png'>
+        </div>
+
+        <span id="imageCredits">
+            Photo by <a href="https://unsplash.com/@bharath9110?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">bharath kumar</a> 
+            on 
+            <a href="https://unsplash.com/photos/a-couple-of-fish-are-swimming-in-the-water-fDBlP_5JjVU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+        </span>
+        
+        <script>
+            function linkUnderline(){
+                let totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+                let linkHome = document.getElementById('topTitle');
+                let linkProjects = document.getElementById('linkProjects');
+                let linkSkills = document.getElementById('linkSkills');
+                let linkAbout = document.getElementById('linkAbout');
+                let linkContact = document.getElementById('linkContact');
+
+                let scrollPosition = window.scrollY;
+
+                let homeMax = totalHeight * (20/100);
+                let projectsMax = totalHeight * (45/100);
+                let skillsMax = totalHeight * (70/100);
+                let contactMax = totalHeight * (92/100);
+
+                if (scrollPosition <= homeMax){
+                    linkHome.style.textDecoration = 'underline';
+                }else{
+                    linkHome.style.textDecoration = 'none';
+                }
+
+                if (scrollPosition <= projectsMax && scrollPosition >= homeMax){
+                    linkProjects.style.textDecoration = 'underline';
+                }else{
+                    linkProjects.style.textDecoration = 'none';
+                }
+
+                if (scrollPosition <= skillsMax && scrollPosition >= projectsMax){
+                    linkSkills.style.textDecoration = 'underline';
+                }else{
+                    linkSkills.style.textDecoration = 'none';
+                }
+
+                if (scrollPosition <= contactMax && scrollPosition >= skillsMax){
+                    linkAbout.style.textDecoration = 'underline';
+                }else{
+                    linkAbout.style.textDecoration = 'none';
+                }
+
+                if (scrollPosition >= contactMax){
+                    linkContact.style.textDecoration = 'underline';
+                }else{
+                    linkContact.style.textDecoration = 'none';
+                }
+            }
+ 
+            function setScrollPercentage(percentage) {
+                const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPosition = (percentage / 100) * totalHeight;
+                window.scrollTo({
+                    top: scrollPosition,
+                    behavior: 'smooth'
+            }); 
+
+            setTimeout(linkUnderline, 500); // Ajuste o tempo se necessário
+            }
+
+            linkUnderline();
+            
+            window.addEventListener('scroll', linkUnderline);
+
+        </script>
+    </body>
+
+</html>
