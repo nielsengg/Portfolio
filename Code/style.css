@@ -30,9 +30,7 @@ body{
 .vContainer{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
+    justify-content: start;
 }
 
 .link{
@@ -48,11 +46,50 @@ body{
     padding-right: 20px;
 }
 
+.webPage{
+    width: 100%;
+    height: 100vh;
+    background-color: blueviolet;
+    border-bottom: 3px solid #131313;
+}
+
+.projectBox{
+    border: 1px solid #131313;
+    width: 600px;
+}
+
+
+/* ----------------------------------------------------------- */
+
+#imgHome{
+    width: 100%;
+    height: 100vh;
+    background-image: url('Images/home.png');
+    background-size: cover; /* Faz a imagem cobrir toda a div */
+    background-position: center; /* Centraliza a imagem */
+    
+}
+
+#imgProject{
+    width: 500px;
+    height: 100%;
+    background-image: url('Images/project.png');
+    background-size: cover; /* Faz a imagem cobrir toda a div */
+    background-position: center; /* Centraliza a imagem */
+    
+}
+
+#wholePage{
+    display: flex;
+    flex-direction:column;
+    height: auto;
+}
+
 #navBar{
     position: fixed;
     background-color: transparent;
     transition: background-color 0.3s ease;
-  
+    z-index: 5;
     /* background-color: #fbf8f1; */
     background-color: rgba(251, 248, 241, 0.7);
     
@@ -63,14 +100,8 @@ body{
 
 #imageContainer{
     display: inline-block;
-    /* background-image: url('Images/all.png');
-    background-size:contain;
-    background-repeat: no-repeat;
-    background-position:top;
-     background-attachment: scroll; */
-}
-
-#imageContainer img {
+    z-index: -1;
+    position: absolute;
     width: 100%;
     height: auto;
     display: block;
@@ -111,7 +142,13 @@ body{
 }
 
 #imageCredits{
+    justify-content: end;
     color: #94928e;
+    position: absolute;
+    /* bottom:-400vh; */
+    z-index: 100;
+    /* background-color: blue; */
+    width: 100%;
 
     font-family: Jetbrains Mono;
     display: flex;
@@ -125,6 +162,28 @@ body{
     color: #94928e;
     margin-right: 5px; 
     margin-left: 5px; 
+}
+
+#pageContainer{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 82px;
+ 
+    /* background-color:aqua; */
+}
+
+#projectPage{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+}
+
+#projectContent{
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
 }
 
 body::-webkit-scrollbar {
