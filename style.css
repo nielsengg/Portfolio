@@ -58,6 +58,8 @@ body{
     background-color: #fff;
     margin-bottom: 6px;
     border-radius: 20px;
+
+    z-index: -50;
 }
 
 .projectBox{
@@ -65,14 +67,52 @@ body{
     width: 600px;
 }
 
+.slider{
+    position: relative;
+    width: 100%;
+    height: 370px;
+    overflow: hidden;
+}
+
+.item{
+    position: absolute;
+    width: 200px;
+    height: 320px;
+    text-align: justify;
+    background-color: #c4c4c4;
+    color: #131313;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.5s;
+    left: calc(50% - 110px);
+    top: 0;
+}
 
 /* ----------------------------------------------------------- */
+
+#next, #prev{
+    position: absolute;
+    top: 40%;
+    color: #131313;
+    background-color: transparent;
+    border: none;
+    font-size: xxx-large;
+    font-family: Jetbrains Mono;
+    font-weight: bold;
+    left: 50px;
+}
+
+#next{
+    left: unset;
+    right: 50px;
+}
 
 #scrollIndication{
     font-size: 20px;
     position: absolute;
     top: 80vh;
     animation: bounce 2s infinite;
+    color: #333333;
 }
 
 #helloMessage{
@@ -115,21 +155,8 @@ body{
     transition: background-color 0.3s ease;
     z-index: 5;
     background-color: #fff;
-    /* background-color: rgba(196, 196, 196, 1); */
-    
-    /* padding-left: 30px; */
-    /* padding-right: 30px; */
     padding-top: 10px; 
 }
-
-/* #imageContainer{
-    display: inline-block;
-    z-index: -1;
-    position: absolute;
-    width: 100%;
-    height: auto;
-    display: block;
-} */
 
 #topLinks{
     font-family: Jetbrains Mono;
@@ -162,28 +189,6 @@ body{
     z-index: 2;
 }
 
-#imageCredits{
-    justify-content: end;
-    color: #94928e;
-    position: absolute;
-    /* bottom:-400vh; */
-    z-index: 100;
-    /* background-color: blue; */
-    width: 100%;
-
-    font-family: Jetbrains Mono;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    white-space: normal;
-}
-
-#imageCredits a{
-    color: #94928e;
-    margin-right: 5px; 
-    margin-left: 5px; 
-}
 
 #pageContainer{
     display: flex;
@@ -195,16 +200,9 @@ body{
 }
 
 #projectPage{
-    display: flex;
-    flex-direction: row;
-    justify-content:center;
-    align-items: center;
-}
-
-#projectContent{
-    /* background-color: aqua; */
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 body::-webkit-scrollbar {
