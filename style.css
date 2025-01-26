@@ -3,7 +3,7 @@ h1{
 }
 
 hr{
-    border: 1px solid #131313;
+    border: 1px solid #c4c4c4;
     border-radius: 40px;
     width: 100%;
     position: fixed;
@@ -12,7 +12,7 @@ hr{
 
 body{
     margin: 0;
-    background-color: #fbf8f1;
+    background-color: #ebe8e8;
 }
 
 .hContainer{
@@ -34,6 +34,7 @@ body{
 }
 
 .link{
+    color: #333333;
     font-family: Jetbrains Mono;
     font-size: 20px;
 
@@ -47,36 +48,58 @@ body{
 }
 
 .webPage{
-    width: 100%;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+
+    width: 96%;
     height: 100vh;
-    background-color: blueviolet;
-    border-bottom: 3px solid #131313;
+    background-color: #fff;
+    margin-bottom: 6px;
+    border-radius: 20px;
 }
 
 .projectBox{
-    border: 1px solid #131313;
+    border: 1px solid #c4c4c4;
     width: 600px;
 }
 
 
 /* ----------------------------------------------------------- */
 
-#imgHome{
-    width: 100%;
-    height: 100vh;
-    background-image: url('Images/home.png');
-    background-size: cover; /* Faz a imagem cobrir toda a div */
-    background-position: center; /* Centraliza a imagem */
-    
+#scrollIndication{
+    font-size: 20px;
+    position: absolute;
+    top: 80vh;
+    animation: bounce 2s infinite;
 }
 
-#imgProject{
-    width: 500px;
-    height: 100%;
-    background-image: url('Images/project.png');
-    background-size: cover; /* Faz a imagem cobrir toda a div */
-    background-position: center; /* Centraliza a imagem */
+#helloMessage{
+    margin: 0;
+
+    font-family: Teko;
+    font-size: 100px;
+    color: #333333;
+    padding: 0;
+    height: auto;
+    width: auto;
+    font-weight:normal;
+ 
+    white-space: nowrap;
+    overflow: hidden;
+    border: none;
     
+
+    animation: typing 2s steps(15, end);
+}
+
+
+#homePage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #wholePage{
@@ -85,43 +108,40 @@ body{
     height: auto;
 }
 
+
 #navBar{
     position: fixed;
     background-color: transparent;
     transition: background-color 0.3s ease;
     z-index: 5;
-    /* background-color: #fbf8f1; */
-    background-color: rgba(251, 248, 241, 0.7);
+    background-color: #fff;
+    /* background-color: rgba(196, 196, 196, 1); */
     
     /* padding-left: 30px; */
     /* padding-right: 30px; */
     padding-top: 10px; 
 }
 
-#imageContainer{
+/* #imageContainer{
     display: inline-block;
     z-index: -1;
     position: absolute;
     width: 100%;
     height: auto;
     display: block;
-}
+} */
 
 #topLinks{
-    color: #131313;
-
     font-family: Jetbrains Mono;
     font-size: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
-  
 }
 
 #topTitle{
     font-family: Teko;
-    color: #131313;
+    color: #333333;
     margin: 0;
     padding: 0;
     padding-left: 20px;
@@ -139,6 +159,7 @@ body{
 #topPage{
     display: flex;
     justify-content: center;
+    z-index: 2;
 }
 
 #imageCredits{
@@ -168,8 +189,8 @@ body{
     display: flex;
     flex-direction: column;
     position: relative;
-    margin-top: 82px;
- 
+
+    align-items: center;
     /* background-color:aqua; */
 }
 
@@ -192,10 +213,36 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
     border-radius: 40px; 
-    background-color: #94928e
+    background-color: #333333
 }
 
 body::-webkit-scrollbar-track {
     border-radius: 40px; 
-    background-color: #e4e0d9;
+    background-color: #c4c4c4;
 }
+
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+
+@keyframes down{
+    0%{ transform: translateY(-200px);}
+    100%{ transform: translateY(0px);}
+}
+
+@keyframes typing {
+    from {
+      width: 0;
+      border-right: 2px solid black;
+    }
+    to {
+      width: 13ch;
+      border-right: 2px solid black;
+    }
+  }

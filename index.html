@@ -41,10 +41,9 @@
             </div>  
 
             <div id="pageContainer" class="vContainer">
-                <!-- <img id="imageContainer" src='Images/all.png'> -->
-
+                
                 <div id="homePage" class="webPage">
-                    <div id="imgHome"></div>
+                    <p id="scrollIndication">▼</p>
                 </div>
 
                 <div id="projectPage" class="webPage"> 
@@ -83,6 +82,19 @@
          
         
         <script>
+            setTimeout(helloMessage, 700);
+
+            // function scrollIndication(){
+            //     let homePage = document.getElementById('homePage');
+            //     homePage.innerHTML = "<p>▼</p>";
+
+            // }
+
+            function helloMessage(){
+                let homePage = document.getElementById('homePage');
+                homePage.innerHTML += "<p id='helloMessage'>Hello, I'm Nielsen</p>";
+            }
+
             function linkUnderline(){
                 let totalHeight = document.documentElement.scrollHeight - window.innerHeight;
 
@@ -94,10 +106,10 @@
 
                 let scrollPosition = window.scrollY;
 
-                let homeMax = totalHeight * (20/100);
-                let projectsMax = totalHeight * (45/100);
-                let skillsMax = totalHeight * (70/100);
-                let contactMax = totalHeight * (92/100);
+                let homeMax = totalHeight * (15/100);
+                let projectsMax = totalHeight * (40/100);
+                let skillsMax = totalHeight * (65/100);
+                let contactMax = totalHeight * (90/100);
 
                 if (scrollPosition <= homeMax){
                     linkHome.style.textDecoration = 'underline';
@@ -138,7 +150,7 @@
                     behavior: 'smooth'
             }); 
 
-            setTimeout(linkUnderline, 500); // Ajuste o tempo se necessário
+            setTimeout(linkUnderline, 500);
             }
 
             linkUnderline();
