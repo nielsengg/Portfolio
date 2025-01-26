@@ -22,17 +22,17 @@
                     <div class="hElement">
                         <button onclick="setScrollPercentage(0)" id="topTitle">Nielsen</button>
                     </div>
-                    <div id="topLinks" class="hElement">
-                        <button onclick="setScrollPercentage(22)" id="linkProjects" class="link">
-                            Projects
-                        </button>
-                        <button onclick="setScrollPercentage(47)" id="linkSkills" class="link">
+                    <div id="topLink" class="hElement">
+                        <button onclick="setScrollPercentage(23.5)" id="linkProjects" class="link">
                             Skills
                         </button>
-                        <button onclick="setScrollPercentage(72)" id="linkAbout" class="link">
+                        <button onclick="setScrollPercentage(48.5)" id="linkSkills" class="link">
+                            Projects
+                        </button>
+                        <button onclick="setScrollPercentage(73.5)" id="linkAbout" class="link">
                             About
                         </button>
-                        <button onclick="setScrollPercentage(98)" id="linkContact" class="link">
+                        <button onclick="setScrollPercentage(99.5)" id="linkContact" class="link">
                             Contact
                         </button>
                     </div>
@@ -46,35 +46,54 @@
                     <p id="scrollIndication">▼</p>
                 </div>
 
+                <div id="skillsPage" class="webPage">
+                </div>
+
                 <div id="projectPage" class="webPage"> 
-                    <div class="slider">
-                        <div class="item">
-                            <h1>Slide 1</h1>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque possimus pariatur cumque molestias soluta beatae, delectus animi a ducimus dolores quo, hic praesentium laudantium consequuntur? Dolorum pariatur quasi ipsam aliquam!
+                    <div id="projectTitle">Projects</div>
+                    <div class="slideBox">
+                        <div class="slideItem">
+                            <div class="wholeSlideProject">
+                                <div class="topSlideProject">
+                                    <h1 class="projectSlideTitle">kCalculator</h1>
+                                    <p class="projectSlideDescription">kCalculator is a personal tool to help the users with their health.
+                                        On the website, you can find out your daily nutrient goal and monitor the amounts of those you have entered.</p>
+                                </div>
+
+                                <div class="bottomSlideProject">
+                                    <div class="imageSlideProject">
+                                        video
+                                    </div>
+
+                                    <div class="skillsSlideProject">
+                                        Skills:<br>
+                                        fsea<br>
+                                        fgsg<br>
+                                        fs<br>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="item">
+                        <div class="slideItem">
                             <h1>Slide 2</h1>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque possimus pariatur cumque molestias soluta beatae, delectus animi a ducimus dolores quo, hic praesentium laudantium consequuntur? Dolorum pariatur quasi ipsam aliquam!
                         </div>
 
-                        <div class="item">
+                        <div class="slideItem">
                             <h1>Slide 3</h1>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque possimus pariatur cumque molestias soluta beatae, delectus animi a ducimus dolores quo, hic praesentium laudantium consequuntur? Dolorum pariatur quasi ipsam aliquam!
                         </div>
 
-                        <div class="item">
+                        <div class="slideItem">
                             <h1>Slide 4</h1>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque possimus pariatur cumque molestias soluta beatae, delectus animi a ducimus dolores quo, hic praesentium laudantium consequuntur? Dolorum pariatur quasi ipsam aliquam!
                         </div>
                         
 
-                        <button id="next">></button>
-                        <button id="prev"><</button>
+                        <button id="nextButton">></button>
+                        <button id="prevButton"><</button>
                     </div>
-                </div>
-
-                <div id="skillsPage" class="webPage">
                 </div>
 
                 <div id="aboutPage" class="webPage">
@@ -87,26 +106,49 @@
         </div>
         
         <script>
-            let items = document.querySelectorAll('.slider .item');
-            let next = document.getElementById('next');
-            let prev = document.getElementById('prev');
+            // Project Page
+            let items = document.querySelectorAll('.slideBox .slideItem');
+            let nextButton = document.getElementById('nextButton');
+            let prevButton = document.getElementById('prevButton');
 
             let active = 0;
 
             function loadShow(){
                 let stt = 0;
+
+                items[active].style.transform = `none`;
+                items[active].style.zIndex = 1;
+                items[active].style.filter = 'none';
+                items[active].style.opacity = 1;
+
                 for(var i = active + 1; i < items.length; i++){
                     stt++;
-                    items[i].style.transform = `translateX(${120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(-1deg)`;
+                    items[i].style.transform = `translateX(${120 * stt}px) scale(${1 - 0.3*stt}) perspective(50px) rotateY(-1deg)`;
                     items[i].style.zIndex = -stt;
                     items[i].style.filter = 'blur(3px)';
                     items[i].style.opacity = stt > 2 ? 0 : 0.6;
                 }
                 stt = 0;
                 for(var i = active - 1; i >= 0; i--){
+                    stt++;
+                    items[i].style.transform = `translateX(${-120 * stt}px) scale(${1 - 0.3*stt}) perspective(50px) rotateY(1deg)`;
+                    items[i].style.zIndex = -stt;
+                    items[i].style.filter = 'blur(3px)';
+                    items[i].style.opacity = stt > 2 ? 0 : 0.6;
                 }
             }
+ 
+            nextButton.onclick = function(){
+                active = active + 1 < items.length ? active + 1 : active;
+                loadShow();
+            }
 
+            prevButton.onclick = function(){
+                active = active - 1 >= 0 ? active - 1 : active;
+                loadShow();
+            }
+
+            // Home Page
             setTimeout(helloMessage, 700);
 
             function helloMessage(){
@@ -114,6 +156,7 @@
                 homePage.innerHTML += "<p id='helloMessage'>Hello, I'm Nielsen</p>";
             }
 
+            // Navigation
             function linkUnderline(){
                 let totalHeight = document.documentElement.scrollHeight - window.innerHeight;
 
@@ -172,6 +215,7 @@
             setTimeout(linkUnderline, 500);
             }
 
+            // Call functions
             linkUnderline();
             loadShow();
 

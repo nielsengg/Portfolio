@@ -20,9 +20,6 @@ body{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /* padding-left: 20px;
-    padding-right: 20px; */
-    /* background-color: #fbf8f1; */
 
     width: 100%;
 }
@@ -47,6 +44,11 @@ body{
     padding-right: 20px;
 }
 
+.link:hover{
+    text-decoration:underline;
+}
+
+
 .webPage{
     padding-top: 15px;
     padding-left: 20px;
@@ -59,7 +61,7 @@ body{
     margin-bottom: 6px;
     border-radius: 20px;
 
-    z-index: -50;
+    z-index: 1;
 }
 
 .projectBox{
@@ -67,30 +69,73 @@ body{
     width: 600px;
 }
 
-.slider{
+.slideBox{
     position: relative;
     width: 100%;
-    height: 370px;
-    overflow: hidden;
+    height: 90%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
 }
 
-.item{
+.slideItem{
     position: absolute;
-    width: 200px;
-    height: 320px;
+    width: 70%;
+    height: 80%;
     text-align: justify;
-    background-color: #c4c4c4;
+    background-color: #fff;
     color: #131313;
-    padding: 20px;
+    padding-top: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 20px;
     border-radius: 10px;
+    border: 1px solid #131313;
     transition: 0.5s;
-    left: calc(50% - 110px);
-    top: 0;
+    
 }
+
+.projectSlideTitle{
+    font-family: Jetbrains Mono;
+    margin-bottom: 15px;
+    font-size: 45px;
+}
+
+.projectSlideDescription{
+    font-family: Jetbrains Mono;
+    font-size: 18px;
+}
+
+
+.wholeSlideProject{
+    display: flex;
+    flex-direction: column;
+}
+
+.topSlideProject{
+    height: auto;
+    /* background-color: blue; */
+}
+
+.bottomSlideProject{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height:auto;
+    /* background-color:brown; */
+}
+
+
 
 /* ----------------------------------------------------------- */
 
-#next, #prev{
+#projectTitle{
+    margin-top: 50px;
+    font-family: Teko;
+    font-size: 70px;
+}
+
+#nextButton, #prevButton{
     position: absolute;
     top: 40%;
     color: #131313;
@@ -98,11 +143,17 @@ body{
     border: none;
     font-size: xxx-large;
     font-family: Jetbrains Mono;
-    font-weight: bold;
+    font-weight: normal;
     left: 50px;
+    cursor:pointer;
 }
 
-#next{
+#nextButton:hover, #prevButton:hover{
+    font-weight: bold;
+   
+}
+
+#nextButton{
     left: unset;
     right: 50px;
 }
@@ -158,13 +209,14 @@ body{
     padding-top: 10px; 
 }
 
-#topLinks{
+#topLink{
     font-family: Jetbrains Mono;
     font-size: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+
 
 #topTitle{
     font-family: Teko;
@@ -186,7 +238,7 @@ body{
 #topPage{
     display: flex;
     justify-content: center;
-    z-index: 2;
+    z-index: 5;
 }
 
 
@@ -201,6 +253,7 @@ body{
 
 #projectPage{
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
