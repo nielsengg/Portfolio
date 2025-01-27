@@ -3,7 +3,7 @@ h1{
 }
 
 hr{
-    border: 1px solid #c4c4c4;
+    border: 1px solid #131313;
     border-radius: 40px;
     width: 100%;
     position: fixed;
@@ -31,7 +31,7 @@ body{
 }
 
 .link{
-    color: #333333;
+    color: #131313;
     font-family: Jetbrains Mono;
     font-size: 20px;
 
@@ -64,11 +64,6 @@ body{
     z-index: 1;
 }
 
-.projectBox{
-    border: 1px solid #c4c4c4;
-    width: 600px;
-}
-
 .slideBox{
     position: relative;
     width: 100%;
@@ -92,7 +87,7 @@ body{
     border-radius: 10px;
     border: 1px solid #131313;
     transition: 0.5s;
-    
+    overflow: hidden;
 }
 
 .projectSlideTitle{
@@ -104,12 +99,15 @@ body{
 .projectSlideDescription{
     font-family: Jetbrains Mono;
     font-size: 18px;
+    
+    /* background-color: aquamarine; */
 }
 
 
 .wholeSlideProject{
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .topSlideProject{
@@ -121,15 +119,79 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    height:auto;
+    height: 100%;
     /* background-color:brown; */
+    /* align-self: stretch; */
 }
 
+.skillIcon{
+    width: 32%;
+    height: 100%;
+    /* margin-right: 3px; */
+}
 
+.skillName{
+    font-family: Jetbrains Mono;
+    font-size: 20px;
+    margin-left: 5px;
+
+    width: 140px;
+
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.skillContent{
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    
+    
+}
+
+.midiaSlideProject{
+    height: 100%;
+    width: 448px;
+    margin-left: 10px;
+    /* background-color: blue; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skillsSlideProject{
+    height: 100%;
+    width: 448px;
+    margin-right: 10px;
+    /* background-color: blue; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.midiaBoxProject{
+    width: 100%;
+    height: 252px;
+
+    border: #131313 1px solid;
+    border-radius: 10px;
+}
 
 /* ----------------------------------------------------------- */
 
-#projectTitle{
+
+
+#pageTitle{
+    color: #131313;
     margin-top: 50px;
     font-family: Teko;
     font-size: 70px;
@@ -163,7 +225,7 @@ body{
     position: absolute;
     top: 80vh;
     animation: bounce 2s infinite;
-    color: #333333;
+    color: #131313;
 }
 
 #helloMessage{
@@ -171,7 +233,7 @@ body{
 
     font-family: Teko;
     font-size: 100px;
-    color: #333333;
+    color: #131313;
     padding: 0;
     height: auto;
     width: auto;
@@ -220,7 +282,7 @@ body{
 
 #topTitle{
     font-family: Teko;
-    color: #333333;
+    color: #131313;
     margin: 0;
     padding: 0;
     padding-left: 20px;
@@ -258,13 +320,118 @@ body{
   justify-content: center;
 }
 
+#skillsPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+#skillBigBox{
+    position: relative;
+    width: 60vw;
+    height: 70%;
+
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-content: flex-start;
+
+    /* animation: down 1s; */
+}
+
+
+#skillBox{
+    
+    width: 200px;
+    height: 60px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    color: #131313;
+    
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+
+    border-radius: 10px;
+    border: 1px solid #131313;
+    
+}
+
+#skillBoxOnProject{
+    
+    width: 150px;
+    height: 45px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    color: #131313;
+    
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+
+    margin-bottom: 7px;
+
+    border-radius: 10px;
+    border: 1px solid #131313;
+    
+}
+
+#skillBox:hover, #skillBoxOnProject:hover{
+    background-color: #131313;
+    color: #fff;
+}
+
+#buttomBoxOnProject{
+    
+    width: 168px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    color: #131313;
+    
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #131313;
+    
+}
+
+#buttomBoxOnProject:hover{
+    background-color: #131313;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ---------------------------- */
+
 body::-webkit-scrollbar {
     width: 7px;
 }
 
 body::-webkit-scrollbar-thumb {
     border-radius: 40px; 
-    background-color: #333333
+    background-color: #131313
 }
 
 body::-webkit-scrollbar-track {
@@ -273,14 +440,14 @@ body::-webkit-scrollbar-track {
 }
 
 
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(10px);
-    }
-  }
+@keyframes bounce {
+0%, 100% {
+    transform: translateY(0);
+}
+50% {
+    transform: translateY(10px);
+}
+}
 
 @keyframes down{
     0%{ transform: translateY(-200px);}

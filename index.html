@@ -24,13 +24,13 @@
                     </div>
                     <div id="topLink" class="hElement">
                         <button onclick="setScrollPercentage(23.5)" id="linkProjects" class="link">
-                            Skills
+                            About
                         </button>
                         <button onclick="setScrollPercentage(48.5)" id="linkSkills" class="link">
-                            Projects
+                            Skills
                         </button>
                         <button onclick="setScrollPercentage(73.5)" id="linkAbout" class="link">
-                            About
+                            Projects
                         </button>
                         <button onclick="setScrollPercentage(99.5)" id="linkContact" class="link">
                             Contact
@@ -46,11 +46,59 @@
                     <p id="scrollIndication">▼</p>
                 </div>
 
+                <div id="aboutPage" class="webPage">
+                </div>
+
                 <div id="skillsPage" class="webPage">
+                    <div id="pageTitle">Skills</div>
+
+                    <div id="skillBigBox">
+                        <div id="skillBox">
+                            <div class="skillContent">
+                                <img class="skillIcon" src="Images/img_icon_html.png">
+                                <p class="skillName">HTML</p>
+                            </div>
+                        </div>
+
+                        <div id="skillBox">
+                            <div class="skillContent">
+                                <img class="skillIcon" src="Images/img_icon_css.png">
+                                <p class="skillName">CSS</p>
+                            </div>
+                        </div>
+
+                        <div id="skillBox">
+                            <div class="skillContent">
+                                <img class="skillIcon" src="Images/img_icon_js.png">
+                                <p class="skillName">JavaScript</p>
+                            </div>
+                        </div>
+
+                        <div id="skillBox">
+                            <div class="skillContent">
+                                <img class="skillIcon" src="Images/img_icon_py.png">
+                                <p class="skillName">Python</p>
+                            </div>
+                        </div>
+
+                        <div id="skillBox">
+                            <div class="skillContent">
+                                <img class="skillIcon" src="Images/img_icon_gml.png">
+                                <p class="skillName">GML</p>
+                            </div>
+                        </div>
+
+                        <div id="skillBox">
+                            <div class="skillContent">
+                                <img class="skillIcon" src="Images/img_icon_godot.png">
+                                <p class="skillName">GDScript</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div id="projectPage" class="webPage"> 
-                    <div id="projectTitle">Projects</div>
+                    <div id="pageTitle">Projects</div>
                     <div class="slideBox">
                         <div class="slideItem">
                             <div class="wholeSlideProject">
@@ -61,42 +109,100 @@
                                 </div>
 
                                 <div class="bottomSlideProject">
-                                    <div class="imageSlideProject">
-                                        video
+                                    <div class="midiaSlideProject">
+                                        <div class="midiaBoxProject">
+
+                                        </div>
                                     </div>
 
                                     <div class="skillsSlideProject">
-                                        Skills:<br>
-                                        fsea<br>
-                                        fgsg<br>
-                                        fs<br>
+                                        <div id="skillBoxOnProject">
+                                            <div class="skillContent">
+                                                <img class="skillIcon" src="Images/img_icon_html.png">
+                                                <p class="skillName">HTML</p>
+                                            </div>
+                                        </div>
+                
+                                        <div id="skillBoxOnProject">
+                                            <div class="skillContent">
+                                                <img class="skillIcon" src="Images/img_icon_css.png">
+                                                <p class="skillName">CSS</p>
+                                            </div>
+                                        </div>
+                
+                                        <div id="skillBoxOnProject">
+                                            <div class="skillContent">
+                                                <img class="skillIcon" src="Images/img_icon_js.png">
+                                                <p class="skillName">Js</p>
+                                            </div>
+                                        </div>
+                
+                                        <div id="skillBoxOnProject">
+                                            <div class="skillContent">
+                                                <img class="skillIcon" src="Images/img_icon_py.png">
+                                                <p class="skillName">Python</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="slideItem">
-                            <h1>Slide 2</h1>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque possimus pariatur cumque molestias soluta beatae, delectus animi a ducimus dolores quo, hic praesentium laudantium consequuntur? Dolorum pariatur quasi ipsam aliquam!
-                        </div>
+                            <div class="wholeSlideProject">
+                                <div class="topSlideProject">
+                                    <h1 class="projectSlideTitle">V.O.I.D.</h1>
+                                    <p class="projectSlideDescription">V.O.I.D. is a game blending fast-paced action with progression and upgrade mechanics.
+                                        Players control a spaceship in an infinite space, facing various enemies with unique behaviors.</p>
+                                </div>
 
-                        <div class="slideItem">
-                            <h1>Slide 3</h1>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque possimus pariatur cumque molestias soluta beatae, delectus animi a ducimus dolores quo, hic praesentium laudantium consequuntur? Dolorum pariatur quasi ipsam aliquam!
-                        </div>
+                                <div class="bottomSlideProject">
+                                    <div class="midiaSlideProject">
+                                        <div class="midiaBoxProject">
 
-                        <div class="slideItem">
-                            <h1>Slide 4</h1>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque possimus pariatur cumque molestias soluta beatae, delectus animi a ducimus dolores quo, hic praesentium laudantium consequuntur? Dolorum pariatur quasi ipsam aliquam!
+                                        </div>
+                                    </div>
+
+                                    <div class="skillsSlideProject">
+                                        <div id="skillBoxOnProject">
+                                            <div class="skillContent">
+                                                <img class="skillIcon" src="Images/img_icon_gml.png">
+                                                <p class="skillName">GML</p>
+                                            </div>
+                                        </div>
+
+                                        <button onclick="playVOID()" id="buttomBoxOnProject" >
+                                            <div class="skillContent">
+                                                <p class="skillName">Play Now</p>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         
+                        <div class="slideItem">
+                            <div class="wholeSlideProject">
+                                <div class="topSlideProject">
+                                    <h1 class="projectSlideTitle">Project 3</h1>
+                                    <p class="projectSlideDescription">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem, minus molestiae voluptates omnis perferendis, quaerat ad minima libero accusantium asperiores similique, inventore alias illum doloribus iste neque dolore incidunt corporis.</p>
+                                </div>
+
+                                <div class="bottomSlideProject">
+                                    <div class="midiaSlideProject">
+                                        <div class="midiaBoxProject">
+                                        </div>
+                                    </div>
+
+                                    <div class="skillsSlideProject">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <button id="nextButton">></button>
                         <button id="prevButton"><</button>
                     </div>
-                </div>
-
-                <div id="aboutPage" class="webPage">
                 </div>
 
                 <div id="contactPage" class="webPage">
@@ -141,11 +247,17 @@
             nextButton.onclick = function(){
                 active = active + 1 < items.length ? active + 1 : active;
                 loadShow();
+                setScrollPercentage(73.5);
             }
 
             prevButton.onclick = function(){
                 active = active - 1 >= 0 ? active - 1 : active;
                 loadShow();
+                setScrollPercentage(73.5);
+            }
+
+            function playVOID(){
+                window.open('https://gamejolt.com/games/void/963733', '_blank');
             }
 
             // Home Page
