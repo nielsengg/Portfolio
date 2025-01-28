@@ -32,7 +32,7 @@
                         <button onclick="setScrollPercentage(73.5)" id="linkAbout" class="link">
                             Projects
                         </button>
-                        <button onclick="setScrollPercentage(99.5)" id="linkContact" class="link">
+                        <button onclick="setScrollPercentage(100)" id="linkContact" class="link">
                             Contact
                         </button>
                     </div>
@@ -52,7 +52,7 @@
                 <div id="skillsPage" class="webPage">
                     <div id="pageTitle">Skills</div>
 
-                    <div id="skillBigBox">
+                    <div id="skillBigBox" class="hiddenAnimation">
                         <div id="skillBox">
                             <div class="skillContent">
                                 <img class="skillIcon" src="Images/img_icon_html.png">
@@ -99,7 +99,7 @@
 
                 <div id="projectPage" class="webPage"> 
                     <div id="pageTitle">Projects</div>
-                    <div class="slideBox">
+                    <div class="slideBox hiddenAnimation">
                         <div class="slideItem">
                             <div class="wholeSlideProject">
                                 <div class="topSlideProject">
@@ -153,8 +153,8 @@
                                 <div class="topSlideProject">
                                     <h1 class="projectSlideTitle">V.O.I.D.</h1>
                                     <p class="projectSlideDescription">V.O.I.D. is a game blending fast-paced action with progression and upgrade mechanics.
-                                        Players control a spaceship in an infinite space, facing various enemies with unique behaviors.</p>
-                                </div>
+                                        You control a spaceship in an infinite space, facing various enemies with unique behaviors.</p>
+                                </div> 
 
                                 <div class="bottomSlideProject">
                                     <div class="midiaSlideProject">
@@ -171,7 +171,7 @@
                                             </div>
                                         </div>
 
-                                        <button onclick="playVOID()" id="buttomBoxOnProject" >
+                                        <button onclick="goVOID()" id="buttomBoxOnProject" >
                                             <div class="skillContent">
                                                 <p class="skillName">Play Now</p>
                                             </div>
@@ -206,12 +206,59 @@
                 </div>
 
                 <div id="contactPage" class="webPage">
+                    <div id="contactBigBox">
+                        <div id="contactMessage">CONTACT ME</div>
+
+                        <button id="emailBox">
+                            <div class="contactContent">
+                                <ion-icon class="contactIcon" name="mail-outline"></ion-icon>
+                                <p class="contactText" id="emailMessage">
+                                    <a href="mailto:gustavogn427@gmail.com">Send an email</a>
+                                </p>
+                            </div>
+                        </button>
+                        <div class="hContainer">
+                            <button id="contactBox" onclick="goLinkedin()">
+                                <div class="contactContent">
+                                    <ion-icon class="contactIcon" name="logo-linkedin"></ion-icon>
+                                </div>
+                            </button>
+
+                            <button id="contactBox" onclick="goGithub()">
+                                <div class="contactContent">
+                                    <ion-icon class="contactIcon" name="logo-github"></ion-icon>
+                                </div>
+                            </button>
+
+                            <button id="contactBox" onclick="goDiscord()">
+                                <div class="contactContent">
+                                    <ion-icon class="contactIcon" name="logo-discord"></ion-icon>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    
                 </div>
                 
             </div>
         </div>
         
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
         <script>
+            const elementsToAnimate = document.querySelectorAll('.hiddenAnimation');
+
+            const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                entry.target.classList.add('visibleAnimation'); 
+                observer.unobserve(entry.target); 
+                }
+            });
+            }, { threshold: 0.1 });
+
+            elementsToAnimate.forEach(element => observer.observe(element));
+
             // Project Page
             let items = document.querySelectorAll('.slideBox .slideItem');
             let nextButton = document.getElementById('nextButton');
@@ -255,10 +302,24 @@
                 loadShow();
                 setScrollPercentage(73.5);
             }
+            
 
-            function playVOID(){
+            function goVOID(){
                 window.open('https://gamejolt.com/games/void/963733', '_blank');
             }
+
+            function goLinkedin(){
+                window.open('https://www.linkedin.com/in/nielsengg/', '_blank');
+            }
+
+            function goGithub(){
+                window.open('https://github.com/nielsengg', '_blank');
+            }
+
+            function goDiscord(){
+                window.open('https://discordapp.com/users/572519718792200212', '_blank');
+            }
+
 
             // Home Page
             setTimeout(helloMessage, 700);
