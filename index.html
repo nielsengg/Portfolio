@@ -37,7 +37,6 @@
                         </button>
                     </div>
                 </nav>
-                <hr>
             </div>  
 
             <div id="pageContainer" class="vContainer">
@@ -51,6 +50,7 @@
                     <div id="aboutBigBox" class="hiddenAnimation">
                         <div id="aboutBox">
                             <div id="leftAbout">
+                                <img id="imageProfile" src="Images/img_nielsen.jpg" alt="">
                             </div>
                             <div id="rightAbout">
                                 <div id="aboutText">My name is</div>
@@ -295,16 +295,20 @@
                 const scrollLocation = window.scrollY;
                 const scrollPercent = (scrollLocation / totalHeightToContact) * 100;
 
-                if (scrollPercent >= 85 && !hasScrolledToContact) {
+                if (((scrollPercent > 85) && (scrollPercent < 87) && !hasScrolledToContact)) {
                     hasScrolledToContact = true;
                     gotoContactPage();
+                }
+
+                if (scrollPercent > 99){
+                    hasScrolledToContact = true;
                 }
 
                 if (scrollLocation < totalHeightToContact && hasScrolledToContact) {
                     returnigToTop = true; 
                 }
 
-                if (returnigToTop && scrollPercent < 80){
+                if (returnigToTop && scrollPercent < 75){
                     hasScrolledToContact = false;
                 }
             });
