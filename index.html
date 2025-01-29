@@ -23,7 +23,7 @@
                         <button onclick="setScrollPercentage(0)" id="topTitle">Nielsen</button>
                     </div>
                     <div id="topLink" class="hElement">
-                        <button onclick="setScrollPercentage(23.5)" id="linkProjects" class="link">
+                        <button onclick="setScrollPercentage(24.5)" id="linkProjects" class="link">
                             About
                         </button>
                         <button onclick="setScrollPercentage(48.5)" id="linkSkills" class="link">
@@ -47,10 +47,24 @@
                 </div>
 
                 <div id="aboutPage" class="webPage">
+                    <div id="aboutMessage" class="hiddenAnimation">About</div>
+                    <div id="aboutBigBox" class="hiddenAnimation">
+                        <div id="aboutBox">
+                            <div id="leftAbout">
+                            </div>
+                            <div id="rightAbout">
+                                <div id="aboutText">My name is</div>
+                                    <span id="aboutName">Gustavo Nielsen,</span>
+                                <div id="aboutText">and I've always been passionate about turning ideas into reality through development. Since 2020,
+                                    I've been actively creating games, school tools, personal tools, and websites, constantly exploring new ways to solve problems and bring creativity to life.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div id="skillsPage" class="webPage">
-                    <div id="pageTitle">Skills</div>
+                    <div id="skillsMessage" class="hiddenAnimation">Skills</div>
 
                     <div id="skillBigBox" class="hiddenAnimation">
                         <div id="skillBox">
@@ -98,7 +112,7 @@
                 </div>
 
                 <div id="projectPage" class="webPage"> 
-                    <div id="pageTitle">Projects</div>
+                    <div id="projectMessage" class="hiddenAnimation">Projects</div>
                     <div class="slideBox hiddenAnimation">
                         <div class="slideItem">
                             <div class="wholeSlideProject">
@@ -159,7 +173,7 @@
                                 <div class="bottomSlideProject">
                                     <div class="midiaSlideProject">
                                         <div class="midiaBoxProject">
-
+                                            <img src="Images/img_project_banner_void.png" id="midiaVOID"></img>
                                         </div>
                                     </div>
 
@@ -173,7 +187,7 @@
 
                                         <button onclick="goVOID()" id="buttomBoxOnProject" >
                                             <div class="skillContent">
-                                                <p class="skillName">Play Now</p>
+                                                <p class="skillName" id="playMessage">Play Now</p>
                                             </div>
                                         </button>
                                     </div>
@@ -244,15 +258,14 @@
                             
                         </div>
                     </div>
-                    
                 </div>
-                
             </div>
         </div>
         
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
         <script>
+            // Animation
             const elementsToAnimate = document.querySelectorAll('.hiddenAnimation');
 
             const observer = new IntersectionObserver((entries, observer) => {
@@ -265,6 +278,36 @@
             }, { threshold: 0.1 });
 
             elementsToAnimate.forEach(element => observer.observe(element));
+
+            // Contact Page Effect
+            const totalHeightToContact = document.getElementById('wholePage').scrollHeight - window.innerHeight;
+            let returnigToTop = false; // Variável para verificar se já foi rolado até a seção de contato
+            let hasScrolledToContact = false; // Variável para verificar se já foi rolado até a seção de contato
+
+            function gotoContactPage() {
+                window.scrollTo({
+                    top: totalHeightToContact,
+                    behavior: 'smooth'
+                }); 
+            }
+
+            window.addEventListener("scroll", () => {
+                const scrollLocation = window.scrollY;
+                const scrollPercent = (scrollLocation / totalHeightToContact) * 100;
+
+                if (scrollPercent >= 85 && !hasScrolledToContact) {
+                    hasScrolledToContact = true;
+                    gotoContactPage();
+                }
+
+                if (scrollLocation < totalHeightToContact && hasScrolledToContact) {
+                    returnigToTop = true; 
+                }
+
+                if (returnigToTop && scrollPercent < 80){
+                    hasScrolledToContact = false;
+                }
+            });
 
             // Project Page
             let items = document.querySelectorAll('.slideBox .slideItem');
