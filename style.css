@@ -219,9 +219,34 @@ body{
     /* margin: 3px; */
 }
 
+.contactBox{
+    overflow: hidden;
+
+    width: 150%;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #131313;
+    color: #fff;
+
+    border-radius: 10px;
+    border: 1px solid #fff;
+    
+}
+
+.contactBox:hover, #emailBox:hover{
+    background-color: #fff;
+    color: #131313;
+    cursor: pointer;
+}
+
 /* ----------------------------------------------------------- */
 
-
+#letterboxdBox:hover .contactContent img{
+    filter: invert(1);
+}
 
 #pageTitle{
     color: #131313;
@@ -479,7 +504,7 @@ body{
 
 #contactBigBox{
     position: relative;
-    width: 20vw;
+    width: 25vw;
     height: 90%;
 
     display: flex;
@@ -489,23 +514,6 @@ body{
     align-content: center;
 
    /* background-color: aqua; */
-}
-
-#contactBox{
-    overflow: hidden;
-
-    width: 150%;
-    height: 40px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #131313;
-    color: #fff;
-
-    border-radius: 10px;
-    border: 1px solid #fff;
-    
 }
 
 #emailBox{
@@ -532,11 +540,7 @@ body{
     
 }
 
-#contactBox:hover, #emailBox:hover{
-    background-color: #fff;
-    color: #131313;
-    cursor: pointer;
-}
+
 
 #emailBox:hover #emailMessage a {
     color: #131313;
@@ -544,11 +548,13 @@ body{
 
 #contactMessage{
     font-family: Teko;
-    font-size: 50px;
-
+    font-size: 80px;
+    height: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
     color: #fff;
+    margin-bottom: -20px;
 }
 
 .hiddenAnimation{

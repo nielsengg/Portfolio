@@ -218,23 +218,30 @@
                             </div>
                         </button>
                         <div class="hContainer">
-                            <button id="contactBox" onclick="goLinkedin()">
+                            <button class="contactBox" onclick="goLinkedin()">
                                 <div class="contactContent">
                                     <ion-icon class="contactIcon" name="logo-linkedin"></ion-icon>
                                 </div>
                             </button>
 
-                            <button id="contactBox" onclick="goGithub()">
+                            <button class="contactBox" onclick="goGithub()">
                                 <div class="contactContent">
                                     <ion-icon class="contactIcon" name="logo-github"></ion-icon>
                                 </div>
                             </button>
 
-                            <button id="contactBox" onclick="goDiscord()">
+                            <button class="contactBox" onclick="goDiscord()">
                                 <div class="contactContent">
                                     <ion-icon class="contactIcon" name="logo-discord"></ion-icon>
                                 </div>
                             </button>
+
+                            <button class="contactBox" id="letterboxdBox" onclick="goLetterboxd()">
+                                <div class="contactContent">
+                                    <img class="contactIcon" src="Images/img_icon_letterboxd.svg">
+                                </div>
+                            </button>
+                            
                         </div>
                     </div>
                     
@@ -320,7 +327,11 @@
                 window.open('https://discordapp.com/users/572519718792200212', '_blank');
             }
 
+            function goLetterboxd(){
+                window.open('https://letterboxd.com/nielsengg/', '_blank');
+            }
 
+            
             // Home Page
             setTimeout(helloMessage, 700);
 
