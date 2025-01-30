@@ -29,7 +29,7 @@
                         <button onclick="setScrollPercentage(48.5)" id="linkSkills" class="link">
                             Skills
                         </button>
-                        <button onclick="setScrollPercentage(73.5)" id="linkAbout" class="link">
+                        <button onclick="setScrollPercentage(73)" id="linkAbout" class="link">
                             Projects
                         </button>
                         <button onclick="setScrollPercentage(100)" id="linkContact" class="link">
@@ -55,29 +55,51 @@
                         <div id="rightAbout">
                             <div id="blurBox"></div>
 
-                            <div class="aboutText">
-                                My name is
+                            <div id="aboutResume">
+                                <div class="aboutText">
+                                    My name is
+                                </div>
+
+                                <span id="aboutName">
+                                    Gustavo Nielsen,
+                                </span>
+
+                                <div class="aboutText">
+                                    and I've always been passionate about turning ideas into reality through development. Since 2020,
+                                    I've been actively creating games, school tools, personal tools, and websites, constantly exploring new ways to solve problems and bring creativity to life.
+                                </div>
                             </div>
 
-                            <span id="aboutName">
-                                Gustavo Nielsen,
-                            </span>
+                            <div id="aboutABackground">
+                                <span id="aboutAdd">
+                                    Academic Background
+                                </span>
 
-                            <div class="aboutText">
-                                and I've always been passionate about turning ideas into reality through development. Since 2020,
-                                I've been actively creating games, school tools, personal tools, and websites, constantly exploring new ways to solve problems and bring creativity to life.
+                                <div class="aboutText" id="academicWeb">
+                                <span class="aboutAcademic">Web Programmer</span> - IFSP
+                                </div>
+                                <div class="aboutText" id="academicADM">
+                                <span class="aboutAcademic">Administrative Technician</span> - IFSP
+                                    <!-- Computer Science Degree - UFSCar.  -->
+                                </div>
+                            </div>
+                        
+                            <div id="aboutLanguages">
+                                <span id="aboutAdd">
+                                    Languages Spoken
+                                </span>
+                                <div id="languages">
+                                    <div class="aboutText" id="languageEN">
+                                        English - B1
+                                    </div>
+                                    <div class="aboutText" id="languagePT">
+                                        Potuguese - Native
+                                    </div>
+                                </div>
                             </div>
 
-                            <span id="aboutAdd">
-                                Academic Background
-                            </span>
-
-                            <div class="aboutText" id="academicWeb">
-                               <span class="aboutAcademic">Web Programmer</span> - IFSP
-                            </div>
-                            <div class="aboutText" id="academicADM">
-                               <span class="aboutAcademic">Administrative Technician</span> - IFSP
-                                <!-- Computer Science Degree - UFSCar.  -->
+                            <div class="aboutText" id="aboutMore">
+                                More...
                             </div>
                         </div>
                     </div>
@@ -251,7 +273,7 @@
 
                         <button id="emailBox">
                             <div class="contactContent">
-                                <ion-icon class="contactIcon" name="mail-outline"></ion-icon>
+                                <ion-icon class="contactIcon" name="mail"></ion-icon>
                                 <p class="contactText" id="emailMessage">
                                     <a href="mailto:gustavogn427@gmail.com">Send an email</a>
                                 </p>
@@ -289,7 +311,7 @@
         </div>
 
         <!-- Tooltip -->
-        <span class="tooltipAcademic" id="academicFirstDescription">
+        <span class="tooltipAbout" id="academicFirstDescription">
             <div class="tooltipTitle">
                 Web Programmer
             </div>
@@ -301,7 +323,7 @@
             </div>
         </span>
 
-        <span class="tooltipAcademic" id="academicSecondDescription">
+        <span class="tooltipAbout" id="academicSecondDescription">
             <div class="tooltipTitle">
                 Administrative Technician
             </div>
@@ -315,12 +337,19 @@
             </div>
         </span>
 
-        
+        <span class="tooltipAbout" id="aboutMoreDescription">
+            <div class="tooltipTitle">
+                More About Me
+            </div>
+            <div class="tooltipText">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut molestias placeat modi voluptates animi, neque quos nisi perferendis quidem incidunt veniam rem possimus quod ea distinctio reprehenderit! Rerum, aliquid praesentium.
+            </div>
+        </span>
+
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
         <script>
-
             // First Academic Blur Effect
             const academicFirstDescription = document.getElementById("academicFirstDescription");
             const academicWeb = document.getElementById("academicWeb");
@@ -339,7 +368,7 @@
 
             academicWeb.addEventListener("mousemove", (event) => {
                 academicFirstDescription.style.left = event.pageX * 0.5 + "px";
-                academicFirstDescription.style.top = event.pageY * 0.8 + "px";
+                academicFirstDescription.style.top = event.pageY * 0.109 + "vh";
                 applyBlurEffectFirstAcademic();
             });
 
@@ -347,7 +376,7 @@
                 removeBlurEffectFirstAcademic();
             });
 
-            // First Academic Blur Effect
+            // Second Academic Blur Effect
             const academicSecondDescription = document.getElementById("academicSecondDescription");
             const academicADM = document.getElementById("academicADM");
 
@@ -364,7 +393,7 @@
 
             academicADM.addEventListener("mousemove", (event) => {
                 academicSecondDescription.style.left = event.pageX * 0.5 + "px";
-                academicSecondDescription.style.top = event.pageY * 0.8 + "px";
+                academicSecondDescription.style.top = event.pageY * 0.1 + "vh";
                 applyBlurEffectSecondAcademic();
             });
 
@@ -372,6 +401,31 @@
                 removeBlurEffectSecondAcademic();
             });
 
+            // More Blur Effect
+            const aboutMoreDescription = document.getElementById("aboutMoreDescription");
+            const aboutMore = document.getElementById("aboutMore");
+
+            function applyBlurEffectMore() {
+                aboutMoreDescription.style.display = "block"; 
+                blurBox.style.opacity = 1;
+            }
+
+            function removeBlurEffectMore() {
+                blurBox.style.opacity = 0;
+                aboutMoreDescription.style.display = "none";
+            }
+
+            aboutMore.addEventListener("mousemove", (event) => {
+                aboutMoreDescription.style.left = event.pageX * 0.5 + "px";
+                aboutMoreDescription.style.top = event.pageY * 0.11 + "vh";
+                applyBlurEffectMore();
+            });
+
+            aboutMore.addEventListener("mouseleave", () => {
+                removeBlurEffectMore();
+            });
+
+            
             // Animation
             const elementsToAnimate = document.querySelectorAll('.hiddenAnimation');
 
