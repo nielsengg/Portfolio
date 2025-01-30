@@ -47,17 +47,37 @@
 
                 <div id="aboutPage" class="webPage">
                     <div id="aboutMessage" class="hiddenAnimation">About</div>
-                    <div id="aboutBigBox" class="hiddenAnimation">
-                        <div id="aboutBox">
-                            <div id="leftAbout">
-                                <img id="imageProfile" src="Images/img_nielsen.jpg" alt="">
+                    <div id="aboutBox" class="hiddenAnimation">
+                        <div id="leftAbout">
+                            <img id="imageProfile" src="Images/img_nielsen.jpg" alt="">
+                        </div>
+
+                        <div id="rightAbout">
+                            <div id="blurBox"></div>
+
+                            <div class="aboutText">
+                                My name is
                             </div>
-                            <div id="rightAbout">
-                                <div id="aboutText">My name is</div>
-                                    <span id="aboutName">Gustavo Nielsen,</span>
-                                <div id="aboutText">and I've always been passionate about turning ideas into reality through development. Since 2020,
-                                    I've been actively creating games, school tools, personal tools, and websites, constantly exploring new ways to solve problems and bring creativity to life.
-                                </div>
+
+                            <span id="aboutName">
+                                Gustavo Nielsen,
+                            </span>
+
+                            <div class="aboutText">
+                                and I've always been passionate about turning ideas into reality through development. Since 2020,
+                                I've been actively creating games, school tools, personal tools, and websites, constantly exploring new ways to solve problems and bring creativity to life.
+                            </div>
+
+                            <span id="aboutAdd">
+                                Academic Background
+                            </span>
+
+                            <div class="aboutText" id="academicWeb">
+                               <span class="aboutAcademic">Web Programmer</span> - IFSP
+                            </div>
+                            <div class="aboutText" id="academicADM">
+                               <span class="aboutAcademic">Administrative Technician</span> - IFSP
+                                <!-- Computer Science Degree - UFSCar.  -->
                             </div>
                         </div>
                     </div>
@@ -97,6 +117,13 @@
 
                         <div id="skillBox">
                             <div class="skillContent">
+                                <ion-icon class="skillIconOnline" name="logo-github"></ion-icon>
+                                <p class="skillName">Git</p>
+                            </div>
+                        </div>
+
+                        <div id="skillBox">
+                            <div class="skillContent">
                                 <img class="skillIcon" src="Images/img_icon_gml.png">
                                 <p class="skillName">GML</p>
                             </div>
@@ -125,35 +152,34 @@
                                 <div class="bottomSlideProject">
                                     <div class="midiaSlideProject">
                                         <div class="midiaBoxProject">
-
                                         </div>
                                     </div>
 
                                     <div class="skillsSlideProject">
                                         <div id="skillBoxOnProject">
                                             <div class="skillContent">
-                                                <img class="skillIcon" src="Images/img_icon_html.png">
+                                                <img class="skillIconOnSlide" src="Images/img_icon_html.png">
                                                 <p class="skillName">HTML</p>
                                             </div>
                                         </div>
                 
                                         <div id="skillBoxOnProject">
                                             <div class="skillContent">
-                                                <img class="skillIcon" src="Images/img_icon_css.png">
+                                                <img class="skillIconOnSlide" src="Images/img_icon_css.png">
                                                 <p class="skillName">CSS</p>
                                             </div>
                                         </div>
                 
                                         <div id="skillBoxOnProject">
                                             <div class="skillContent">
-                                                <img class="skillIcon" src="Images/img_icon_js.png">
+                                                <img class="skillIconOnSlide" src="Images/img_icon_js.png">
                                                 <p class="skillName">Js</p>
                                             </div>
                                         </div>
                 
                                         <div id="skillBoxOnProject">
                                             <div class="skillContent">
-                                                <img class="skillIcon" src="Images/img_icon_py.png">
+                                                <img class="skillIconOnSlide" src="Images/img_icon_py.png">
                                                 <p class="skillName">Python</p>
                                             </div>
                                         </div>
@@ -180,12 +206,12 @@
                                     <div class="skillsSlideProject">
                                         <div id="skillBoxOnProject">
                                             <div class="skillContent">
-                                                <img class="skillIcon" src="Images/img_icon_gml.png">
+                                                <img class="skillIconOnSlide" src="Images/img_icon_gml.png">
                                                 <p class="skillName">GML</p>
                                             </div>
                                         </div>
 
-                                        <button onclick="goVOID()" id="buttomBoxOnProject" >
+                                        <button onclick="goVOID()" id="buttonBoxOnProject" >
                                             <div class="skillContent">
                                                 <p class="skillName" id="playMessage">Play Now</p>
                                             </div>
@@ -261,10 +287,91 @@
                 </div>
             </div>
         </div>
+
+        <!-- Tooltip -->
+        <span class="tooltipAcademic" id="academicFirstDescription">
+            <div class="tooltipTitle">
+                Web Programmer
+            </div>
+            <div class="tooltipText">
+                - Front-end development with HTML, CSS, and JavaScript.<br> 
+                - PHP programming, including OOP, forms, and integration with WordPress.<br>   
+                - Database modeling, querying, and management using SQL (MySQL).<br>     
+                - API creation and dynamic application development with AngularJS.
+            </div>
+        </span>
+
+        <span class="tooltipAcademic" id="academicSecondDescription">
+            <div class="tooltipTitle">
+                Administrative Technician
+            </div>
+            <div class="tooltipText">
+                - Management of administrative, financial, and human resources processes.<br> 
+                - Planning, organizing, and controlling business activities.<br> 
+                - Market analysis, marketing strategies, and corporate communication.<br> 
+                - Budget preparation, cash flow management, and financial control.<br> 
+                - Use of technologies and tools for information and operations management.<br> 
+                - Development of leadership, negotiation, and decision-making skills in<br> corporate environments.
+            </div>
+        </span>
+
         
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
         <script>
+
+            // First Academic Blur Effect
+            const academicFirstDescription = document.getElementById("academicFirstDescription");
+            const academicWeb = document.getElementById("academicWeb");
+            const blurBox = document.getElementById("blurBox");
+
+            function applyBlurEffectFirstAcademic() {
+                academicFirstDescription.style.display = "block"; 
+                blurBox.style.opacity = 1;
+            }
+
+            function removeBlurEffectFirstAcademic() {
+                blurBox.style.opacity = 0;
+
+                academicFirstDescription.style.display = "none";
+            }
+
+            academicWeb.addEventListener("mousemove", (event) => {
+                academicFirstDescription.style.left = event.pageX * 0.5 + "px";
+                academicFirstDescription.style.top = event.pageY * 0.8 + "px";
+                applyBlurEffectFirstAcademic();
+            });
+
+            academicWeb.addEventListener("mouseleave", () => {
+                removeBlurEffectFirstAcademic();
+            });
+
+            // First Academic Blur Effect
+            const academicSecondDescription = document.getElementById("academicSecondDescription");
+            const academicADM = document.getElementById("academicADM");
+
+            function applyBlurEffectSecondAcademic() {
+                academicSecondDescription.style.display = "block"; 
+                blurBox.style.opacity = 1;
+            }
+
+            function removeBlurEffectSecondAcademic() {
+                blurBox.style.opacity = 0;
+
+                academicSecondDescription.style.display = "none";
+            }
+
+            academicADM.addEventListener("mousemove", (event) => {
+                academicSecondDescription.style.left = event.pageX * 0.5 + "px";
+                academicSecondDescription.style.top = event.pageY * 0.8 + "px";
+                applyBlurEffectSecondAcademic();
+            });
+
+            academicADM.addEventListener("mouseleave", () => {
+                removeBlurEffectSecondAcademic();
+            });
+
             // Animation
             const elementsToAnimate = document.querySelectorAll('.hiddenAnimation');
 
@@ -286,7 +393,7 @@
 
             function gotoContactPage() {
                 window.scrollTo({
-                    top: totalHeightToContact,
+                    top: totalHeightToContact * 10,
                     behavior: 'smooth'
                 }); 
             }
