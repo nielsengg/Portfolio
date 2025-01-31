@@ -358,7 +358,7 @@ body{
     transition: opacity 0.3s ease-in-out; 
 }
 
-#academicWeb:hover, #academicADM:hover, #aboutMore:hover{
+#academicFirst:hover, #academicSecond:hover, #aboutMore:hover{
     position: relative; 
     z-index: 4; 
     cursor: pointer;
