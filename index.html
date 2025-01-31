@@ -16,7 +16,10 @@
     </head>
 
     <body>
-        <div id="wholePage">
+        
+
+        <!-- All itens on the webpage -->
+        <div id="webSite">
             <div id="topPage">
                 <nav class="hContainer" id="navBar">
                     <div class="hElement">
@@ -29,7 +32,7 @@
                         <button onclick="setScrollPercentage(48.5)" id="linkSkills" class="link">
                             Skills
                         </button>
-                        <button onclick="setScrollPercentage(73)" id="linkAbout" class="link">
+                        <button onclick="setScrollPercentage(73.5)" id="linkAbout" class="link">
                             Projects
                         </button>
                         <button onclick="setScrollPercentage(100)" id="linkContact" class="link">
@@ -41,6 +44,11 @@
 
             <div id="pageContainer" class="vContainer">
                 
+                <span id="wholePage">
+                    <div id="highIndexPages"></div>
+                    <div id="lowIndexPages"></div>
+                </span>
+
                 <div id="homePage" class="webPage">
                     <p id="scrollIndication">▼</p>
                 </div>
@@ -75,10 +83,10 @@
                                     Academic Background
                                 </span>
 
-                                <div class="aboutText" id="academicWeb">
+                                <div class="aboutText" id="academicFirst">
                                 <span class="aboutAcademic">Web Programmer</span> - IFSP
                                 </div>
-                                <div class="aboutText" id="academicADM">
+                                <div class="aboutText" id="academicSecond">
                                 <span class="aboutAcademic">Administrative Technician</span> - IFSP
                                     <!-- Computer Science Degree - UFSCar.  -->
                                 </div>
@@ -233,7 +241,7 @@
                                             </div>
                                         </div>
 
-                                        <button onclick="goVOID()" id="buttonBoxOnProject" >
+                                        <button onclick="goLink('https://gamejolt.com/games/void/963733')" id="buttonBoxOnProject" >
                                             <div class="skillContent">
                                                 <p class="skillName" id="playMessage">Play Now</p>
                                             </div>
@@ -246,8 +254,10 @@
                         <div class="slideItem">
                             <div class="wholeSlideProject">
                                 <div class="topSlideProject">
-                                    <h1 class="projectSlideTitle">Project 3</h1>
-                                    <p class="projectSlideDescription">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem, minus molestiae voluptates omnis perferendis, quaerat ad minima libero accusantium asperiores similique, inventore alias illum doloribus iste neque dolore incidunt corporis.</p>
+                                    <h1 class="projectSlideTitle">Portfolio</h1>
+                                    <p class="projectSlideDescription">This Portfolio website was made to show a resume about me and my projects.
+                                        It has some personal designs, effects and layouts. 
+                                    </p>
                                 </div>
 
                                 <div class="bottomSlideProject">
@@ -257,6 +267,26 @@
                                     </div>
 
                                     <div class="skillsSlideProject">
+                                        <div id="skillBoxOnProject">
+                                            <div class="skillContent">
+                                                <img class="skillIconOnSlide" src="Images/img_icon_html.png">
+                                                <p class="skillName">HTML</p>
+                                            </div>
+                                        </div>
+                
+                                        <div id="skillBoxOnProject">
+                                            <div class="skillContent">
+                                                <img class="skillIconOnSlide" src="Images/img_icon_css.png">
+                                                <p class="skillName">CSS</p>
+                                            </div>
+                                        </div>
+                
+                                        <div id="skillBoxOnProject">
+                                            <div class="skillContent">
+                                                <img class="skillIconOnSlide" src="Images/img_icon_js.png">
+                                                <p class="skillName">Js</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -280,25 +310,25 @@
                             </div>
                         </button>
                         <div class="hContainer">
-                            <button class="contactBox" onclick="goLinkedin()">
+                            <button class="contactBox" onclick="goLink('https://www.linkedin.com/in/nielsengg/')">
                                 <div class="contactContent">
                                     <ion-icon class="contactIcon" name="logo-linkedin"></ion-icon>
                                 </div>
                             </button>
 
-                            <button class="contactBox" onclick="goGithub()">
+                            <button class="contactBox" onclick="goLink('https://github.com/nielsengg')">
                                 <div class="contactContent">
                                     <ion-icon class="contactIcon" name="logo-github"></ion-icon>
                                 </div>
                             </button>
 
-                            <button class="contactBox" onclick="goDiscord()">
+                            <button class="contactBox" onclick="goLink('https://discordapp.com/users/572519718792200212')">
                                 <div class="contactContent">
                                     <ion-icon class="contactIcon" name="logo-discord"></ion-icon>
                                 </div>
                             </button>
 
-                            <button class="contactBox" id="letterboxdBox" onclick="goLetterboxd()">
+                            <button class="contactBox" id="letterboxdBox" onclick="goLink('https://letterboxd.com/nielsengg/')">
                                 <div class="contactContent">
                                     <img class="contactIcon" src="Images/img_icon_letterboxd.svg">
                                 </div>
@@ -306,6 +336,9 @@
                             
                         </div>
                     </div>
+
+                    <footer id="creditsFooter">by Nielsen</footer>
+
                 </div>
             </div>
         </div>
@@ -346,86 +379,37 @@
             </div>
         </span>
 
+        <!-- Scripts -->
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
         <script>
-            // First Academic Blur Effect
-            const academicFirstDescription = document.getElementById("academicFirstDescription");
-            const academicWeb = document.getElementById("academicWeb");
-            const blurBox = document.getElementById("blurBox");
+            //Academic & More... Blur Effect
+            function tooltipAndBlur(itemID, descriptionID){
+                const offsetX = 0.5; 
+                const offsetY = 20;
 
-            function applyBlurEffectFirstAcademic() {
-                academicFirstDescription.style.display = "block"; 
-                blurBox.style.opacity = 1;
+                const item = document.getElementById(itemID);
+                const description = document.getElementById(descriptionID);
+
+                const blurBox = document.getElementById("blurBox");
+
+                item.addEventListener("mousemove", (event) => {
+                    const tooltipHeight = description.offsetHeight;
+        
+                    description.style.left = (event.pageX * offsetX) + "px";
+                    description.style.top = (event.pageY - offsetY - tooltipHeight) + "px";
+                    
+                    description.style.visibility = "visible";                
+                    blurBox.style.opacity = 1;
+                });
+
+                item.addEventListener("mouseleave", () => {
+                    blurBox.style.opacity = 0;
+                    description.style.visibility = "hidden";  
+                });
             }
 
-            function removeBlurEffectFirstAcademic() {
-                blurBox.style.opacity = 0;
-
-                academicFirstDescription.style.display = "none";
-            }
-
-            academicWeb.addEventListener("mousemove", (event) => {
-                academicFirstDescription.style.left = event.pageX * 0.5 + "px";
-                academicFirstDescription.style.top = event.pageY * 0.109 + "vh";
-                applyBlurEffectFirstAcademic();
-            });
-
-            academicWeb.addEventListener("mouseleave", () => {
-                removeBlurEffectFirstAcademic();
-            });
-
-            // Second Academic Blur Effect
-            const academicSecondDescription = document.getElementById("academicSecondDescription");
-            const academicADM = document.getElementById("academicADM");
-
-            function applyBlurEffectSecondAcademic() {
-                academicSecondDescription.style.display = "block"; 
-                blurBox.style.opacity = 1;
-            }
-
-            function removeBlurEffectSecondAcademic() {
-                blurBox.style.opacity = 0;
-
-                academicSecondDescription.style.display = "none";
-            }
-
-            academicADM.addEventListener("mousemove", (event) => {
-                academicSecondDescription.style.left = event.pageX * 0.5 + "px";
-                academicSecondDescription.style.top = event.pageY * 0.1 + "vh";
-                applyBlurEffectSecondAcademic();
-            });
-
-            academicADM.addEventListener("mouseleave", () => {
-                removeBlurEffectSecondAcademic();
-            });
-
-            // More Blur Effect
-            const aboutMoreDescription = document.getElementById("aboutMoreDescription");
-            const aboutMore = document.getElementById("aboutMore");
-
-            function applyBlurEffectMore() {
-                aboutMoreDescription.style.display = "block"; 
-                blurBox.style.opacity = 1;
-            }
-
-            function removeBlurEffectMore() {
-                blurBox.style.opacity = 0;
-                aboutMoreDescription.style.display = "none";
-            }
-
-            aboutMore.addEventListener("mousemove", (event) => {
-                aboutMoreDescription.style.left = event.pageX * 0.5 + "px";
-                aboutMoreDescription.style.top = event.pageY * 0.11 + "vh";
-                applyBlurEffectMore();
-            });
-
-            aboutMore.addEventListener("mouseleave", () => {
-                removeBlurEffectMore();
-            });
-
-            
             // Animation
             const elementsToAnimate = document.querySelectorAll('.hiddenAnimation');
 
@@ -441,38 +425,27 @@
             elementsToAnimate.forEach(element => observer.observe(element));
 
             // Contact Page Effect
-            const totalHeightToContact = document.getElementById('wholePage').scrollHeight - window.innerHeight;
-            let returnigToTop = false; // Variável para verificar se já foi rolado até a seção de contato
-            let hasScrolledToContact = false; // Variável para verificar se já foi rolado até a seção de contato
+            const lowIndexPages = document.getElementById('lowIndexPages');
 
             function gotoContactPage() {
                 window.scrollTo({
-                    top: totalHeightToContact * 10,
+                    top: document.body.scrollHeight,
                     behavior: 'smooth'
-                }); 
+                });
             }
-
-            window.addEventListener("scroll", () => {
-                const scrollLocation = window.scrollY;
-                const scrollPercent = (scrollLocation / totalHeightToContact) * 100;
-
-                if (((scrollPercent > 85) && (scrollPercent < 87) && !hasScrolledToContact)) {
-                    hasScrolledToContact = true;
-                    gotoContactPage();
-                }
-
-                if (scrollPercent > 99){
-                    hasScrolledToContact = true;
-                }
-
-                if (scrollLocation < totalHeightToContact && hasScrolledToContact) {
-                    returnigToTop = true; 
-                }
-
-                if (returnigToTop && scrollPercent < 75){
-                    hasScrolledToContact = false;
-                }
+           
+            const observerPage = new IntersectionObserver((entries, observerPage) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        gotoContactPage();
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -200px 0px'
             });
+
+            observerPage.observe(lowIndexPages);
 
             // Project Page
             let items = document.querySelectorAll('.slideBox .slideItem');
@@ -518,27 +491,11 @@
                 setScrollPercentage(73.5);
             }
             
-
-            function goVOID(){
-                window.open('https://gamejolt.com/games/void/963733', '_blank');
+            
+            // Contact Page
+            function goLink(link){
+                window.open(link)
             }
-
-            function goLinkedin(){
-                window.open('https://www.linkedin.com/in/nielsengg/', '_blank');
-            }
-
-            function goGithub(){
-                window.open('https://github.com/nielsengg', '_blank');
-            }
-
-            function goDiscord(){
-                window.open('https://discordapp.com/users/572519718792200212', '_blank');
-            }
-
-            function goLetterboxd(){
-                window.open('https://letterboxd.com/nielsengg/', '_blank');
-            }
-
             
             // Home Page
             setTimeout(helloMessage, 700);
@@ -610,6 +567,10 @@
             // Call functions
             linkUnderline();
             loadShow();
+
+            tooltipAndBlur("academicFirst", "academicFirstDescription");
+            tooltipAndBlur("academicSecond", "academicSecondDescription");
+            tooltipAndBlur("aboutMore", "aboutMoreDescription");
 
             window.addEventListener('scroll', linkUnderline);
 

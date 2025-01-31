@@ -175,7 +175,7 @@ body{
 
 .midiaSlideProject{
     height: auto;
-    width: 35vw;
+    width: 50%;
     aspect-ratio: 16 / 9;
     /* margin-left: 10px; */
     /* background-color: blue; */
@@ -201,19 +201,13 @@ body{
 
 .midiaBoxProject{
     width: 100%;
-    height: 100%;
+    height: auto;
     aspect-ratio: 16 / 9;
     border: #131313 1px solid;
     border-radius: 10px;
     box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.4);
     overflow: hidden;
     /* filter:saturate(0.5); */
-}
-
-#midiaVOID{
-    height: 100%;
-    width: 100%;
-
 }
 
 
@@ -285,9 +279,11 @@ body{
     cursor: pointer;
 }
 
-.aboutAcademic:hover + #rightAbout{
-    filter: blur(2rem);
+.aboutAcademic:hover, #aboutMore:hover{
+    /* transition: text-decoration 0.3s ease; */
+    text-decoration: none;
 }
+
 
 .blur-target{
     transition: filter 0.3s ease;
@@ -306,16 +302,17 @@ body{
     padding-bottom: 15px;
     padding-left: 20px;
     padding-right: 20px;
+    visibility: hidden;
 
     border: 1px solid #131313;
     border-radius: 10px;
     font-size: 20px;
-    display: none; 
+    display: block; 
     pointer-events: none;
 
     justify-content: center;
     height: auto;
-    min-width: 30vw;
+    min-width: 1vw;
     max-width: 50vw;
     box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.4);
     z-index: 5;
@@ -334,6 +331,19 @@ body{
 }
 /* ----------------------------------------------------------- */
 
+#midiaVOID{
+    height: 100%;
+    width: 100%;
+}
+
+#creditsFooter{
+    position: absolute;
+    top: 90%;
+    font-family: Jetbrains Mono;
+    color: #ececec;
+    font-size: 1vw;
+}
+
 #blurBox {
     position: absolute;
     top: 0;
@@ -348,7 +358,7 @@ body{
     transition: opacity 0.3s ease-in-out; 
 }
 
-#academicWeb:hover, #academicADM:hover, #aboutMore{
+#academicWeb:hover, #academicADM:hover, #aboutMore:hover{
     position: relative; 
     z-index: 4; 
     cursor: pointer;
@@ -408,6 +418,9 @@ body{
 #letterboxdBox:hover, #skillBox:hover, #skillBoxOnProject:hover, .contactBox:hover, #emailBox:hover{
     filter: invert(1);
     transition: filter 0.3s ease-in-out;
+}
+
+.contactBox:hover, #emailBox:hover{
     cursor: pointer;
 }
 
@@ -435,22 +448,26 @@ body{
 #nextButton, #prevButton{
     position: absolute;
     top: 40%;
-    color: #131313;
+    color: #ececec;
     background-color: transparent;
     border: none;
     font-size: xxx-large;
-    font-family: Jetbrains Mono;
+    /* font-family: Jetbrains Mono; */
     font-weight: normal;
     left: 50px;
     cursor: pointer;
-    opacity: 0.7;
-    font-weight: bolder;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+    /* opacity: 0.7; */
+    /* font-weight: bolder; */
     z-index: 10;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4), 1px 0px 0px rgba(0, 0, 0, 1), -1px 0px 0px rgba(0, 0, 0, 1), 0px 1px 0px rgba(0, 0, 0, 1), 0px -1px 0px rgba(0, 0, 0, 1);
+
 }
 
 #nextButton:hover, #prevButton:hover{
     opacity: 1;
+    filter: invert(1);
+    text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.4);
 }
 
 #nextButton{
@@ -485,10 +502,31 @@ body{
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
-#wholePage{
+#webSite{
     display: flex;
     flex-direction:column;
-    height: 530vh;
+    height: 470vh;
+}
+
+#highIndexPages{
+    
+    /* background-color: rgba(0, 136, 255, 0.2); */
+    width: 100%;
+    height: 80.75%;
+}
+
+#lowIndexPages{
+    /* background-color: rgba(255, 0, 0, 0.2); */
+    width: 100%;
+    height: 19.25%;
+}
+
+#wholePage{
+    position: absolute;
+    width: 100%;
+    height: 525vh;
+    z-index: 9;
+    pointer-events: none;
 }
 
 
@@ -546,7 +584,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #ccdbdc;
+    background-color: #f2f5ef;
 
 
     z-index: 5;
@@ -558,7 +596,7 @@ body{
     align-items: center;
     justify-content: center;
     z-index: 4;
-    background-color: #9ad1d4;
+    background-color: #E8EBE4;
 }
 
 #skillsPage{
@@ -567,7 +605,7 @@ body{
     align-items: center;
     justify-content: start;
     z-index: 3;
-    background-color: #80ced7;
+    background-color: #cbcdd3;
 }
 
 #projectPage{
@@ -576,7 +614,7 @@ body{
     align-items: center;
     justify-content: center;
     z-index: 2;
-    background-color: #007ea7;
+    background-color: #7E6B8F;
 }
 
 #contactPage{
@@ -586,6 +624,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    max-height: 100vh;
+
+    /* overflow:visible; */
 }
 
 #aboutName{
