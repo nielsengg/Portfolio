@@ -16,8 +16,6 @@
     </head>
 
     <body>
-        
-
         <!-- All itens on the webpage -->
         <div id="webSite">
             <div id="topPage">
@@ -45,16 +43,14 @@
             <div id="pageContainer" class="vContainer">
                 
                 <span id="wholePage">
-                    <div id="highIndexPages"></div>
-                    <div id="lowIndexPages"></div>
                 </span>
 
                 <div id="homePage" class="webPage"> 
-                    <p id="scrollIndication">▼</p>
+                    <!-- <p id="scrollIndication">▼</p> -->
                 </div>
 
                 <div id="aboutPage" class="webPage">
-                    <div id="aboutMessage" class="hiddenAnimation">About</div>
+                    <!-- <div id="aboutMessage" class="hiddenAnimation">About</div> -->
                     <div id="aboutBox" class="hiddenAnimation">
                         <div id="leftAbout">
                             <img id="imageProfile" src="Images/img_nielsen.jpg" alt="">
@@ -342,7 +338,7 @@
                         </div>
                     </div>
 
-                    <footer id="creditsFooter">by Nielsen</footer>
+                    <!-- <footer id="creditsFooter">by Nielsen</footer> -->
 
                 </div>
             </div>
@@ -430,7 +426,7 @@
             elementsToAnimate.forEach(element => observer.observe(element));
 
             // Contact Page Effect
-            const lowIndexPages = document.getElementById('lowIndexPages');
+            const wholePage = document.getElementById('wholePage');
 
             function gotoContactPage() {
                 window.scrollTo({
@@ -441,16 +437,16 @@
            
             const observerPage = new IntersectionObserver((entries, observerPage) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
+                    if (!entry.isIntersecting) {
                         gotoContactPage();
                     }
                 });
             }, {
                 threshold: 0.1,
-                rootMargin: '0px 0px -200px 0px'
+                rootMargin: '-200px 0px 0px 0px'
             });
 
-            observerPage.observe(lowIndexPages);
+            observerPage.observe(wholePage);
 
             // Project Page
             let items = document.querySelectorAll('.slideBox .slideItem');
@@ -508,6 +504,7 @@
             function helloMessage(){
                 let homePage = document.getElementById('homePage');
                 homePage.innerHTML += "<p id='helloMessage'>Hello, I'm Nielsen</p>";
+                homePage.innerHTML += "<p>A dev snakjfbafbk</p>";
             }
 
             // Navigation

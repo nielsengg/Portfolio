@@ -47,14 +47,11 @@ body{
 }
 
 .webPage{
-    height: 100vh;
+    min-height: 80vh;
     max-height: auto;
     background-color: #fcfbfb;
     /* border-bottom: 1px solid #131313; */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-
-    padding-top: 3vh;
-    padding-bottom: 3vh;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); */
 
     width: 100%;
     max-width: 100vw;
@@ -65,16 +62,16 @@ body{
 .slideBox{
     position: relative;
     width: 100%;
-    height: 90%;
+    height: 90vh;
     display: flex;
-    /* align-items: center; */
     justify-content: center;
+    padding-bottom: 4vh;
 }
 
 .slideItem{
     position: absolute;
     width: 70vw;
-    height: 80%;
+    height: 80vh;
     text-align: justify;
     background-color: #ececec;
     color: #131313;
@@ -431,7 +428,6 @@ body{
 
 #projectMessage{
     color: #131313;
-    margin-top: 2vh;
     font-family: Teko;
     font-size: 70px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
@@ -439,7 +435,7 @@ body{
 
 #skillsMessage{
     color: #131313;
-    margin-top: 4vh;
+    /* margin-top: 4vh; */
     font-family: Teko;
     font-size: 70px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
@@ -508,29 +504,18 @@ body{
     height: 470vh;
 }
 
-#highIndexPages{
-    
-    /* background-color: rgba(0, 136, 255, 0.2); */
-    width: 100%;
-    height: 80.75%;
-}
-
-#lowIndexPages{
-    /* background-color: rgba(255, 0, 0, 0.2); */
-    width: 100%;
-    height: 19.25%;
-}
-
 #wholePage{
     position: absolute;
     width: 100%;
-    height: 525vh;
+    height: 100%;
     z-index: 9;
     pointer-events: none;
+    /* background-color: rgba(0, 136, 255, 0.2); */
 }
 
 
 #navBar{
+    height: 10vh;
     position: fixed;
     background-color: #131313;
     /* padding-top: 10px;  */
@@ -574,7 +559,7 @@ body{
     display: flex;
     flex-direction: column;
     position: relative;
-
+    margin-top: 10vh;
     align-items: center;
     /* background-color:aqua; */
 }
@@ -585,9 +570,7 @@ body{
     justify-content: center;
     align-items: center;
     background-color: #f2f5ef;
-
-
-    z-index: 5;
+    /* z-index: 5; */
 }
 
 #aboutPage{
@@ -595,17 +578,20 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 4;
-    background-color: #E8EBE4;
+    background-color: #f2f5ef;
+    /* z-index: 4;
+    background-color: #E8EBE4; */
 }
 
 #skillsPage{
+    min-height: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
-    z-index: 3;
-    background-color: #cbcdd3;
+    justify-content: center;
+    background-color: #f2f5ef;
+    /* z-index: 3;
+    background-color: #cbcdd3; */
 }
 
 #projectPage{
@@ -613,8 +599,10 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 2;
-    background-color: #7E6B8F;
+    /* z-index: 2;
+    background-color: #7E6B8F; */
+    background-color: #f2f5ef;
+    height: auto;
 }
 
 #contactPage{
@@ -624,7 +612,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    max-height: 100vh;
 
     /* overflow:visible; */
 }
@@ -650,12 +637,12 @@ body{
 #skillBigBox{
     position: relative;
     width: 60vw;
-    height: 70%;
+    /* height: 70%; */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
-    align-content: flex-start;
+    align-content: center;
 }
 
 #rightAbout{
@@ -684,7 +671,7 @@ body{
 
 #aboutBox{
     width: 70vw;
-    height: 70%;
+    height: 70vh;
     flex-wrap: wrap;
     overflow:auto;
     display: flex;
@@ -882,7 +869,7 @@ body::-webkit-scrollbar-track {
     }
   }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
 
     #aboutText, .projectSlideDescription {
         font-size: 16px;
@@ -896,4 +883,4 @@ body::-webkit-scrollbar-track {
     #contactBigBox {
         width: 80vw;
     }
-}
+} */
