@@ -19,7 +19,7 @@
         <!-- All itens on the webpage -->
         <div id="webSite">
             <div id="topPage">
-                <nav class="hContainer" id="navBar">
+                <nav class="hContainer shadowBox" id="navBar">
                     <div class="hElement">
                         <button onclick="setScrollPercentage()" id="topTitle">Nielsen</button>
                     </div>
@@ -41,7 +41,7 @@
                 </nav>
             </div>  
 
-            <div id="pageContainer" class="vContainer">
+            <div id="pageBody" class="vContainer">
                 
                 <span id="wholePage">
                 </span>
@@ -52,16 +52,16 @@
 
                 <div id="aboutPage" class="webPage">
                     <!-- <div id="aboutMessage" class="hiddenAnimation">About</div> -->
-                    <div id="aboutBox" class="hiddenAnimation">
+                    <div id="aboutBox" class=" shadowBox hiddenAnimation">
                         <div id="leftAbout">
-                            <img id="imageProfile" src="Images/img_nielsen.jpg" alt="">
+                            <img id="imageProfile" class="shadowBox boxAnimation" src="Images/img_nielsen.jpg" alt="">
                         </div>
 
                         <div id="rightAbout">
                             <div id="blurBox"></div>
 
-                            <div id="aboutResume">
-                                <div class="aboutText" id="preTitle">
+                            <div id="aboutResume" class="textBox shadowBox boxAnimation">
+                                <div class="textParagraph" id="preTitle">
                                     My name is
                                 </div>
 
@@ -69,43 +69,43 @@
                                     Gustavo Nielsen,
                                 </span>
 
-                                <div class="aboutText textParagraph">
+                                <div class="textParagraph textParagraph finalText">
                                     and I've always been passionate about turning ideas into reality through development. Since 2020,
                                     I've been actively creating games, school tools, personal tools, and websites, constantly exploring new ways to solve problems and bring creativity to life.
                                 </div>
                             </div>
 
-                            <div id="aboutABackground">
+                            <div id="aboutABackground" class="textBox shadowBox boxAnimation">
                                 <span class="aboutAdd">
                                     Academic Background
                                 </span>
 
-                                <div class="aboutText">
+                                <div class="textParagraph">
                                     <span class="aboutAcademic" id="academicFirst">Web Programmer</span>
                                     - IFSP
                                 </div>
-                                <div class="aboutText academicText">
-                                    <span class="aboutAcademic" id="academicSecond">Administrative Technician</span>
+                                <div class="textParagraph academicText">
+                                    <span class="aboutAcademic finalText" id="academicSecond">Administrative Technician</span>
                                     - IFSP
                                     <!-- Computer Science Degree - UFSCar.  -->
                                 </div>
                             </div>
                         
-                            <div id="aboutLanguages">
+                            <div id="aboutLanguages" class="textBox shadowBox boxAnimation">
                                 <span class="aboutAdd">
                                     Languages Spoken
                                 </span>
                                 <div id="languages">
-                                    <div class="aboutText" id="languageEN">
+                                    <div class="textParagraph finalText" id="languageFirst">
                                         English - B1
                                     </div>
-                                    <div class="aboutText" id="languagePT">
+                                    <div class="textParagraph finalText" id="languageSecond">
                                         Potuguese - Native
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="aboutText" id="aboutMore">
+                            <div class="textParagraph textBox finalText shadowBox boxAnimation" id="aboutMore">
                                 More...
                             </div>
                         </div>
@@ -113,121 +113,53 @@
                 </div>
 
                 <div id="skillsPage" class="webPage">
-                    <div id="skillsMessage" class="hiddenAnimation">Skills</div>
+                    <div id="skillsMessage" class="">Skills</div>
 
                     <div id="skillBigBox" class="hiddenAnimation">
-                        <div id="skillBox">
-                            <div class="skillContent">
-                                <img class="skillIcon" src="Images/img_icon_html.png">
-                                <p class="skillName">HTML</p>
-                            </div>
-                        </div>
-
-                        <div id="skillBox">
-                            <div class="skillContent">
-                                <img class="skillIcon" src="Images/img_icon_css.png">
-                                <p class="skillName">CSS</p>
-                            </div>
-                        </div>
-
-                        <div id="skillBox">
-                            <div class="skillContent">
-                                <img class="skillIcon" src="Images/img_icon_js.png">
-                                <p class="skillName">JavaScript</p>
-                            </div>
-                        </div>
-
-                        <div id="skillBox">
-                            <div class="skillContent">
-                                <img class="skillIcon" src="Images/img_icon_py.png">
-                                <p class="skillName">Python</p>
-                            </div>
-                        </div>
-
-                        <div id="skillBox">
-                            <div class="skillContent">
-                                <ion-icon class="skillIconOnline" name="logo-github"></ion-icon>
-                                <p class="skillName">Git</p>
-                            </div>
-                        </div>
-
-                        <div id="skillBox">
-                            <div class="skillContent">
-                                <img class="skillIcon" src="Images/img_icon_gml.png">
-                                <p class="skillName">GML</p>
-                            </div>
-                        </div>
-
-                        <div id="skillBox">
-                            <div class="skillContent">
-                                <img class="skillIcon" src="Images/img_icon_godot.png">
-                                <p class="skillName">GDScript</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
                 <div id="projectPage" class="webPage"> 
-                    <div id="projectMessage" class="hiddenAnimation">Projects</div>
+                    <div id="projectMessage" class="">Projects</div>
                     <div class="slideBox hiddenAnimation">
-                        <div class="slideItem">
+                        <div class="slideItem shadowBox">
                             <div class="wholeSlideProject">
                                 <div class="topSlideProject">
-                                    <h1 class="projectSlideTitle">kCalculator</h1>
-                                    <p class="projectSlideDescription">The kCalculator is a personal tool to help the users with their health.
-                                        On the website, you can find out your daily nutrient goal and monitor the amounts of those you have entered.</p>
+                                    <div class="textBox shadowBox boxAnimation boxAnimation">
+                                        <h1 class="projectSlideTitle">kCalculator</h1>
+                                        <p class="textParagraph topProjectSlideDescription">The kCalculator is a personal tool to help the users with their health.
+                                            On the website, you can find out your daily nutrient goal and monitor the amounts of those you have entered.
+                                        </p>
+                                    </div>
                                 </div>
 
                                 <div class="bottomSlideProject">
                                     <div class="midiaSlideProject">
-                                        <div class="midiaBoxProject">
+                                        <div class="midiaBoxProject shadowBox boxAnimation">
                                         </div>
                                     </div>
 
-                                    <div class="skillsSlideProject">
-                                        <div id="skillBoxOnProject">
-                                            <div class="skillContent">
-                                                <img class="skillIconOnSlide" src="Images/img_icon_html.png">
-                                                <p class="skillName">HTML</p>
-                                            </div>
-                                        </div>
-                
-                                        <div id="skillBoxOnProject">
-                                            <div class="skillContent">
-                                                <img class="skillIconOnSlide" src="Images/img_icon_css.png">
-                                                <p class="skillName">CSS</p>
-                                            </div>
-                                        </div>
-                
-                                        <div id="skillBoxOnProject">
-                                            <div class="skillContent">
-                                                <img class="skillIconOnSlide" src="Images/img_icon_js.png">
-                                                <p class="skillName">Js</p>
-                                            </div>
-                                        </div>
-                
-                                        <div id="skillBoxOnProject">
-                                            <div class="skillContent">
-                                                <img class="skillIconOnSlide" src="Images/img_icon_py.png">
-                                                <p class="skillName">Python</p>
-                                            </div>
-                                        </div>
+                                    <div id="skillsSlideProjectFirst" class="skillsSlideProject">
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="slideItem">
+                        <div class="slideItem shadowBox">
                             <div class="wholeSlideProject">
                                 <div class="topSlideProject">
-                                    <h1 class="projectSlideTitle">V.O.I.D.</h1>
-                                    <p class="projectSlideDescription">V.O.I.D. is a game blending fast-paced action with progression and upgrade mechanics.
-                                        You control a spaceship in an infinite space, facing various enemies with unique behaviors.</p>
+                                    <div class="textBox shadowBox boxAnimation">
+                                        <h1 class="projectSlideTitle">V.O.I.D.</h1>
+                                        <p class="textParagraph topProjectSlideDescription">
+                                            V.O.I.D. is a game blending fast-paced action with progression and upgrade mechanics.
+                                            You control a spaceship in an infinite space, facing various enemies with unique behaviors.
+                                        </p>
+                                    </div>
                                 </div> 
 
                                 <div class="bottomSlideProject">
                                     <div class="midiaSlideProject">
-                                        <div class="midiaBoxProject">
+                                        <div class="midiaBoxProject shadowBox boxAnimation">
                                             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/t23NEB3uIGo?si=05wZ7agSNlnEJlWu"
                                                 title="YouTube video player" frameborder="0"
                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -236,61 +168,31 @@
                                         </div>
                                     </div>
 
-                                    <div class="skillsSlideProject">
-                                        <div id="skillBoxOnProject">
-                                            <div class="skillContent">
-                                                <img class="skillIconOnSlide" src="Images/img_icon_gml.png">
-                                                <p class="skillName">GML</p>
-                                            </div>
-                                        </div>
-
-                                        <button onclick="goLink('https://gamejolt.com/games/void/963733')" id="buttonBoxOnProject" >
-                                            <div class="skillContent">
-                                                <p class="skillName" id="playMessage">Play Now</p>
-                                            </div>
-                                        </button>
+                                    <div id="skillsSlideProjectSecond" class="skillsSlideProject">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="slideItem">
+                        <div class="slideItem shadowBox">
                             <div class="wholeSlideProject">
                                 <div class="topSlideProject">
-                                    <h1 class="projectSlideTitle">Portfolio</h1>
-                                    <p class="projectSlideDescription">The Portfolio website was made to show a resume about me and my projects.
-                                        It has some personal designs, effects and layouts. 
-                                    </p>
+                                    <div class="textBox shadowBox boxAnimation">
+                                        <h1 class="projectSlideTitle">Portfolio</h1>
+                                        <p class="textParagraph topProjectSlideDescription">The Portfolio website was made to show a resume about me and my projects.
+                                            It has some personal designs, effects and layouts. 
+                                        </p>
+                                    </div>
                                 </div>
 
                                 <div class="bottomSlideProject">
                                     <div class="midiaSlideProject">
-                                        <div class="midiaBoxProject">
+                                        <div class="midiaBoxProject shadowBox boxAnimation">
                                             <img src="Images/img_project_banner_portfolio.png" id="midiaVOID"></img>
                                         </div>
                                     </div>
 
-                                    <div class="skillsSlideProject">
-                                        <div id="skillBoxOnProject">
-                                            <div class="skillContent">
-                                                <img class="skillIconOnSlide" src="Images/img_icon_html.png">
-                                                <p class="skillName">HTML</p>
-                                            </div>
-                                        </div>
-                
-                                        <div id="skillBoxOnProject">
-                                            <div class="skillContent">
-                                                <img class="skillIconOnSlide" src="Images/img_icon_css.png">
-                                                <p class="skillName">CSS</p>
-                                            </div>
-                                        </div>
-                
-                                        <div id="skillBoxOnProject">
-                                            <div class="skillContent">
-                                                <img class="skillIconOnSlide" src="Images/img_icon_js.png">
-                                                <p class="skillName">Js</p>
-                                            </div>
-                                        </div>
+                                    <div id="skillsSlideProjectThird" class="skillsSlideProject">
                                     </div>
                                 </div>
                             </div>
@@ -348,7 +250,7 @@
         </div>
 
         <!-- Tooltip -->
-        <span class="tooltipAbout" id="academicFirstDescription">
+        <span class="tooltipAbout shadowBox" id="academicFirstDescription">
             <div class="tooltipTitle">
                 Web Programmer - IFSP
             </div>
@@ -360,7 +262,7 @@
             </div>
         </span>
 
-        <span class="tooltipAbout" id="academicSecondDescription">
+        <span class="tooltipAbout shadowBox" id="academicSecondDescription">
             <div class="tooltipTitle">
                 Administrative Technician - IFSP
             </div>
@@ -374,7 +276,7 @@
             </div>
         </span>
 
-        <span class="tooltipAbout" id="aboutMoreDescription">
+        <span class="tooltipAbout shadowBox" id="aboutMoreDescription">
             <div class="tooltipTitle">
                 More About Me
             </div>
@@ -398,7 +300,73 @@
 
             // -------------------------------------------------------------------- //
 
+            //Creates Boxes
+            function createSkillBox(father, skill, local){
+                let icon = null;
+                let skillName = null;
+                
+                if (skill === "html"){
+                    if (local === "skills"){
+                        icon = '<img class="skillIcon" src="Images/img_icon_html.png">';
+                    }else if(local === "project"){
+                        icon = '<img class="skillIconOnSlide" src="Images/img_icon_html.png">';
+                    }
 
+                    skillName = 'HTML';
+                }
+
+                if (skill === "css"){
+                    icon = '<ion-icon class="skillIconOnline" name="logo-css3"></ion-icon>';
+                    skillName = 'CSS';
+                }
+
+                if (skill === "js"){
+                    icon = '<ion-icon class="skillIconOnline" name="logo-javascript"></ion-icon>';
+                    skillName = 'JS';
+                }
+                
+                if (skill === "python"){
+                    icon = '<ion-icon class="skillIconOnline" name="logo-python"></ion-icon>';
+                    skillName = 'Python';
+                }
+
+                if (skill === "git"){
+                    icon = '<ion-icon class="skillIconOnline" name="logo-github"></ion-icon>';
+                    skillName = 'Git';
+                }
+
+                if (skill === "gml"){
+                    icon = '<img class="skillIcon" src="Images/img_icon_gml.png">';
+                    skillName = 'GML';
+                }
+
+                if (skill === "gds"){
+                    icon = '<img class="skillIcon" src="Images/img_icon_godot.png">';
+                    skillName = 'GDScript';
+                }
+
+
+                let item = document.getElementById(father);
+
+                
+                if (local === "skills"){
+                    item.innerHTML += "<div id ='skillBox'class='boxAnimation skillBox shadowBox'><div class='skillContent'>" + icon + "<p class='skillName'>" + skillName + "</p></div></div>"
+                }else if(local === "project"){
+                    item.innerHTML += "<div class='boxAnimation skillBoxOnProject shadowBox'><div class='skillContentOnProject'>" + icon + "<p class='skillName'>" + skillName + "</p></div></div>"
+                    
+                    if (father === "skillsSlideProjectSecond"){
+                        item.innerHTML += `<button onclick="goLink('https://gamejolt.com/games/void/963733')" id="buttonBoxOnProject" class="shadowBox boxAnimation">
+                            <div class="skillContent">
+                                <p class="skillName" id="playMessage">Play Now</p>
+                            </div>
+                        </button>`
+                    }
+                }
+            }
+
+            
+            // -------------------------------------------------------------------- //
+            
 
             //Academic & More... Blur Effect
             function tooltipAndBlur(itemID, descriptionID){
@@ -431,18 +399,24 @@
 
 
             // Animation
-            const elementsToAnimate = document.querySelectorAll('.hiddenAnimation');
+            const elementsToAnimateHidden = document.querySelectorAll('.hiddenAnimation');
 
             const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                entry.target.classList.add('visibleAnimation'); 
-                observer.unobserve(entry.target); 
-                }
-            });
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visibleAnimation');
+
+                        const boxElements = entry.target.querySelectorAll('.boxAnimation');
+                        boxElements.forEach(box => {
+                            box.classList.add('animate-popup');
+                        });
+
+                        observer.unobserve(entry.target);
+                    }
+                });
             }, { threshold: 0.25 });
 
-            elementsToAnimate.forEach(element => observer.observe(element));
+            elementsToAnimateHidden.forEach(element => observer.observe(element));
 
 
             // -------------------------------------------------------------------- //
@@ -539,7 +513,6 @@
             function helloMessage(){
                 homePage.innerHTML += "<p id='homeMessageFirst'>Hello, I'm Nielsen</p>";
                 homePage.innerHTML += "<p id='homeMessageSecond' class='homeAnimation'>A dev...</p> <p id='scrollIndication'>▼</p>";
-                // homePage.innerHTML += "";
             }
 
             function helloSubMessage(){
@@ -603,6 +576,24 @@
             tooltipAndBlur("academicFirst", "academicFirstDescription");
             tooltipAndBlur("academicSecond", "academicSecondDescription");
             tooltipAndBlur("aboutMore", "aboutMoreDescription");
+
+            createSkillBox('skillBigBox', 'html', 'skills');
+            createSkillBox('skillBigBox', 'css', 'skills');
+            createSkillBox('skillBigBox', 'js', 'skills');
+            createSkillBox('skillBigBox', 'python', 'skills');
+            createSkillBox('skillBigBox', 'gml', 'skills');
+            createSkillBox('skillBigBox', 'gds', 'skills');
+
+            createSkillBox('skillsSlideProjectFirst', 'html', 'project');
+            createSkillBox('skillsSlideProjectFirst', 'css', 'project');
+            createSkillBox('skillsSlideProjectFirst', 'js', 'project');
+            createSkillBox('skillsSlideProjectFirst', 'python', 'project');
+
+            createSkillBox('skillsSlideProjectSecond', 'gml', 'project');
+
+            createSkillBox('skillsSlideProjectThird', 'html', 'project');
+            createSkillBox('skillsSlideProjectThird', 'css', 'project');
+            createSkillBox('skillsSlideProjectThird', 'js', 'project');
 
             window.addEventListener('scroll', linkUnderline);
 
