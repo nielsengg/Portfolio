@@ -21,19 +21,20 @@
             <div id="topPage">
                 <nav class="hContainer" id="navBar">
                     <div class="hElement">
-                        <button onclick="setScrollPercentage(0)" id="topTitle">Nielsen</button>
+                        <button onclick="setScrollPercentage()" id="topTitle">Nielsen</button>
                     </div>
+
                     <div id="topLink" class="hElement">
-                        <button onclick="setScrollPercentage(24.5)" id="linkProjects" class="link">
+                        <button onclick="setScrollPercentage('about')" id="linkAbout" class="link">
                             About
                         </button>
-                        <button onclick="setScrollPercentage(48.5)" id="linkSkills" class="link">
+                        <button onclick="setScrollPercentage('skills')" id="linkSkills" class="link">
                             Skills
                         </button>
-                        <button onclick="setScrollPercentage(73.5)" id="linkAbout" class="link">
+                        <button onclick="setScrollPercentage('projects')" id="linkProjects" class="link">
                             Projects
                         </button>
-                        <button onclick="setScrollPercentage(100)" id="linkContact" class="link">
+                        <button onclick="setScrollPercentage('contact')" id="linkContact" class="link">
                             Contact
                         </button>
                     </div>
@@ -46,7 +47,7 @@
                 </span>
 
                 <div id="homePage" class="webPage"> 
-                    <!-- <p id="scrollIndication">▼</p> -->
+                    <p id='scrollIndication' class=''>▼</p>
                 </div>
 
                 <div id="aboutPage" class="webPage">
@@ -60,7 +61,7 @@
                             <div id="blurBox"></div>
 
                             <div id="aboutResume">
-                                <div class="aboutText">
+                                <div class="aboutText" id="preTitle">
                                     My name is
                                 </div>
 
@@ -68,28 +69,30 @@
                                     Gustavo Nielsen,
                                 </span>
 
-                                <div class="aboutText">
+                                <div class="aboutText textParagraph">
                                     and I've always been passionate about turning ideas into reality through development. Since 2020,
                                     I've been actively creating games, school tools, personal tools, and websites, constantly exploring new ways to solve problems and bring creativity to life.
                                 </div>
                             </div>
 
                             <div id="aboutABackground">
-                                <span id="aboutAdd">
+                                <span class="aboutAdd">
                                     Academic Background
                                 </span>
 
-                                <div class="aboutText" id="academicFirst">
-                                <span class="aboutAcademic">Web Programmer</span> - IFSP
+                                <div class="aboutText">
+                                    <span class="aboutAcademic" id="academicFirst">Web Programmer</span>
+                                    - IFSP
                                 </div>
-                                <div class="aboutText" id="academicSecond">
-                                <span class="aboutAcademic">Administrative Technician</span> - IFSP
+                                <div class="aboutText academicText">
+                                    <span class="aboutAcademic" id="academicSecond">Administrative Technician</span>
+                                    - IFSP
                                     <!-- Computer Science Degree - UFSCar.  -->
                                 </div>
                             </div>
                         
                             <div id="aboutLanguages">
-                                <span id="aboutAdd">
+                                <span class="aboutAdd">
                                     Languages Spoken
                                 </span>
                                 <div id="languages">
@@ -347,7 +350,7 @@
         <!-- Tooltip -->
         <span class="tooltipAbout" id="academicFirstDescription">
             <div class="tooltipTitle">
-                Web Programmer
+                Web Programmer - IFSP
             </div>
             <div class="tooltipText">
                 - Front-end development with HTML, CSS, and JavaScript.<br> 
@@ -359,7 +362,7 @@
 
         <span class="tooltipAbout" id="academicSecondDescription">
             <div class="tooltipTitle">
-                Administrative Technician
+                Administrative Technician - IFSP
             </div>
             <div class="tooltipText">
                 - Management of administrative, financial, and human resources processes.<br> 
@@ -367,7 +370,7 @@
                 - Market analysis, marketing strategies, and corporate communication.<br> 
                 - Budget preparation, cash flow management, and financial control.<br> 
                 - Use of technologies and tools for information and operations management.<br> 
-                - Development of leadership, negotiation, and decision-making skills in<br> corporate environments.
+                - Development of leadership, negotiation, and decision-making skills in corporate environments.
             </div>
         </span>
 
@@ -385,6 +388,18 @@
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
         <script>
+            //Very Used Variables
+            let homePage = document.getElementById('homePage');
+            let aboutPage = document.getElementById('aboutPage');
+            let skillsPage = document.getElementById('skillsPage');
+            let projectPage = document.getElementById('projectPage');
+            let contactPage = document.getElementById('contactPage');
+
+
+            // -------------------------------------------------------------------- //
+
+
+
             //Academic & More... Blur Effect
             function tooltipAndBlur(itemID, descriptionID){
                 const offsetX = 0.5; 
@@ -411,6 +426,10 @@
                 });
             }
 
+
+            // -------------------------------------------------------------------- //
+
+
             // Animation
             const elementsToAnimate = document.querySelectorAll('.hiddenAnimation');
 
@@ -421,9 +440,13 @@
                 observer.unobserve(entry.target); 
                 }
             });
-            }, { threshold: 0.1 });
+            }, { threshold: 0.25 });
 
             elementsToAnimate.forEach(element => observer.observe(element));
+
+
+            // -------------------------------------------------------------------- //
+
 
             // Contact Page Effect
             const wholePage = document.getElementById('wholePage');
@@ -438,15 +461,19 @@
             const observerPage = new IntersectionObserver((entries, observerPage) => {
                 entries.forEach(entry => {
                     if (!entry.isIntersecting) {
-                        gotoContactPage();
+                        // gotoContactPage();
                     }
                 });
             }, {
                 threshold: 0.1,
-                rootMargin: '-200px 0px 0px 0px'
+                rootMargin: '-200px 20000px 20000px 20000px'
             });
 
             observerPage.observe(wholePage);
+
+
+            // -------------------------------------------------------------------- //
+
 
             // Project Page
             let items = document.querySelectorAll('.slideBox .slideItem');
@@ -483,81 +510,81 @@
             nextButton.onclick = function(){
                 active = active + 1 < items.length ? active + 1 : active;
                 loadShow();
-                setScrollPercentage(73.5);
+                setScrollPercentage("projects");
             }
 
             prevButton.onclick = function(){
                 active = active - 1 >= 0 ? active - 1 : active;
                 loadShow();
-                setScrollPercentage(73.5);
+                setScrollPercentage("projects");
             }
             
+
+            // -------------------------------------------------------------------- //
+
             
             // Contact Page
             function goLink(link){
                 window.open(link)
             }
             
+
+            // -------------------------------------------------------------------- //
+
+
             // Home Page
             setTimeout(helloMessage, 700);
+            setTimeout(helloSubMessage, 4000)
 
             function helloMessage(){
-                let homePage = document.getElementById('homePage');
-                homePage.innerHTML += "<p id='helloMessage'>Hello, I'm Nielsen</p>";
-                homePage.innerHTML += "<p>A dev snakjfbafbk</p>";
+                homePage.innerHTML += "<p id='homeMessageFirst'>Hello, I'm Nielsen</p>";
+                homePage.innerHTML += "<p id='homeMessageSecond' class='homeAnimation'>A dev...</p> <p id='scrollIndication'>▼</p>";
+                // homePage.innerHTML += "";
             }
+
+            function helloSubMessage(){
+                let homeAnimation = document.querySelectorAll('.homeAnimation');
+                homeAnimation.forEach(element => {
+                    element.style.opacity = "1";
+                });
+            }
+
+
+            // -------------------------------------------------------------------- //
+
+            
 
             // Navigation
-            function linkUnderline(){
-                let totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+            
+            function setScrollPercentage(local) {
+                const totalHeight = document.getElementById('webSite').scrollHeight - window.innerHeight;
 
-                let linkHome = document.getElementById('topTitle');
-                let linkProjects = document.getElementById('linkProjects');
-                let linkSkills = document.getElementById('linkSkills');
-                let linkAbout = document.getElementById('linkAbout');
-                let linkContact = document.getElementById('linkContact');
+                const bufferHeight = 55;
 
-                let scrollPosition = window.scrollY;
+                let homeLocation = 0;
+                let aboutLocation = (homePage.offsetHeight - bufferHeight) /  totalHeight;
+                let skillsLocation = ((homePage.offsetHeight + aboutPage.offsetHeight)) /  totalHeight;
+                let projectLocation = ((homePage.offsetHeight + aboutPage.offsetHeight + skillsPage.offsetHeight + (bufferHeight * 1.5))) /  totalHeight;
+                let contactLocation = document.body.scrollHeight;
 
-                let homeMax = totalHeight * (15/100);
-                let projectsMax = totalHeight * (40/100);
-                let skillsMax = totalHeight * (65/100);
-                let contactMax = totalHeight * (90/100);
+                let scrollPosition = 0;
 
-                if (scrollPosition <= homeMax){
-                    linkHome.style.textDecoration = 'underline';
-                }else{
-                    linkHome.style.textDecoration = 'none';
+                if (local === "about"){
+                    scrollPosition = aboutLocation * totalHeight;
                 }
 
-                if (scrollPosition <= projectsMax && scrollPosition >= homeMax){
-                    linkProjects.style.textDecoration = 'underline';
-                }else{
-                    linkProjects.style.textDecoration = 'none';
+                if (local === "skills"){
+                    scrollPosition = skillsLocation * totalHeight;
                 }
 
-                if (scrollPosition <= skillsMax && scrollPosition >= projectsMax){
-                    linkSkills.style.textDecoration = 'underline';
-                }else{
-                    linkSkills.style.textDecoration = 'none';
+                if (local === "projects"){
+                    scrollPosition = projectLocation * totalHeight;
                 }
 
-                if (scrollPosition <= contactMax && scrollPosition >= skillsMax){
-                    linkAbout.style.textDecoration = 'underline';
-                }else{
-                    linkAbout.style.textDecoration = 'none';
+                if (local === "contact"){
+                    scrollPosition = totalHeight;
                 }
 
-                if (scrollPosition >= contactMax){
-                    linkContact.style.textDecoration = 'underline';
-                }else{
-                    linkContact.style.textDecoration = 'none';
-                }
-            }
- 
-            function setScrollPercentage(percentage) {
-                const totalHeight = document.getElementById('wholePage').scrollHeight - window.innerHeight;
-                const scrollPosition = (percentage / 100) * totalHeight;
                 window.scrollTo({
                     top: scrollPosition,
                     behavior: 'smooth'
@@ -566,8 +593,11 @@
             setTimeout(linkUnderline, 500);
             }
 
+
+            // -------------------------------------------------------------------- //
+
+
             // Call functions
-            linkUnderline();
             loadShow();
 
             tooltipAndBlur("academicFirst", "academicFirstDescription");
