@@ -54,7 +54,7 @@
                     <!-- <div id="aboutMessage" class="hiddenAnimation">About</div> -->
                     <div id="aboutBox" class=" shadowBox hiddenAnimation">
                         <div id="leftAbout">
-                            <img id="imageProfile" class="shadowBox boxAnimation" src="Images/img_nielsen.jpg" alt="">
+                            <img id="imageProfile" class="shadowBox" src="Images/img_nielsen.jpg" alt="">
                         </div>
 
                         <div id="rightAbout">
@@ -135,7 +135,7 @@
 
                                 <div class="bottomSlideProject">
                                     <div class="midiaSlideProject">
-                                        <div class="midiaBoxProject shadowBox boxAnimation">
+                                        <div class="midiaBoxProject shadowBox">
                                         </div>
                                     </div>
 
@@ -159,7 +159,7 @@
 
                                 <div class="bottomSlideProject">
                                     <div class="midiaSlideProject">
-                                        <div class="midiaBoxProject shadowBox boxAnimation">
+                                        <div class="midiaBoxProject shadowBox">
                                             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/t23NEB3uIGo?si=05wZ7agSNlnEJlWu"
                                                 title="YouTube video player" frameborder="0"
                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -187,7 +187,7 @@
 
                                 <div class="bottomSlideProject">
                                     <div class="midiaSlideProject">
-                                        <div class="midiaBoxProject shadowBox boxAnimation">
+                                        <div class="midiaBoxProject shadowBox">
                                             <img src="Images/img_project_banner_portfolio.png" id="midiaVOID"></img>
                                         </div>
                                     </div>
@@ -290,14 +290,29 @@
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
         <script>
+
+
             //Very Used Variables
             let homePage = document.getElementById('homePage');
             let aboutPage = document.getElementById('aboutPage');
             let skillsPage = document.getElementById('skillsPage');
             let projectPage = document.getElementById('projectPage');
             let contactPage = document.getElementById('contactPage');
+            
+            const webSite = document.getElementById('webSite');
+            const wholePage = document.getElementById('wholePage');
 
 
+            // -------------------------------------------------------------------- //
+
+
+            // Set Sixe of The Site
+            function setWebSize() {
+                const totalHeight = wholePage.offsetHeight + contactPage.offsetHeight;
+                webSite.style.height = `${totalHeight}px`;
+            }
+
+    
             // -------------------------------------------------------------------- //
 
             //Creates Boxes
@@ -336,8 +351,13 @@
                 }
 
                 if (skill === "gml"){
-                    icon = '<img class="skillIcon" src="Images/img_icon_gml.png">';
                     skillName = 'GML';
+
+                    if (local === "skills"){
+                        icon = '<img class="skillIcon" src="Images/img_icon_gml.png">';
+                    }else if(local === "project"){
+                        icon = '<img class="skillIconOnSlide" src="Images/img_icon_gml.png">';
+                    }
                 }
 
                 if (skill === "gds"){
@@ -350,12 +370,12 @@
 
                 
                 if (local === "skills"){
-                    item.innerHTML += "<div id ='skillBox'class='boxAnimation skillBox shadowBox'><div class='skillContent'>" + icon + "<p class='skillName'>" + skillName + "</p></div></div>"
+                    item.innerHTML += "<div id ='skillBox'class='skillBoxAnimation skillBox shadowBox'><div class='skillContent'>" + icon + "<p class='skillName'>" + skillName + "</p></div></div>"
                 }else if(local === "project"){
-                    item.innerHTML += "<div class='boxAnimation skillBoxOnProject shadowBox'><div class='skillContentOnProject'>" + icon + "<p class='skillName'>" + skillName + "</p></div></div>"
+                    item.innerHTML += "<div class='skillBoxAnimation skillBoxOnProject shadowBox'><div class='skillContentOnProject'>" + icon + "<p class='skillName'>" + skillName + "</p></div></div>"
                     
                     if (father === "skillsSlideProjectSecond"){
-                        item.innerHTML += `<button onclick="goLink('https://gamejolt.com/games/void/963733')" id="buttonBoxOnProject" class="shadowBox boxAnimation">
+                        item.innerHTML += `<button onclick="goLink('https://gamejolt.com/games/void/963733')" id="buttonBoxOnProject" class="shadowBox BoxAnimation">
                             <div class="skillContent">
                                 <p class="skillName" id="playMessage">Play Now</p>
                             </div>
@@ -408,7 +428,12 @@
 
                         const boxElements = entry.target.querySelectorAll('.boxAnimation');
                         boxElements.forEach(box => {
-                            box.classList.add('animate-popup');
+                            box.classList.add('animationPopup');
+                        });
+
+                        const skilBoxElements = entry.target.querySelectorAll('.skillBoxAnimation');
+                        skilBoxElements.forEach(box => {
+                            box.classList.add('animationBoxPopup');
                         });
 
                         observer.unobserve(entry.target);
@@ -423,7 +448,6 @@
 
 
             // Contact Page Effect
-            const wholePage = document.getElementById('wholePage');
 
             function gotoContactPage() {
                 window.scrollTo({
@@ -484,13 +508,13 @@
             nextButton.onclick = function(){
                 active = active + 1 < items.length ? active + 1 : active;
                 loadShow();
-                setScrollPercentage("projects");
+                // setScrollPercentage("projects");
             }
 
             prevButton.onclick = function(){
                 active = active - 1 >= 0 ? active - 1 : active;
                 loadShow();
-                setScrollPercentage("projects");
+                // setScrollPercentage("projects");
             }
             
 
@@ -511,8 +535,8 @@
             setTimeout(helloSubMessage, 4000)
 
             function helloMessage(){
-                homePage.innerHTML += "<p id='homeMessageFirst'>Hello, I'm Nielsen</p>";
-                homePage.innerHTML += "<p id='homeMessageSecond' class='homeAnimation'>A dev...</p> <p id='scrollIndication'>▼</p>";
+                homePage.innerHTML += "<p id='homeMessageFirst'>Hello, I'm Nielsen.</p>";
+                homePage.innerHTML += "<p id='homeMessageSecond' class='homeAnimation'>A DEV</p> <p id='scrollIndication'>▼</p>";
             }
 
             function helloSubMessage(){
@@ -538,7 +562,7 @@
                 let aboutLocation = (homePage.offsetHeight - bufferHeight) /  totalHeight;
                 let skillsLocation = ((homePage.offsetHeight + aboutPage.offsetHeight)) /  totalHeight;
                 let projectLocation = ((homePage.offsetHeight + aboutPage.offsetHeight + skillsPage.offsetHeight + (bufferHeight * 1.5))) /  totalHeight;
-                let contactLocation = document.body.scrollHeight;
+                let contactLocation = totalHeight * 1.5;
 
                 let scrollPosition = 0;
 
@@ -555,7 +579,7 @@
                 }
 
                 if (local === "contact"){
-                    scrollPosition = totalHeight;
+                    scrollPosition = contactLocation;
                 }
 
                 window.scrollTo({
@@ -595,6 +619,9 @@
             createSkillBox('skillsSlideProjectThird', 'css', 'project');
             createSkillBox('skillsSlideProjectThird', 'js', 'project');
 
+            setWebSize();
+
+            window.addEventListener('resize', setWebSize);
             window.addEventListener('scroll', linkUnderline);
 
         </script>

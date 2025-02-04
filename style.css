@@ -66,14 +66,14 @@ body{
 .slideItem{
     position: absolute;
     width: 70vw;
-    height: 80vh;
+    height: 75vh;
     text-align: justify;
     background-color: #ececec;
     color: #131313;
     padding-top: 20px;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-bottom: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
     border-radius: 10px;
     border: 1px solid #131313;
     transition: 0.5s;
@@ -107,6 +107,7 @@ body{
     flex-direction: column;
     align-items: center;
     height: 100%;
+    gap: 2vh
 }
 
 .topSlideProject{
@@ -265,7 +266,7 @@ body{
 }
 
 .tooltipAbout {
-    background-color: #ececec;
+    background-color: #f5f4f4;
     position: absolute;
     color: #131313;
     
@@ -380,22 +381,25 @@ body{
 }
 
 .shadowBox{
-    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.4);
 }
 
-.boxAnimation {
-    opacity: 0; 
-    transform: translateY(5px); 
-    transition: opacity 0.6s ease, transform 0.6s ease;
+
+.boxAnimation.animationPopup {
+    animation: popup 0.7s ease normal;
 }
 
-.boxAnimation.animate-popup {
-    animation: popup 1s ease forwards;
+.skillBoxAnimation.animationBoxPopup {
+    animation: popupSkills 0.7s ease normal;
+}
+
+.boxAnimation.animationPopup:hover, .skillBoxAnimation.animationBoxPopup:hover {
+    animation: popupReverse 0.7s ease forwards;
 }
 
 .textBox{
     border: #131313 1px solid;
-    background-color: #ececec;
+    background-color: #f5f4f4;
     padding-top: 1vh;
     padding-bottom: 1vh;
     padding-left: 0.8vw;
@@ -438,7 +442,6 @@ body{
     aspect-ratio: 1/1;
     border-radius: 10px;
     border: 1px solid #131313;
-    /* z-index: 5; */
 }
 
 #languages{
@@ -453,7 +456,7 @@ body{
 
 #letterboxdBox:hover, #skillBox:hover, .skillBoxOnProject:hover, .contactBox:hover, #emailBox:hover{
     filter: invert(1);
-    transition: filter 0.3s ease-in-out;
+    transition: filter 0.4s ease-in-out;
 }
 
 .contactBox:hover, #emailBox:hover{
@@ -461,7 +464,7 @@ body{
 }
 
 #skillBox:hover{
-    border: 1px solid #ececec;
+    border: 1px solid #f5f4f4;
 }
 
 
@@ -548,7 +551,7 @@ body{
 #webSite{
     display: flex;
     flex-direction:column;
-    height: 470vh;
+    /* height: 450vh; */
 }
 
 #wholePage{
@@ -568,7 +571,7 @@ body{
 }
 
 #topLink{
-    width: 22vw;
+    width: 24vw;
     font-family: Jetbrains Mono;
     font-size: 1vw;
     display: flex;
@@ -736,7 +739,7 @@ body{
 
 #aboutBox::-webkit-scrollbar-thumb {
     border-radius: 40px; 
-    background-color: #131313
+    background-color: #131313;
 }
 
 #aboutBox::-webkit-scrollbar-track {
@@ -752,7 +755,7 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #ececec;
+    background-color: #f5f4f4;
     color: #131313;
     padding-top: 5px;
     padding-left: 10px;
@@ -771,7 +774,7 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #ececec;
+    background-color: #f5f4f4;
     color: #131313;
     padding-top: 5px;
     padding-left: 5px;
@@ -786,6 +789,9 @@ body{
 #buttonBoxOnProject{
     width: 85%;
 }
+
+
+
 #buttonBoxOnProject:hover{
     background-color: #131313;
     color: #ececec;
@@ -917,33 +923,45 @@ body::-webkit-scrollbar-track {
   
 @keyframes popup {
     0% {
-        opacity: 0;
         transform: translateY(5px);
         box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
     }
     70% {
-        opacity: 1;
         transform: translateY(5px);
         box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
     }
     100% {
-        opacity: 1;
         transform: translateY(0px);
     }
 }
 
-/* @media (max-width: 768px) {
+@keyframes popupSkills {
+    0% {
+        transform: translateY(5px);
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
+        filter: invert(1);
+    }
+    70% {
+        transform: translateY(5px);
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
+        filter: invert(1);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
 
-    #aboutText, .projectSlideDescription {
-        font-size: 16px;
+@keyframes popupReverse {
+    70% {
+        transform: translateY(5px);
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
+        
     }
-    #skillBigBox, #aboutBigBox {
-        width: 80vw;
+    100% {
+        transform: translateY(5px);
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
     }
-    .slideItem {
-        width: 80%;
-    }
-    #contactBigBox {
-        width: 80vw;
-    }
-} */
+}
+    
+
+
