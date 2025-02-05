@@ -52,15 +52,15 @@
 
                 <div id="aboutPage" class="webPage">
                     <!-- <div id="aboutMessage" class="hiddenAnimation">About</div> -->
-                    <div id="aboutBox" class=" shadowBox hiddenAnimation">
+                    <div id="aboutBox" class="borderBox shadowBox hiddenAnimation">
                         <div id="leftAbout">
-                            <img id="imageProfile" class="shadowBox" src="Images/img_nielsen.jpg" alt="">
+                            <img id="imageProfile" class="shadowBox borderBox" src="Images/img_nielsen.jpg" alt="">
                         </div>
 
                         <div id="rightAbout">
                             <div id="blurBox"></div>
 
-                            <div id="aboutResume" class="textBox shadowBox boxAnimation">
+                            <div id="aboutResume" class="textBox borderBox shadowBox boxAnimation">
                                 <div class="textParagraph" id="preTitle">
                                     My name is
                                 </div>
@@ -75,7 +75,7 @@
                                 </div>
                             </div>
 
-                            <div id="aboutABackground" class="textBox shadowBox boxAnimation">
+                            <div id="aboutABackground" class="textBox borderBox shadowBox boxAnimation">
                                 <span class="aboutAdd">
                                     Academic Background
                                 </span>
@@ -91,7 +91,7 @@
                                 </div>
                             </div>
                         
-                            <div id="aboutLanguages" class="textBox shadowBox boxAnimation">
+                            <div id="aboutLanguages" class="textBox borderBox shadowBox boxAnimation">
                                 <span class="aboutAdd">
                                     Languages Spoken
                                 </span>
@@ -105,7 +105,7 @@
                                 </div>
                             </div>
 
-                            <div class="textParagraph textBox finalText shadowBox boxAnimation" id="aboutMore">
+                            <div class="textParagraph textBox borderBox finalText shadowBox boxAnimation" id="aboutMore">
                                 More...
                             </div>
                         </div>
@@ -113,91 +113,18 @@
                 </div>
 
                 <div id="skillsPage" class="webPage">
-                    <div id="skillsMessage" class="">Skills</div>
+                    <div class="pageTitle">
+                        Skills
+                    </div>
 
                     <div id="skillBigBox" class="hiddenAnimation">
                     </div>
                 </div>
 
                 <div id="projectPage" class="webPage"> 
-                    <div id="projectMessage" class="">Projects</div>
-                    <div class="slideBox hiddenAnimation">
-                        <div class="slideItem shadowBox">
-                            <div class="wholeSlideProject">
-                                <div class="topSlideProject">
-                                    <div class="textBox shadowBox boxAnimation boxAnimation">
-                                        <h1 class="projectSlideTitle">kCalculator</h1>
-                                        <p class="textParagraph topProjectSlideDescription">The kCalculator is a personal tool to help the users with their health.
-                                            On the website, you can find out your daily nutrient goal and monitor the amounts of those you have entered.
-                                        </p>
-                                    </div>
-                                </div>
+                    <div class="pageTitle">Projects</div>
 
-                                <div class="bottomSlideProject">
-                                    <div class="midiaSlideProject">
-                                        <div class="midiaBoxProject shadowBox">
-                                        </div>
-                                    </div>
-
-                                    <div id="skillsSlideProjectFirst" class="skillsSlideProject">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="slideItem shadowBox">
-                            <div class="wholeSlideProject">
-                                <div class="topSlideProject">
-                                    <div class="textBox shadowBox boxAnimation">
-                                        <h1 class="projectSlideTitle">V.O.I.D.</h1>
-                                        <p class="textParagraph topProjectSlideDescription">
-                                            V.O.I.D. is a game blending fast-paced action with progression and upgrade mechanics.
-                                            You control a spaceship in an infinite space, facing various enemies with unique behaviors.
-                                        </p>
-                                    </div>
-                                </div> 
-
-                                <div class="bottomSlideProject">
-                                    <div class="midiaSlideProject">
-                                        <div class="midiaBoxProject shadowBox">
-                                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/t23NEB3uIGo?si=05wZ7agSNlnEJlWu"
-                                                title="YouTube video player" frameborder="0"
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                referrerpolicy="strict-origin-when-cross-origin">
-                                            </iframe>
-                                        </div>
-                                    </div>
-
-                                    <div id="skillsSlideProjectSecond" class="skillsSlideProject">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="slideItem shadowBox">
-                            <div class="wholeSlideProject">
-                                <div class="topSlideProject">
-                                    <div class="textBox shadowBox boxAnimation">
-                                        <h1 class="projectSlideTitle">Portfolio</h1>
-                                        <p class="textParagraph topProjectSlideDescription">The Portfolio website was made to show a resume about me and my projects.
-                                            It has some personal designs, effects and layouts. 
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="bottomSlideProject">
-                                    <div class="midiaSlideProject">
-                                        <div class="midiaBoxProject shadowBox">
-                                            <img src="Images/img_project_banner_portfolio.png" id="midiaVOID"></img>
-                                        </div>
-                                    </div>
-
-                                    <div id="skillsSlideProjectThird" class="skillsSlideProject">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                    <div id="slideFather" class="slideBox hiddenAnimation">
                         <button id="nextButton">></button>
                         <button id="prevButton"><</button>
                     </div>
@@ -207,40 +134,12 @@
                     <div id="contactBigBox">
                         <div id="contactMessage">CONTACT ME</div>
 
-                        <button id="emailBox">
-                            <div class="contactContent">
-                                <ion-icon class="contactIcon" name="mail"></ion-icon>
-                                <p class="contactText" id="emailMessage">
-                                    <a href="mailto:gustavogn427@gmail.com">Send an email</a>
-                                </p>
-                            </div>
-                        </button>
-                        <div class="hContainer">
-                            <button class="contactBox" onclick="goLink('https://www.linkedin.com/in/nielsengg/')">
-                                <div class="contactContent">
-                                    <ion-icon class="contactIcon" name="logo-linkedin"></ion-icon>
-                                </div>
-                            </button>
-
-                            <button class="contactBox" onclick="goLink('https://github.com/nielsengg')">
-                                <div class="contactContent">
-                                    <ion-icon class="contactIcon" name="logo-github"></ion-icon>
-                                </div>
-                            </button>
-
-                            <button class="contactBox" onclick="goLink('https://discordapp.com/users/572519718792200212')">
-                                <div class="contactContent">
-                                    <ion-icon class="contactIcon" name="logo-discord"></ion-icon>
-                                </div>
-                            </button>
-
-                            <button class="contactBox" id="letterboxdBox" onclick="goLink('https://letterboxd.com/nielsengg/')">
-                                <div class="contactContent">
-                                    <img class="contactIcon" src="Images/img_icon_letterboxd.svg">
-                                </div>
-                            </button>
-                            
+                        <div id="contactPrincipalLink">
                         </div>
+
+                        <div id="contactOthersLinks" class="hContainer">
+                        </div>
+
                     </div>
 
                     <!-- <footer id="creditsFooter">by Nielsen</footer> -->
@@ -290,8 +189,6 @@
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
         <script>
-
-
             //Very Used Variables
             let homePage = document.getElementById('homePage');
             let aboutPage = document.getElementById('aboutPage');
@@ -306,7 +203,7 @@
             // -------------------------------------------------------------------- //
 
 
-            // Set Sixe of The Site
+            // Set Size of The Site
             function setWebSize() {
                 const totalHeight = wholePage.offsetHeight + contactPage.offsetHeight;
                 webSite.style.height = `${totalHeight}px`;
@@ -314,6 +211,7 @@
 
     
             // -------------------------------------------------------------------- //
+
 
             //Creates Boxes
             function createSkillBox(father, skill, local){
@@ -370,12 +268,12 @@
 
                 
                 if (local === "skills"){
-                    item.innerHTML += "<div id ='skillBox'class='skillBoxAnimation skillBox shadowBox'><div class='skillContent'>" + icon + "<p class='skillName'>" + skillName + "</p></div></div>"
+                    item.innerHTML += "<div class='skillBoxAnimation skillBox shadowBox borderBox'><div class='skillContent'>" + icon + "<p class='skillName'>" + skillName + "</p></div></div>"
                 }else if(local === "project"){
-                    item.innerHTML += "<div class='skillBoxAnimation skillBoxOnProject shadowBox'><div class='skillContentOnProject'>" + icon + "<p class='skillName'>" + skillName + "</p></div></div>"
+                    item.innerHTML += "<div class='skillBoxAnimation skillBoxOnProject shadowBox borderBox'><div class='skillContentOnProject'>" + icon + "<p class='skillName'>" + skillName + "</p></div></div>"
                     
                     if (father === "skillsSlideProjectSecond"){
-                        item.innerHTML += `<button onclick="goLink('https://gamejolt.com/games/void/963733')" id="buttonBoxOnProject" class="shadowBox BoxAnimation">
+                        item.innerHTML += `<button onclick="goLink('https://gamejolt.com/games/void/963733')" id="buttonBoxOnProject" class="shadowBox BoxAnimation borderBox">
                             <div class="skillContent">
                                 <p class="skillName" id="playMessage">Play Now</p>
                             </div>
@@ -384,7 +282,123 @@
                 }
             }
 
+            function createContactBox(father, contact){
+                let icon = null;
+                let message = null;
+                let link = null;
+                
+                if (contact === "email"){
+                    icon = '<ion-icon id="principalContactIcon" name="mail"></ion-icon>';
+                    message = 'Send an email';
+
+                }else if (contact === "linkedin"){
+                    icon = '<ion-icon class="contactIcon" name="logo-linkedin"></ion-icon>';
+                    link = 'https://www.linkedin.com/in/nielsengg/';
+                }else if (contact === "github"){
+                    icon = '<ion-icon class="contactIcon" name="logo-github"></ion-icon>';
+                    link = 'https://github.com/nielsengg';
+
+                }else if (contact === "discord"){
+                    icon = '<ion-icon class="contactIcon" name="logo-discord"></ion-icon>';
+                    link = 'https://discordapp.com/users/572519718792200212';
+
+                }else if (contact === "letterboxd"){
+                    icon = '<img class="contactIcon" src="Images/img_icon_letterboxd.svg">';
+                    link = 'https://letterboxd.com/nielsengg/';
+
+                }
+
+                let item = document.getElementById(father);
+
+                
+                if (father === "contactPrincipalLink"){
+                    
+                    item.innerHTML += '<button id="emailBox"><div class="contactContent"> '+ icon +' <p class="contactText" id="emailMessage"><a href="mailto:gustavogn427@gmail.com">' + message +'</a> </p></div></button>'
+                
+                }else if(father === "contactOthersLinks"){
+
+                    item.innerHTML += `<button class="contactBox" onclick="goLink('`+ link +`')">
+                                <div class="contactContent">
+                                    `+ icon +`
+                                </div>
+                            </button>`
+                }
+            }
             
+            function createProjectSlide(title, description, midia, skillsSlideProjectOrder){
+                item = document.getElementById('slideFather');
+
+                if (midia != 0){
+                    item.innerHTML += 
+                    `<div class="slideItem borderBox shadowBox">
+                        <div class="wholeSlideProject">
+                            <div class="topSlideProject">
+                                <div class="textBox borderBox shadowBox boxAnimation boxAnimation">
+                                    <h1 class="projectSlideTitle">`+ title +`</h1>
+                                    <p class="textParagraph topProjectSlideDescription">
+                                        `+ description +`
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="bottomSlideProject">
+                                <div class="midiaSlideProject">
+                                    <div class="borderBox midiaBoxProject shadowBox">
+                                        `+ midia +`
+                                    </div>
+                                </div>
+
+                                <div id="`+ skillsSlideProjectOrder +`" class="skillsSlideProject">
+                                </div>
+                            </div>
+                        </div>
+                    </div>`
+                }else{
+                    item.innerHTML += 
+                    `<div class="slideItem borderBox shadowBox">
+                        <div class="wholeSlideProject">
+                            <div class="topSlideProject">
+                                <div class="textBox borderBox shadowBox boxAnimation boxAnimation">
+                                    <h1 class="projectSlideTitle">`+ title +`</h1>
+                                    <p class="textParagraph topProjectSlideDescription">
+                                        `+ description +`
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="bottomSlideProject">
+                                <div class="midiaSlideProject">
+                                    <div class="borderBox midiaBoxProject shadowBox">
+                                    </div>
+                                </div>
+
+                                <div id="`+ skillsSlideProjectOrder +`" class="skillsSlideProject">
+                                </div>
+                            </div>
+                        </div>
+                    </div>`
+                }
+            }
+            
+            createProjectSlide(
+                'kCalculator',
+                'The kCalculator is a personal tool to help the users with their health. On the website, you can find out your daily nutrient goal and monitor the amounts of those you have entered.',
+                0,
+                'skillsSlideProjectFirst');
+
+            createProjectSlide(
+                'V.O.I.D.',
+                'The V.O.I.D. is a game blending fast-paced action with progression and upgrade mechanics. You control a spaceship in an infinite space, facing various enemies with unique behaviors.',
+                `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/t23NEB3uIGo?si=05wZ7agSNlnEJlWu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"> </iframe>`,
+                'skillsSlideProjectSecond');
+
+            createProjectSlide(
+                'Portfolio',
+                'The Portfolio website was made to show a resume about me and my projects. It has some personal designs, effects and layouts.',
+                `<img src="Images/img_project_banner_portfolio.png" id="midiaVOID"></img>`,
+                'skillsSlideProjectThird');
+            
+                
             // -------------------------------------------------------------------- //
             
 
@@ -595,32 +609,48 @@
 
 
             // Call functions
-            loadShow();
+                loadShow();
+                // Tooltips
+                tooltipAndBlur("academicFirst", "academicFirstDescription");
+                tooltipAndBlur("academicSecond", "academicSecondDescription");
+                tooltipAndBlur("aboutMore", "aboutMoreDescription");
 
-            tooltipAndBlur("academicFirst", "academicFirstDescription");
-            tooltipAndBlur("academicSecond", "academicSecondDescription");
-            tooltipAndBlur("aboutMore", "aboutMoreDescription");
 
-            createSkillBox('skillBigBox', 'html', 'skills');
-            createSkillBox('skillBigBox', 'css', 'skills');
-            createSkillBox('skillBigBox', 'js', 'skills');
-            createSkillBox('skillBigBox', 'python', 'skills');
-            createSkillBox('skillBigBox', 'gml', 'skills');
-            createSkillBox('skillBigBox', 'gds', 'skills');
+                // Skillbox on Skills' Page
+                createSkillBox('skillBigBox', 'html', 'skills');
+                createSkillBox('skillBigBox', 'css', 'skills');
+                createSkillBox('skillBigBox', 'js', 'skills');
+                createSkillBox('skillBigBox', 'python', 'skills');
+                createSkillBox('skillBigBox', 'gml', 'skills');
+                createSkillBox('skillBigBox', 'gds', 'skills');
 
-            createSkillBox('skillsSlideProjectFirst', 'html', 'project');
-            createSkillBox('skillsSlideProjectFirst', 'css', 'project');
-            createSkillBox('skillsSlideProjectFirst', 'js', 'project');
-            createSkillBox('skillsSlideProjectFirst', 'python', 'project');
 
-            createSkillBox('skillsSlideProjectSecond', 'gml', 'project');
+                // Skillbox on Projects' Page
+                createSkillBox('skillsSlideProjectFirst', 'html', 'project');
+                createSkillBox('skillsSlideProjectFirst', 'css', 'project');
+                createSkillBox('skillsSlideProjectFirst', 'js', 'project');
+                createSkillBox('skillsSlideProjectFirst', 'python', 'project');
 
-            createSkillBox('skillsSlideProjectThird', 'html', 'project');
-            createSkillBox('skillsSlideProjectThird', 'css', 'project');
-            createSkillBox('skillsSlideProjectThird', 'js', 'project');
+                createSkillBox('skillsSlideProjectSecond', 'gml', 'project');
 
-            setWebSize();
+                createSkillBox('skillsSlideProjectThird', 'html', 'project');
+                createSkillBox('skillsSlideProjectThird', 'css', 'project');
+                createSkillBox('skillsSlideProjectThird', 'js', 'project');
 
+
+                // Conatctsbox on Contact's Page
+                createContactBox('contactPrincipalLink', 'email');
+
+                createContactBox('contactOthersLinks', 'linkedin');
+                createContactBox('contactOthersLinks', 'github');
+                createContactBox('contactOthersLinks', 'discord');
+                createContactBox('contactOthersLinks', 'letterboxd');
+
+                // Size of the website
+                setWebSize();
+
+
+                
             window.addEventListener('resize', setWebSize);
             window.addEventListener('scroll', linkUnderline);
 
