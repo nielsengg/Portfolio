@@ -66,7 +66,7 @@ body{
 .slideItem{
     position: absolute;
     width: 70vw;
-    height: 75vh;
+    height: 80vh;
     text-align: justify;
     background-color: #ececec;
     color: #131313;
@@ -128,14 +128,17 @@ body{
     width: auto;
     height: 100%;
     aspect-ratio: 1/1;
-    margin-left: 1vw;
+ 
     margin-right: 1vw;
 }
 
-.skillIconOnline{
-    width: 6em;
+.skillIconOnline, .skillIcon{
+    width: auto;
     height: auto;
+    aspect-ratio: 1/1;
 }
+
+
 
 .contactIcon{
     width: 2em;
@@ -164,14 +167,19 @@ body{
     justify-content: flex-start;
 }
 
-.skillContentOnProject{
-    height: 100%;
-
+.centerContent{
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
 }
+
+.justifyCenter{
+    justify-content: center;
+}
+
+.boxCenter{
+    width: 100%;
+}
+
 
 .midiaSlideProject{
     height: auto;
@@ -208,15 +216,6 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
-    
-}
-
-.contactContent{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     
 }
 
@@ -308,7 +307,7 @@ body{
 }
 
 .textParagraph{
-    line-height: 3.55vh;
+    line-height: 1.5;
     font-family: Jetbrains Mono;
     font-size: 1.1vw;
     text-align: justify;
@@ -333,6 +332,7 @@ body{
 
 .skillBox{
     min-width: 15vw;
+    max-width: 15vw;
     height: 9vh;
     flex: 1 1 auto;
     display: flex;
@@ -352,21 +352,46 @@ body{
     border-radius: 1.5rem;
 }
 
+.borderBoxWhite{
+    border: 2px solid #f5f4f4;
+    border-radius: 1.5rem;
+}
+
 .skillBoxOnProject, #buttonBoxOnProject{
-    width: 80%;
-    height: 9vh;
+    /* max-width: 17rem; */
+    min-width: 15vw;
+    /* width: 17vw; */
+    height: 6vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     background-color: #f5f4f4;
     color: #131313;
-    padding-top: 5px;
-    padding-left: 5px;
-    padding-right: 10px;
-    padding-bottom: 5px;
-
+    padding-top: 1vh;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    padding-bottom: 1vh;
 }
+
+#buttonBoxOnProject{
+    height: 6vh;
+    min-width: 18.2vw;
+}
+
+.homeAnimation{
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    margin: 0;
+}
+
+.boldText{
+    font-weight: bolder;
+}
+
+/* .tooltipSecondTitle{
+    
+} */
 
 /* ----------------------------------------------------------- */
 
@@ -452,7 +477,7 @@ body{
     box-sizing: border-box;
 }
 
-#aboutABackground{
+#aboutAcademicBackground{
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -493,12 +518,18 @@ body{
 
 #playMessage{
     text-decoration: underline;
+    align-self: center;
 }
 
-#letterboxdBox:hover, .skillBox:hover, .skillBoxOnProject:hover, .contactBox:hover, #emailBox:hover{
+#letterboxdBox:hover, .skillBox:hover, .skillBoxOnProject:hover, .contactBox:hover{
     filter: invert(1);
     transition: filter 0.4s ease-in-out;
 }
+
+#emailBox:hover{
+    filter: invert(1);
+}
+
 
 .contactBox:hover, #emailBox:hover{
     cursor: pointer;
@@ -511,8 +542,8 @@ body{
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
-#principalContactIcon{
-    width: 5em;
+#contactIcon{
+    width: 2rem;
     height: auto;
 }
 
@@ -575,11 +606,6 @@ body{
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
-.homeAnimation{
-    opacity: 0;
-    transition: opacity 1s ease;
-    margin: 0;
-}
 
 #webSite{
     display: flex;
@@ -793,7 +819,7 @@ body{
     text-decoration: none;
 }
 
-#buttonBoxOnProject:hover #playMessage{
+#buttonBoxOnProject:hover #playMessage, #emailBox:hover #playMessage{
     text-decoration: none;
 }
 

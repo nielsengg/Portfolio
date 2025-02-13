@@ -15,7 +15,7 @@
         <title>nielsengg</title>
     </head>
 
-    <body>
+    <body id="body">
         <!-- All itens on the webpage -->
         <div id="webSite">
             <div id="topPage">
@@ -75,7 +75,7 @@
                                 </div>
                             </div>
 
-                            <div id="aboutABackground" class="textBox borderBox shadowBox boxAnimation">
+                            <div id="aboutAcademicBackground" class="textBox borderBox shadowBox boxAnimation">
                                 <span class="aboutAdd">
                                     Academic Background
                                 </span>
@@ -105,9 +105,9 @@
                                 </div>
                             </div>
 
-                            <div class="textParagraph textBox borderBox finalText shadowBox boxAnimation" id="aboutMore">
+                            <!-- <div class="textParagraph textBox borderBox finalText shadowBox boxAnimation" id="aboutMore">
                                 More...
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -148,42 +148,6 @@
             </div>
         </div>
 
-        <!-- Tooltip -->
-        <span class="tooltipAbout shadowBox" id="academicFirstDescription">
-            <div class="tooltipTitle">
-                Web Programmer - IFSP
-            </div>
-            <div class="tooltipText">
-                - Front-end development with HTML, CSS, and JavaScript.<br> 
-                - PHP programming, including OOP, forms, and integration with WordPress.<br>   
-                - Database modeling, querying, and management using SQL (MySQL).<br>     
-                - API creation and dynamic application development with AngularJS.
-            </div>
-        </span>
-
-        <span class="tooltipAbout shadowBox" id="academicSecondDescription">
-            <div class="tooltipTitle">
-                Administrative Technician - IFSP
-            </div>
-            <div class="tooltipText">
-                - Management of administrative, financial, and human resources processes.<br> 
-                - Planning, organizing, and controlling business activities.<br> 
-                - Market analysis, marketing strategies, and corporate communication.<br> 
-                - Budget preparation, cash flow management, and financial control.<br> 
-                - Use of technologies and tools for information and operations management.<br> 
-                - Development of leadership, negotiation, and decision-making skills in corporate environments.
-            </div>
-        </span>
-
-        <span class="tooltipAbout shadowBox" id="aboutMoreDescription">
-            <div class="tooltipTitle">
-                More About Me
-            </div>
-            <div class="tooltipText">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut molestias placeat modi voluptates animi, neque quos nisi perferendis quidem incidunt veniam rem possimus quod ea distinctio reprehenderit! Rerum, aliquid praesentium.
-            </div>
-        </span>
-
         <!-- Scripts -->
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -214,191 +178,214 @@
 
 
             //Creates Boxes
-            function createSkillBox(father, skill, local){
-                let icon = null;
-                let skillName = null;
-                
-                if (skill === "html"){
-                    if (local === "skills"){
-                        icon = '<img class="skillIcon" src="Images/img_icon_html.png">';
-                    }else if(local === "project"){
-                        icon = '<img class="skillIconOnSlide" src="Images/img_icon_html.png">';
-                    }
-
-                    skillName = 'HTML';
-                }
-
-                if (skill === "css"){
-                    icon = '<ion-icon class="skillIconOnline" name="logo-css3"></ion-icon>';
-                    skillName = 'CSS';
-                }
-
-                if (skill === "js"){
-                    icon = '<ion-icon class="skillIconOnline" name="logo-javascript"></ion-icon>';
-                    skillName = 'JS';
-                }
-                
-                if (skill === "python"){
-                    icon = '<ion-icon class="skillIconOnline" name="logo-python"></ion-icon>';
-                    skillName = 'Python';
-                }
-
-                if (skill === "git"){
-                    icon = '<ion-icon class="skillIconOnline" name="logo-github"></ion-icon>';
-                    skillName = 'Git';
-                }
-
-                if (skill === "gml"){
-                    skillName = 'GML';
-
-                    if (local === "skills"){
-                        icon = '<img class="skillIcon" src="Images/img_icon_gml.png">';
-                    }else if(local === "project"){
-                        icon = '<img class="skillIconOnSlide" src="Images/img_icon_gml.png">';
-                    }
-                }
-
-                if (skill === "gds"){
-                    icon = '<img class="skillIcon" src="Images/img_icon_godot.png">';
-                    skillName = 'GDScript';
-                }
-
-
-                let item = document.getElementById(father);
-
-                
-                if (local === "skills"){
-                    item.innerHTML += "<div class='skillBoxAnimation skillBox shadowBox borderBox'><div class='skillContent'>" + icon + "<p class='skillName'>" + skillName + "</p></div></div>"
-                }else if(local === "project"){
-                    item.innerHTML += "<div class='skillBoxAnimation skillBoxOnProject shadowBox borderBox'><div class='skillContentOnProject'>" + icon + "<p class='skillName'>" + skillName + "</p></div></div>"
-                    
-                    if (father === "skillsSlideProjectSecond"){
-                        item.innerHTML += `<button onclick="goLink('https://gamejolt.com/games/void/963733')" id="buttonBoxOnProject" class="shadowBox BoxAnimation borderBox">
-                            <div class="skillContent">
-                                <p class="skillName" id="playMessage">Play Now</p>
-                            </div>
-                        </button>`
-                    }
-                }
-            }
-
-            function createContactBox(father, contact){
-                let icon = null;
-                let message = null;
-                let link = null;
-                
-                if (contact === "email"){
-                    icon = '<ion-icon id="principalContactIcon" name="mail"></ion-icon>';
-                    message = 'Send an email';
-
-                }else if (contact === "linkedin"){
-                    icon = '<ion-icon class="contactIcon" name="logo-linkedin"></ion-icon>';
-                    link = 'https://www.linkedin.com/in/nielsengg/';
-                }else if (contact === "github"){
-                    icon = '<ion-icon class="contactIcon" name="logo-github"></ion-icon>';
-                    link = 'https://github.com/nielsengg';
-
-                }else if (contact === "discord"){
-                    icon = '<ion-icon class="contactIcon" name="logo-discord"></ion-icon>';
-                    link = 'https://discordapp.com/users/572519718792200212';
-
-                }else if (contact === "letterboxd"){
-                    icon = '<img class="contactIcon" src="Images/img_icon_letterboxd.svg">';
-                    link = 'https://letterboxd.com/nielsengg/';
-
-                }
-
-                let item = document.getElementById(father);
-
-                
-                if (father === "contactPrincipalLink"){
-                    
-                    item.innerHTML += '<button id="emailBox"><div class="contactContent"> '+ icon +' <p class="contactText" id="emailMessage"><a href="mailto:gustavogn427@gmail.com">' + message +'</a> </p></div></button>'
-                
-                }else if(father === "contactOthersLinks"){
-
-                    item.innerHTML += `<button class="contactBox" onclick="goLink('`+ link +`')">
-                                <div class="contactContent">
-                                    `+ icon +`
-                                </div>
-                            </button>`
-                }
-            }
             
             function createProjectSlide(title, description, midia, skillsSlideProjectOrder){
-                item = document.getElementById('slideFather');
+                const item = document.getElementById('slideFather');
 
-                if (midia != 0){
-                    item.innerHTML += 
-                    `<div class="slideItem borderBox shadowBox">
-                        <div class="wholeSlideProject">
-                            <div class="topSlideProject">
-                                <div class="textBox borderBox shadowBox boxAnimation boxAnimation">
-                                    <h1 class="projectSlideTitle">`+ title +`</h1>
-                                    <p class="textParagraph topProjectSlideDescription">
-                                        `+ description +`
-                                    </p>
-                                </div>
-                            </div>
+                const slideItem = document.createElement('div');
+                slideItem.classList.add('slideItem', 'borderBox', 'shadowBox');
 
-                            <div class="bottomSlideProject">
-                                <div class="midiaSlideProject">
-                                    <div class="borderBox midiaBoxProject shadowBox">
-                                        `+ midia +`
-                                    </div>
-                                </div>
+                const wholeSlide = document.createElement('div');
+                wholeSlide.classList.add('wholeSlideProject');
 
-                                <div id="`+ skillsSlideProjectOrder +`" class="skillsSlideProject">
-                                </div>
-                            </div>
-                        </div>
-                    </div>`
-                }else{
-                    item.innerHTML += 
-                    `<div class="slideItem borderBox shadowBox">
-                        <div class="wholeSlideProject">
-                            <div class="topSlideProject">
-                                <div class="textBox borderBox shadowBox boxAnimation boxAnimation">
-                                    <h1 class="projectSlideTitle">`+ title +`</h1>
-                                    <p class="textParagraph topProjectSlideDescription">
-                                        `+ description +`
-                                    </p>
-                                </div>
-                            </div>
+                const topSlide = document.createElement('div');
+                topSlide.classList.add('topSlideProject');
 
-                            <div class="bottomSlideProject">
-                                <div class="midiaSlideProject">
-                                    <div class="borderBox midiaBoxProject shadowBox">
-                                    </div>
-                                </div>
+                const projectText = document.createElement('div');
+                projectText.classList.add('textBox', 'borderBox', 'shadowBox', 'boxAnimation');
 
-                                <div id="`+ skillsSlideProjectOrder +`" class="skillsSlideProject">
-                                </div>
-                            </div>
-                        </div>
-                    </div>`
+                const projectTitle = document.createElement('h1');
+                projectTitle.classList.add('projectSlideTitle');
+                projectTitle.textContent = title;
+
+                const projectDescription = document.createElement('p');
+                projectDescription.classList.add('textParagraph', 'topProjectSlideDescription');
+                projectDescription.textContent = description;
+
+
+                const bottomSlide = document.createElement('div');
+                bottomSlide.classList.add('bottomSlideProject');
+                
+                const projectMidiaFather = document.createElement('div');
+                projectMidiaFather.classList.add('midiaSlideProject');
+
+                const projectMidiaChild = document.createElement('div');
+                projectMidiaChild .classList.add('borderBox', 'midiaBoxProject', 'shadowBox');
+                projectMidiaChild.innerHTML = midia;
+
+                const projectSkills = document.createElement('div');
+                projectSkills.classList.add('skillsSlideProject');
+                projectSkills.id = skillsSlideProjectOrder;
+
+
+                slideItem.appendChild(wholeSlide);
+
+                wholeSlide.appendChild(topSlide);
+                wholeSlide.appendChild(bottomSlide);
+
+                topSlide.appendChild(projectText);
+                projectText.appendChild(projectTitle);
+                projectText.appendChild(projectDescription);
+
+                bottomSlide.appendChild(projectMidiaFather);
+                bottomSlide.appendChild(projectSkills);
+
+                projectMidiaFather.appendChild(projectMidiaChild);
+
+                item.appendChild(slideItem);
+            }
+            
+            function createSkillBox(father, local, icon, iconlocal, showname, button, link){
+
+                const item = document.getElementById(father);
+
+                let boxVariation = 'skillBox';
+                let iconVariation = 'skillIcon';
+                let iconType = 'img';
+                let contentVariation = 'skillContent';
+
+                let buttonID = null;
+                buttonClass = null;
+
+                contentClass = null;
+                buttonText = null;
+
+
+                if(local === "project"){
+                    boxVariation = 'skillBoxOnProject';
+                    iconVariation = 'skillIconOnSlide';
+                }
+
+                if(iconlocal === "online"){
+                    iconVariation = 'skillIconOnline';
+                    iconType = 'ion-icon';
+                }
+
+                
+                if (button > 0){
+                    if (button === 1){
+                        buttonID = 'buttonBoxOnProject';
+                        buttonClass = "'shadowBox', 'borderBox'";
+
+                        contentClass = "'skillContent'";
+                        buttonText = 'Play Now';
+                        
+                    }else if (button === 2){
+                        buttonID = 'emailBox';
+                        buttonClass = "'ok', 'borderBoxWhite'";
+
+                        contentClass = " 'skillContent'";
+                        buttonText = 'Send an email';
+
+                    }else if (button === 3){
+                        buttonID = '';
+                        buttonClass = "'contactBox', 'borderBoxWhite'";
+
+                        contentClass = "'justifyCenter', 'skillContent', 'centerContent'";
+                        buttonText = '';
+                    }
+
+                        const buttonLink = document.createElement('button');
+                        buttonLink.id = buttonID;
+                        buttonClass.split(',').forEach(cls => {
+                            buttonLink.classList.add(cls.trim().replace(/'/g, ''));
+                        });
+                        ;
+                        if (button === 2){
+                            const email = "gustavogn427@gmail.com"
+                            buttonLink.onclick = () => window.location.href = `mailto:${email}`;
+                        }else{
+                            buttonLink.onclick = () => goLink(link);
+                        }
+                        
+
+
+                        
+
+                        const buttonContent = document.createElement('div');
+                        contentClass.split(',').forEach(cls => {
+                            buttonContent.classList.add(cls.trim().replace(/'/g, ''));
+                        });
+
+                        buttonLink.appendChild(buttonContent);
+
+                        if (button === 2 || button === 3){
+                            const buttonIcon = document.createElement(iconType);
+                            buttonIcon.id = 'contactIcon';
+                            if (iconlocal != "online"){
+                                buttonIcon.src = icon;
+                            }else{
+                                buttonIcon.name = icon;
+                            }
+
+                            buttonContent.appendChild(buttonIcon);
+                        }
+                        if (button != 3){
+                            const buttonName = document.createElement('p');
+                            buttonName.id = 'playMessage';
+                            buttonName.classList.add('skillName');
+                            buttonName.textContent = buttonText;
+                            buttonContent.appendChild(buttonName);
+                        }
+                        
+                        
+                        item.appendChild(buttonLink);
+                }
+
+                if(button === 0){
+                        
+                    const skillBox = document.createElement('div');
+                    skillBox.classList.add('skillBoxAnimation', boxVariation, 'shadowBox', 'borderBox');
+
+                    const skillContent = document.createElement('div');
+                    skillContent.classList.add('skillContent');
+                    if(local === "project"){
+                        skillContent.classList.add('boxCenter');
+                    }
+
+                    const skillIcon = document.createElement(iconType);
+                    skillIcon.classList.add(iconVariation);
+                    if (iconlocal != "online"){
+                        skillIcon.src = icon;
+                    }else{
+                        skillIcon.name = icon;
+                    }
+
+
+                    const skillName = document.createElement('p');
+                    skillName.classList.add('skillName');
+                    skillName.textContent = showname;
+
+                    skillBox.appendChild(skillContent);
+                    skillContent.appendChild(skillIcon);
+                    skillContent.appendChild(skillName);
+
+                    item.appendChild(skillBox);
                 }
             }
             
-            createProjectSlide(
-                'kCalculator',
-                'The kCalculator is a personal tool to help the users with their health. On the website, you can find out your daily nutrient goal and monitor the amounts of those you have entered.',
-                0,
-                'skillsSlideProjectFirst');
+            function createTooltip(title, description, academicDescriptionOrder) {
+                const item = document.getElementById('body');
 
-            createProjectSlide(
-                'V.O.I.D.',
-                'The V.O.I.D. is a game blending fast-paced action with progression and upgrade mechanics. You control a spaceship in an infinite space, facing various enemies with unique behaviors.',
-                `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/t23NEB3uIGo?si=05wZ7agSNlnEJlWu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"> </iframe>`,
-                'skillsSlideProjectSecond');
+                const tooltip = document.createElement('span');
+                tooltip.classList.add('tooltipAbout', 'shadowBox');
+                tooltip.id = academicDescriptionOrder;
 
-            createProjectSlide(
-                'Portfolio',
-                'The Portfolio website was made to show a resume about me and my projects. It has some personal designs, effects and layouts.',
-                `<img src="Images/img_project_banner_portfolio.png" id="midiaVOID"></img>`,
-                'skillsSlideProjectThird');
-            
-                
+                const tooltipTitle = document.createElement('div');
+                tooltipTitle.classList.add('tooltipTitle');
+                tooltipTitle.textContent = title;
+
+                const tooltipText = document.createElement('div');
+                tooltipText.classList.add('tooltipText');
+                tooltipText.innerHTML = description;
+
+                tooltip.appendChild(tooltipTitle);
+                tooltip.appendChild(tooltipText);
+
+                item.appendChild(tooltip);
+            }
+
+
             // -------------------------------------------------------------------- //
             
 
@@ -413,7 +400,7 @@
                 const blurBox = document.getElementById("blurBox");
 
                 item.addEventListener("mousemove", (event) => {
-                    const tooltipHeight = description.offsetHeight;
+                    let tooltipHeight = description.offsetHeight;
         
                     description.style.left = (event.pageX * offsetX) + "px";
                     description.style.top = (event.pageY - offsetY - tooltipHeight) + "px";
@@ -486,6 +473,27 @@
 
             // -------------------------------------------------------------------- //
 
+            // Project Slides
+            createProjectSlide(
+                'kCalculator',
+                'The kCalculator is a personal tool to help the users with their health. On the website, you can find out your daily nutrient goal and monitor the amounts of those you have entered.',
+                '',
+                'skillsSlideProjectFirst'
+            );
+
+            createProjectSlide(
+                'V.O.I.D.',
+                'The V.O.I.D. is a game blending fast-paced action with progression and upgrade mechanics. You control a spaceship in an infinite space, facing various enemies with unique behaviors.',
+                `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/t23NEB3uIGo?si=05wZ7agSNlnEJlWu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"> </iframe>`,
+                'skillsSlideProjectSecond'
+            );
+
+            createProjectSlide(
+                'Portfolio',
+                'The Portfolio website was made to show a resume about me and my projects. It has some personal designs, effects and layouts.',
+                `<img src="Images/img_project_banner_portfolio.png" id="midiaVOID"></img>`,
+                'skillsSlideProjectThird'
+            );
 
             // Project Page
             let items = document.querySelectorAll('.slideBox .slideItem');
@@ -539,6 +547,8 @@
             function goLink(link){
                 window.open(link)
             }
+
+
             
 
             // -------------------------------------------------------------------- //
@@ -564,9 +574,7 @@
             // -------------------------------------------------------------------- //
 
             
-
             // Navigation
-            
             function setScrollPercentage(local) {
                 const totalHeight = document.getElementById('webSite').scrollHeight - window.innerHeight;
 
@@ -600,8 +608,6 @@
                     top: scrollPosition,
                     behavior: 'smooth'
             }); 
-
-            setTimeout(linkUnderline, 500);
             }
 
 
@@ -609,51 +615,84 @@
 
 
             // Call functions
-                loadShow();
-                // Tooltips
-                tooltipAndBlur("academicFirst", "academicFirstDescription");
-                tooltipAndBlur("academicSecond", "academicSecondDescription");
-                tooltipAndBlur("aboutMore", "aboutMoreDescription");
+                
 
-
-                // Skillbox on Skills' Page
-                createSkillBox('skillBigBox', 'html', 'skills');
-                createSkillBox('skillBigBox', 'css', 'skills');
-                createSkillBox('skillBigBox', 'js', 'skills');
-                createSkillBox('skillBigBox', 'python', 'skills');
-                createSkillBox('skillBigBox', 'gml', 'skills');
-                createSkillBox('skillBigBox', 'gds', 'skills');
-
-
-                // Skillbox on Projects' Page
-                createSkillBox('skillsSlideProjectFirst', 'html', 'project');
-                createSkillBox('skillsSlideProjectFirst', 'css', 'project');
-                createSkillBox('skillsSlideProjectFirst', 'js', 'project');
-                createSkillBox('skillsSlideProjectFirst', 'python', 'project');
-
-                createSkillBox('skillsSlideProjectSecond', 'gml', 'project');
-
-                createSkillBox('skillsSlideProjectThird', 'html', 'project');
-                createSkillBox('skillsSlideProjectThird', 'css', 'project');
-                createSkillBox('skillsSlideProjectThird', 'js', 'project');
-
-
-                // Conatctsbox on Contact's Page
-                createContactBox('contactPrincipalLink', 'email');
-
-                createContactBox('contactOthersLinks', 'linkedin');
-                createContactBox('contactOthersLinks', 'github');
-                createContactBox('contactOthersLinks', 'discord');
-                createContactBox('contactOthersLinks', 'letterboxd');
 
                 // Size of the website
                 setWebSize();
 
-
                 
-            window.addEventListener('resize', setWebSize);
-            window.addEventListener('scroll', linkUnderline);
+                // Skillbox on Skills' Page
+                const htmlIcon = 'Images/img_icon_html.png';
+                const cssIcon = 'logo-css3';
+                const jsIcon = 'logo-javascript';
+                const pythonIcon = 'logo-python';
+                const gitIcon = 'logo-github';
+                const gmlIcon = 'Images/img_icon_gml.png';
+                const gdsIcon = 'Images/img_icon_godot.png';
+                
+                const mailIcon = 'mail';
+                const linkedinIcon = 'logo-linkedin';
+                const discordIcon = 'logo-discord';
+                const letterboxdIcon = 'Images/img_icon_letterboxd.svg';
 
+
+                // Create Skill on Skills' Page
+                createSkillBox('skillBigBox', 'skills', htmlIcon, '', 'HTML', 0);
+                createSkillBox('skillBigBox', 'skills', cssIcon, 'online', 'CSS', 0);
+                createSkillBox('skillBigBox', 'skills', jsIcon, 'online', 'JS', 0);
+                createSkillBox('skillBigBox', 'skills', pythonIcon, 'online', 'Python', 0);
+                createSkillBox('skillBigBox', 'skills', gitIcon, 'online', 'Git', 0);
+                createSkillBox('skillBigBox', 'skills', gmlIcon, '', 'GML', 0);
+                createSkillBox('skillBigBox', 'skills', gdsIcon, '', 'GDScript', 0);
+
+
+                // Create Skillboxes on Projects' Page
+                createSkillBox('skillsSlideProjectFirst', 'project', htmlIcon, '', 'HTML', 0);
+                createSkillBox('skillsSlideProjectFirst', 'project', cssIcon, 'online', 'CSS', 0);
+                createSkillBox('skillsSlideProjectFirst', 'project', jsIcon, 'online', 'JS', 0);
+                createSkillBox('skillsSlideProjectFirst', 'project', pythonIcon, 'online', 'Python', 0);
+
+                createSkillBox('skillsSlideProjectSecond', 'project', gmlIcon, '', 'GML', 0);
+                createSkillBox('skillsSlideProjectSecond', 'project', '', '', '', 1, 'https://gamejolt.com/games/void/963733');
+
+                createSkillBox('skillsSlideProjectThird', 'project', htmlIcon, '', 'HTML', 0);
+                createSkillBox('skillsSlideProjectThird', 'project', cssIcon, 'online', 'CSS', 0);
+                createSkillBox('skillsSlideProjectThird', 'project', jsIcon, 'online', 'JS', 0);
+
+
+                // Create Contact Boxes
+                createSkillBox('contactPrincipalLink', '', mailIcon, 'online', '', 2);
+                createSkillBox('contactOthersLinks', '', linkedinIcon, 'online', '', 3, 'https://www.linkedin.com/in/nielsengg/');
+                createSkillBox('contactOthersLinks', '', gitIcon, 'online', '', 3, 'https://github.com/nielsengg');
+                createSkillBox('contactOthersLinks', '', discordIcon, 'online', '', 3, 'http://discordapp.com/users/572519718792200212');
+                createSkillBox('contactOthersLinks', '', letterboxdIcon, '', '', 3, 'https://letterboxd.com/nielsengg/');
+
+
+                loadShow();
+
+
+                // Tooltips
+                createTooltip(
+                    "Web Programmer - IFSP",
+                    "- Front-end development with HTML, CSS, and JavaScript.<br> - PHP programming, including OOP, forms, and integration with WordPress.<br> - Database modeling, querying, and management using SQL (MySQL).<br> - API creation and dynamic application development with AngularJS.",
+                    "academicDescription-First"
+                );
+                createTooltip(
+                    'Administrative Technician - IFSP',
+                    `- Management of administrative, financial, and human resources processes.<br> 
+                    - Planning, organizing, and controlling business activities.<br> 
+                    - Market analysis, marketing strategies, and corporate communication.<br> 
+                    - Budget preparation, cash flow management, and financial control.<br> 
+                    - Use of technologies and tools for information and operations management.<br> 
+                    - Development of leadership, negotiation, and decision-making skills in corporate environments.`, 
+                    'academicDescription-Second'
+                );
+                
+                tooltipAndBlur("academicFirst", "academicDescription-First");
+                tooltipAndBlur("academicSecond", "academicDescription-Second");
+
+            window.addEventListener('resize', setWebSize);
         </script>
     </body>
 </html>
