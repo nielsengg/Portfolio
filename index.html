@@ -490,19 +490,29 @@
             // -------------------------------------------------------------------- //
 
             // Project Slides
+
             createProjectSlide(
                 'kCalculator',
                 'The kCalculator is a personal tool to help the users with their health. On the website, you can find out your daily nutrient goal and monitor the amounts of those you have entered.',
                 '<img src="Images/img_kcalculator_project.png" id="midiaCalculator" width="100%" height="100%"></img>',
-                'skillsSlideProjectFirst',
+                'skillsSlideProjectkCalculator',
                 'https://github.com/nielsengg/kCalculator'
             );
 
             createProjectSlide(
+                'Marginalia',
+                `Marginalia is a command-line utility for cataloging your readings. It allows users to register books they've read, assign ratings, and maintain an organized record of their literary journey.`,
+                `<iframe width="101%" height="100%" src="https://www.youtube.com/embed/521LpHwbmMA?si=KduL3AUUGk7W9ktr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"> </iframe>`,
+                'skillsSlideProjectMarginalia',
+                "https://github.com/nielsengg/Marginalia"
+            );
+
+
+            createProjectSlide(
                 'V.O.I.D.',
                 'The V.O.I.D. is a game blending fast-paced action with progression and upgrade mechanics. You control a spaceship in an infinite space, facing various enemies with unique behaviors.',
-                `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/t23NEB3uIGo?si=05wZ7agSNlnEJlWu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"> </iframe>`,
-                'skillsSlideProjectSecond',
+                `<iframe width="101%" height="100%" src="https://www.youtube.com/embed/t23NEB3uIGo?si=05wZ7agSNlnEJlWu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"> </iframe>`,
+                'skillsSlideProjectVOID',
                 0
             );
 
@@ -510,7 +520,7 @@
                 'Portfolio',
                 'The Portfolio website was made to show a resume about me and my projects. It has some personal designs, effects and layouts.',
                 `<img src="Images/img_project_banner_portfolio.png" id="midiaVOID"></img>`,
-                'skillsSlideProjectThird',
+                'skillsSlideProjectPortfolio',
                 "https://github.com/nielsengg/Portfolio"
             );
 
@@ -647,6 +657,7 @@
                 const jsIcon = 'logo-javascript';
                 const pythonIcon = 'logo-python';
                 const cIcon = 'Images/img_icon_c.png';
+                const apiIcon = 'cloud';
                 const gitIcon = 'logo-github';
                 const gmlIcon = 'Images/img_icon_gml.png';
                 const gdsIcon = 'Images/img_icon_godot.png';
@@ -660,6 +671,7 @@
                 // Create Skill on Skills' Page
                 createSkillBox('skillBigBox', 'skills', pythonIcon, 'online', 'Python', 0);
                 createSkillBox('skillBigBox', 'skills', cIcon, '', 'C', 0);
+                createSkillBox('skillBigBox', 'skills', apiIcon, 'online', 'API', 0);
                 createSkillBox('skillBigBox', 'skills', htmlIcon, '', 'HTML', 0);
                 createSkillBox('skillBigBox', 'skills', cssIcon, 'online', 'CSS', 0);
                 createSkillBox('skillBigBox', 'skills', jsIcon, 'online', 'JS', 0);
@@ -669,17 +681,20 @@
 
 
                 // Create Skillboxes on Projects' Page
-                createSkillBox('skillsSlideProjectFirst', 'project', htmlIcon, '', 'HTML', 0);
-                createSkillBox('skillsSlideProjectFirst', 'project', cssIcon, 'online', 'CSS', 0);
-                createSkillBox('skillsSlideProjectFirst', 'project', jsIcon, 'online', 'JS', 0);
-                createSkillBox('skillsSlideProjectFirst', 'project', pythonIcon, 'online', 'Python', 0);
+                createSkillBox('skillsSlideProjectkCalculator', 'project', htmlIcon, '', 'HTML', 0);
+                createSkillBox('skillsSlideProjectkCalculator', 'project', cssIcon, 'online', 'CSS', 0);
+                createSkillBox('skillsSlideProjectkCalculator', 'project', jsIcon, 'online', 'JS', 0);
+                createSkillBox('skillsSlideProjectkCalculator', 'project', pythonIcon, 'online', 'Python', 0);
 
-                createSkillBox('skillsSlideProjectSecond', 'project', gmlIcon, '', 'GML', 0);
-                createSkillBox('skillsSlideProjectSecond', 'project', '', '', '', 1, 'https://gamejolt.com/games/void/963733');
+                createSkillBox('skillsSlideProjectMarginalia', 'project', cIcon, '', 'C', 0);
+                createSkillBox('skillsSlideProjectMarginalia', 'project', apiIcon, 'online', 'API', 0);
 
-                createSkillBox('skillsSlideProjectThird', 'project', htmlIcon, '', 'HTML', 0);
-                createSkillBox('skillsSlideProjectThird', 'project', cssIcon, 'online', 'CSS', 0);
-                createSkillBox('skillsSlideProjectThird', 'project', jsIcon, 'online', 'JS', 0);
+                createSkillBox('skillsSlideProjectVOID', 'project', gmlIcon, '', 'GML', 0);
+                createSkillBox('skillsSlideProjectVOID', 'project', '', '', '', 1, 'https://gamejolt.com/games/void/963733');
+
+                createSkillBox('skillsSlideProjectPortfolio', 'project', htmlIcon, '', 'HTML', 0);
+                createSkillBox('skillsSlideProjectPortfolio', 'project', cssIcon, 'online', 'CSS', 0);
+                createSkillBox('skillsSlideProjectPortfolio', 'project', jsIcon, 'online', 'JS', 0);
 
 
                 // Create Contact Boxes
