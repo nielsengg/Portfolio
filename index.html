@@ -12,7 +12,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Teko:wght@300..700&display=swap" rel="stylesheet">
               
-          
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
         <title>nielsengg</title>
     </head>
@@ -101,7 +102,7 @@
                                         English - B1
                                     </div>
                                     <div class="textParagraph finalText" id="languageSecond">
-                                        Potuguese - Native
+                                        Portuguese - Native
                                     </div>
                                 </div>
                             </div>
@@ -150,9 +151,6 @@
         </div>
 
         <!-- Scripts -->
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
         <script>
             //Very Used Variables
             let homePage = document.getElementById('homePage');
@@ -179,7 +177,7 @@
 
 
             //Creates Boxes
-                function createProjectSlide(title, description, midia, skillsSlideProjectOrder, link){
+            function createProjectSlide(title, description, midia, skillsSlideProjectOrder, link){
                 const item = document.getElementById('slideFather');
 
                 const slideItem = document.createElement('div');
@@ -256,8 +254,7 @@
                 item.appendChild(slideItem);
             }
             
-            function createSkillBox(father, local, icon, iconlocal, showname, button, link){
-
+            function createSkillBox(father, local, icon, showname, button, link){
                 const item = document.getElementById(father);
 
                 let boxVariation = 'skillBox';
@@ -277,12 +274,6 @@
                     iconVariation = 'skillIconOnSlide';
                 }
 
-                if(iconlocal === "online"){
-                    iconVariation = 'skillIconOnline';
-                    iconType = 'ion-icon';
-                }
-
-                
                 if (button > 0){
                     if (button === 1){
                         buttonID = 'buttonBoxOnProject';
@@ -311,7 +302,7 @@
                         buttonClass.split(',').forEach(cls => {
                             buttonLink.classList.add(cls.trim().replace(/'/g, ''));
                         });
-                        ;
+                        
                         if (button === 2){
                             const email = "gustavogn427@gmail.com"
                             buttonLink.onclick = () => window.location.href = `mailto:${email}`;
@@ -327,13 +318,15 @@
                         buttonLink.appendChild(buttonContent);
 
                         if (button === 2 || button === 3){
-                            const buttonIcon = document.createElement(iconType);
-                            buttonIcon.id = 'contactIcon';
-                            if (iconlocal != "online"){
-                                buttonIcon.src = icon;
-                            }else{
-                                buttonIcon.name = icon;
-                            }
+                            const skillIconBox = document.createElement('div');
+                            skillIconBox.classList.add('contactBox');
+                        
+                            const buttonIcon = document.createElement('i');
+                            buttonIcon.classList.add('skillIconOnline');
+                            buttonIcon.classList.add(...icon.split(' '));
+
+
+
 
                             buttonContent.appendChild(buttonIcon);
                         }
@@ -360,21 +353,23 @@
                         skillContent.classList.add('boxCenter');
                     }
 
-                    const skillIcon = document.createElement(iconType);
-                    skillIcon.classList.add(iconVariation);
-                    if (iconlocal != "online"){
-                        skillIcon.src = icon;
-                    }else{
-                        skillIcon.name = icon;
-                    }
-
+                    const skillIconBox = document.createElement('div');
+                    skillIconBox.classList.add('skillIconBox');
+                
+                    const skillIconOnline = document.createElement('i');
+                    skillIconOnline.classList.add('skillIconOnline');
+                    skillIconOnline.classList.add(...icon.split(' '));
+                    
+                    
                     const skillName = document.createElement('p');
                     skillName.classList.add('skillName');
                     skillName.textContent = showname;
 
                     skillBox.appendChild(skillContent);
-                    skillContent.appendChild(skillIcon);
+                    skillContent.appendChild(skillIconBox);
                     skillContent.appendChild(skillName);
+
+                    skillIconBox.appendChild(skillIconOnline);
 
                     item.appendChild(skillBox);
                 }
@@ -652,57 +647,57 @@
 
                 
                 // Skillbox on Skills' Page
-                const htmlIcon = 'Images/img_icon_html.png';
-                const cssIcon = 'logo-css3';
-                const jsIcon = 'logo-javascript';
-                const pythonIcon = 'logo-python';
-                const cIcon = 'Images/img_icon_c.png';
-                const apiIcon = 'cloud';
-                const gitIcon = 'logo-github';
-                const gmlIcon = 'Images/img_icon_gml.png';
-                const gdsIcon = 'Images/img_icon_godot.png';
+                const htmlIcon = 'fa-brands fa-html5';
+                const cssIcon = 'fa-brands fa-css3-alt';
+                const jsIcon = 'fa-brands fa-js';
+                const pythonIcon = 'fa-brands fa-python';
+                const cIcon = 'fa-brands fa-c';
+                const apiIcon = 'fa-solid fa-cloud';
+                const gitIcon = 'fa-brands fa-github';
+                const gmlIcon = 'fa-solid fa-puzzle-piece';
+                const gdsIcon = 'fa-solid fa-gamepad';
                 
-                const mailIcon = 'mail';
-                const linkedinIcon = 'logo-linkedin';
-                const discordIcon = 'logo-discord';
-                const letterboxdIcon = 'Images/img_icon_letterboxd.svg';
+                const mailIcon = 'fa-solid fa-envelope';
+                const linkedinIcon = 'fa-brands fa-linkedin';
+                const discordIcon = 'fa-brands fa-discord';
+                const letterboxdIcon = 'fa-brands fa-square-letterboxd';
 
 
                 // Create Skill on Skills' Page
-                createSkillBox('skillBigBox', 'skills', pythonIcon, 'online', 'Python', 0);
-                createSkillBox('skillBigBox', 'skills', cIcon, '', 'C', 0);
-                createSkillBox('skillBigBox', 'skills', apiIcon, 'online', 'API', 0);
-                createSkillBox('skillBigBox', 'skills', htmlIcon, '', 'HTML', 0);
-                createSkillBox('skillBigBox', 'skills', cssIcon, 'online', 'CSS', 0);
-                createSkillBox('skillBigBox', 'skills', jsIcon, 'online', 'JS', 0);
-                createSkillBox('skillBigBox', 'skills', gitIcon, 'online', 'Git', 0);
-                createSkillBox('skillBigBox', 'skills', gmlIcon, '', 'GML', 0);
-                createSkillBox('skillBigBox', 'skills', gdsIcon, '', 'GDScript', 0);
+                createSkillBox('skillBigBox', 'skills', pythonIcon, 'Python', 0);
+                createSkillBox('skillBigBox', 'skills', cIcon, 'C', 0);
+                createSkillBox('skillBigBox', 'skills', htmlIcon, 'HTML', 0);
+                createSkillBox('skillBigBox', 'skills', cssIcon, 'CSS', 0);
+                createSkillBox('skillBigBox', 'skills', jsIcon, 'JavaScript', 0);
+                createSkillBox('skillBigBox', 'skills', gmlIcon, 'GML', 0);
+                createSkillBox('skillBigBox', 'skills', gitIcon, 'Git', 0);
+                createSkillBox('skillBigBox', 'skills', apiIcon, 'API', 0);
+                // createSkillBox('skillBigBox', 'skills', gdsIcon, 'GDScript', 0);
 
 
                 // Create Skillboxes on Projects' Page
-                createSkillBox('skillsSlideProjectkCalculator', 'project', htmlIcon, '', 'HTML', 0);
-                createSkillBox('skillsSlideProjectkCalculator', 'project', cssIcon, 'online', 'CSS', 0);
-                createSkillBox('skillsSlideProjectkCalculator', 'project', jsIcon, 'online', 'JS', 0);
-                createSkillBox('skillsSlideProjectkCalculator', 'project', pythonIcon, 'online', 'Python', 0);
+                createSkillBox('skillsSlideProjectkCalculator', 'project', htmlIcon, 'HTML', 0);
+                createSkillBox('skillsSlideProjectkCalculator', 'project', cssIcon, 'CSS', 0);
+                createSkillBox('skillsSlideProjectkCalculator', 'project', jsIcon, 'JavaScript', 0);
+                createSkillBox('skillsSlideProjectkCalculator', 'project', pythonIcon, 'Python', 0);
 
-                createSkillBox('skillsSlideProjectMarginalia', 'project', cIcon, '', 'C', 0);
-                createSkillBox('skillsSlideProjectMarginalia', 'project', apiIcon, 'online', 'API', 0);
+                createSkillBox('skillsSlideProjectMarginalia', 'project', cIcon, 'C', 0);
+                createSkillBox('skillsSlideProjectMarginalia', 'project', apiIcon, 'API', 0);
 
-                createSkillBox('skillsSlideProjectVOID', 'project', gmlIcon, '', 'GML', 0);
-                createSkillBox('skillsSlideProjectVOID', 'project', '', '', '', 1, 'https://gamejolt.com/games/void/963733');
+                createSkillBox('skillsSlideProjectVOID', 'project', gmlIcon, 'GML', 0);
+                createSkillBox('skillsSlideProjectVOID', 'project', '', '', 1, 'https://gamejolt.com/games/void/963733');
 
-                createSkillBox('skillsSlideProjectPortfolio', 'project', htmlIcon, '', 'HTML', 0);
-                createSkillBox('skillsSlideProjectPortfolio', 'project', cssIcon, 'online', 'CSS', 0);
-                createSkillBox('skillsSlideProjectPortfolio', 'project', jsIcon, 'online', 'JS', 0);
+                createSkillBox('skillsSlideProjectPortfolio', 'project', htmlIcon, 'HTML', 0);
+                createSkillBox('skillsSlideProjectPortfolio', 'project', cssIcon, 'CSS', 0);
+                createSkillBox('skillsSlideProjectPortfolio', 'project', jsIcon, 'JavaScript', 0);
 
 
                 // Create Contact Boxes
-                createSkillBox('contactPrincipalLink', '', mailIcon, 'online', '', 2);
-                createSkillBox('contactOthersLinks', '', linkedinIcon, 'online', '', 3, 'https://www.linkedin.com/in/nielsengg/');
-                createSkillBox('contactOthersLinks', '', gitIcon, 'online', '', 3, 'https://github.com/nielsengg');
-                createSkillBox('contactOthersLinks', '', discordIcon, 'online', '', 3, 'http://discordapp.com/users/572519718792200212');
-                createSkillBox('contactOthersLinks', '', letterboxdIcon, '', '', 3, 'https://letterboxd.com/nielsengg/');
+                createSkillBox('contactPrincipalLink', '', mailIcon, '', 2);
+                createSkillBox('contactOthersLinks', '', linkedinIcon, '', 3, 'https://www.linkedin.com/in/nielsengg/');
+                createSkillBox('contactOthersLinks', '', gitIcon, '', 3, 'https://github.com/nielsengg');
+                createSkillBox('contactOthersLinks', '', discordIcon, '', 3, 'http://discordapp.com/users/572519718792200212');
+                createSkillBox('contactOthersLinks', '', letterboxdIcon, '', 3, 'https://letterboxd.com/nielsengg/');
 
 
                 loadShow();
