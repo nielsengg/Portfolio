@@ -55,44 +55,47 @@
 
                 <div id="aboutPage" class="webPage">
                     <!-- <div id="aboutMessage" class="hiddenAnimation">About</div> -->
+
+                    <div id="blurBox"></div>
                     <div id="aboutBox" class="borderBox shadowBox hiddenAnimation">
-                        <div id="leftAbout">
+                        <div id="topAboutBox">
                             <img id="imageProfile" class="shadowBox borderBox" src="Images/img_nielsen.jpg" alt="">
+
+                            <div id="rightTopAboutBox">
+                                <div id="aboutResume" class="textBox borderBox shadowBox boxAnimation">
+                                    <div class="textParagraph" id="preTitle">
+                                        My name is
+                                    </div>
+
+                                    <span id="aboutName">
+                                        Gustavo Nielsen,
+                                    </span>
+
+                                    <div class="textParagraph textParagraph finalText">
+                                        and I've always been passionate about turning ideas into reality through development. Since 2020,
+                                        I've been actively creating games, school tools, personal tools, and websites, constantly exploring new ways to solve problems and bring creativity to life.
+                                    </div>
+                                </div>
+
+                                <div id="aboutAcademicBackground" class="textBox borderBox shadowBox boxAnimation">
+                                    <span class="aboutAdd">
+                                        Academic Background
+                                    </span>
+
+                                    <div class="textParagraph">
+                                        <span class="aboutAcademic cursorPointer" id="academicFirst">Computer Science</span>
+                                        - UFSCar
+                                    </div>
+                                    <div class="textParagraph academicText">
+                                        <span class="aboutAcademic finalText cursorPointer" id="academicSecond">Administrative Technician</span>
+                                        - IFSP
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
-
-                        <div id="rightAbout">
-                            <div id="blurBox"></div>
-
-                            <div id="aboutResume" class="textBox borderBox shadowBox boxAnimation">
-                                <div class="textParagraph" id="preTitle">
-                                    My name is
-                                </div>
-
-                                <span id="aboutName">
-                                    Gustavo Nielsen,
-                                </span>
-
-                                <div class="textParagraph textParagraph finalText">
-                                    and I've always been passionate about turning ideas into reality through development. Since 2020,
-                                    I've been actively creating games, school tools, personal tools, and websites, constantly exploring new ways to solve problems and bring creativity to life.
-                                </div>
-                            </div>
-
-                            <div id="aboutAcademicBackground" class="textBox borderBox shadowBox boxAnimation">
-                                <span class="aboutAdd">
-                                    Academic Background
-                                </span>
-
-                                <div class="textParagraph">
-                                    <span class="aboutAcademic cursorPointer" id="academicFirst">Computer Science</span>
-                                    - UFSCar
-                                </div>
-                                <div class="textParagraph academicText">
-                                    <span class="aboutAcademic finalText cursorPointer" id="academicSecond">Administrative Technician</span>
-                                    - IFSP
-                                </div>
-                            </div>
                         
+                        <div id="bottomAboutBox">
                             <div id="aboutLanguages" class="textBox borderBox shadowBox boxAnimation">
                                 <span class="aboutAdd">
                                     Languages Spoken
@@ -107,11 +110,12 @@
                                 </div>
                             </div>
 
-                            <!-- <div class="textParagraph textBox borderBox finalText shadowBox boxAnimation" id="aboutMore">
+                            <div class="textParagraph textBox borderBox finalText shadowBox boxAnimation" id="aboutMore">
                                 More...
-                            </div> -->
+                            </div>
+                        
                         </div>
-                    </div>
+                        
                 </div>
 
                 <div id="skillsPage" class="webPage">
@@ -583,8 +587,8 @@
             setTimeout(helloSubMessage, 4000)
 
             function helloMessage(){
-                homePage.innerHTML += "<p id='homeMessageFirst'>Hello, I'm Nielsen.</p>";
-                homePage.innerHTML += "<p id='homeMessageSecond' class='homeAnimation'>A DEV</p> <p id='scrollIndication'>▼</p>";
+                homePage.innerHTML += "<p id='homeMessageTitle'>Hello, I'm Nielsen.</p>";
+                homePage.innerHTML += "<p id='homeMessageSubTitle' class='homeAnimation'>A DEV</p> <p id='scrollIndication'>▼</p>";
             }
 
             function helloSubMessage(){
