@@ -41,6 +41,11 @@
                             Contact
                         </button>
                     </div>
+
+                    <button id="mobileNavBar" onclick="toggleMenu()">
+                        &#9776;
+                    </button>
+
                 </nav>
             </div>  
 
@@ -170,6 +175,11 @@
 
     
             // -------------------------------------------------------------------- //
+
+            function toggleMenu() {
+                const topLink = document.querySelector('#topLink');
+                topLink.classList.toggle('active');
+            }
 
 
             //Creates Boxes

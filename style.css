@@ -706,6 +706,8 @@ i.skillIconOnline::before {
     height: 10vh;
     position: fixed;
     background-color: #131313;
+
+    border-radius: 0 0 7px 7px;
 }
 
 #topLink{
@@ -943,7 +945,39 @@ i.skillIconOnline::before {
     font-size: 1em;
 }
 
+#mobileNavBar {
+    display: none;
+    font-size: 28px;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 3vw;
+}
+
 /* ---------------------------- */
+
+@media (max-width: 768px) {
+    #topTitle{
+        margin-left: 3vw;
+    }
+
+    /* #mobileNavBar {
+        display: block;
+    } */
+
+    #topLink {
+        display: none;
+        /* flex-direction: column; */
+        background-color: #111;
+        /* padding: 10px; */
+    }
+
+    /* #topLink.active {
+        display: flex;
+    } */
+
+}
 
 /* About page */
 @media (max-width: 768px) {
@@ -1078,7 +1112,7 @@ i.skillIconOnline::before {
 
     .slideItem{
         width: 80vw;
-        height: 50vh;
+        height: 54vh;
         overflow: hidden;
     }
 
