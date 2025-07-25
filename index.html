@@ -199,17 +199,20 @@
                 projectText.classList.add('textBox', 'borderBox', 'shadowBox', 'boxAnimation');
 
                 const projectTextTop = document.createElement('div');
+                projectTextTop.id = "slideProjectTitle";
                 projectTextTop.classList.add('hContainer', "container-SpaceStart");
 
                 const projectTitle = document.createElement('h1');
-                projectTitle.classList.add('projectSlideTitle');
+                projectTitle.classList.add('projectTitle');
                 projectTitle.textContent = title;
 
                 projectTextTop.appendChild(projectTitle);
 
                 if (link != 0){
-                    const projectLink = document.createElement('ion-icon');
-                    projectLink.name = 'logo-github';
+                    const projectLink = document.createElement('i');
+                    projectLink.classList.add('skillIconOnline');
+                    projectLink.classList.add("fa-brands", "fa-github");
+
                     if (link != null){
                         projectLink.classList.add('cursorPointer');
                         projectLink.onclick = () => goLink(link);
@@ -265,7 +268,6 @@
 
                 let boxVariation = 'skillBox';
                 let iconVariation = 'skillIcon';
-                let iconType = 'img';
                 let contentVariation = 'skillContent';
 
                 let buttonID = null;
@@ -338,7 +340,7 @@
                         }
                         if (button != 3){
                             const buttonName = document.createElement('p');
-                            buttonName.id = 'playMessage';
+                            buttonName.id = 'buttonMessage';
                             buttonName.classList.add('skillName');
                             buttonName.textContent = buttonText;
                             buttonContent.appendChild(buttonName);

@@ -80,7 +80,7 @@ body{
     padding-bottom: 20px;
     border-radius: 10px;
     transition: 0.5s;
-    overflow:auto;
+    overflow: auto;
 }
 
 .slideItem::-webkit-scrollbar {
@@ -97,7 +97,7 @@ body{
     background-color: #dfdfdf;
 }
 
-.projectSlideTitle{
+.projectTitle{
     font-family: Teko;
     /* margin-bottom: 15px; */
     font-size: 4vw;
@@ -148,10 +148,6 @@ i.skillIconOnline::before {
     font-size: 3.5em;
 }
 
-
-.skillIconBox.skillIconOnline::before{
-    font-size: 30em
-}
 .contactIcon{
     width: 2em;
     height: auto;
@@ -602,82 +598,7 @@ i.skillIconOnline::before {
 }
 
 
-@media (max-width: 768px) {
-    .textBox{
-        padding-top: 1.5vh;
-        padding-bottom: 1.5vh;
-        padding-left: 1.5vw;
-        padding-right: 1.5vw;
-    }
-
-    .textParagraph{
-        line-height: 1.5;
-        font-family: Jetbrains Mono;
-        font-size: 1rem;
-        text-align: justify;
-        margin-bottom: 0;
-    }
-
-    .aboutOthersInfo{
-        font-size: 1.8rem;
-        margin-bottom: -0.6vh;
-    }
-
-    #preTitle{
-        font-size: 0.7rem;
-        margin-bottom: 1.5vh;
-    }
-   
-    #aboutBox {
-        align-items: start;
-        display: flex;
-        flex-direction: row;
-        
-        gap: 2vh;
-
-        height: auto;
-        width: 80vw;
-    }
-
-    #topAboutBox{
-        gap: 2vh;
-        height: auto;
-        flex-direction: column;
-
-    }
-
-    #leftTopAboutBox{
-        /* height: 10vh; */
-        width: 50vw;
-    }
-
-    #rightTopAboutBox {
-        width: 100%;
-        height: auto;
-        gap: 2vh;
-    }
-
-    #aboutResume{
-        height: auto;
-    }
-
-    #bottomAboutBox{
-        height: auto;
-        gap: 1.4vh;
-    }
-
-    #languagesSpoken{
-        flex-direction: column;
-        gap: 0;
-    }
-
-    #aboutMore{
-        display: none;
-    }
-
-}
-
-#playMessage{
+#buttonMessage{
     text-decoration: underline;
     align-self: center;
 }
@@ -908,40 +829,6 @@ i.skillIconOnline::before {
     align-content: center;
 }
 
-@media (max-width: 768px) {
-    #skillBigBox{
-        width: 80vw;
-    }
-
-    .skillBox{
-        /* min-width: 22vw; */
-        min-width: 30vw;
-        height: 9vh;
-
-        flex: 1 1 auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        background-color: #f5f4f4;
-        color: #131313;
-
-        padding-top: 5px;
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-bottom: 5px;
-
-        overflow-wrap:anywhere;
-    }
-
-    p.skillName{
-        display: none;
-    }
-
-}
-
-
-
 #buttonBoxOnProject{
     width: 85%;
 }
@@ -962,7 +849,7 @@ i.skillIconOnline::before {
     text-decoration: none;
 }
 
-#buttonBoxOnProject:hover #playMessage, #emailBox:hover #playMessage{
+#buttonBoxOnProject:hover #buttonMessage, #emailBox:hover #buttonMessage{
     text-decoration: none;
 }
 
@@ -1042,8 +929,169 @@ i.skillIconOnline::before {
 
 }
 
+i.skillIconOnline::before {
+    font-size: 3.5em;
+}
+
+
+#slideProjectTitle i.skillIconOnline::before{
+    font-size: 1em;
+}
+
 /* ---------------------------- */
 
+/* About page */
+@media (max-width: 768px) {
+    .textBox{
+        padding-top: 1.5vh;
+        padding-bottom: 1.5vh;
+        padding-left: 1.5vw;
+        padding-right: 1.5vw;
+    }
+
+    .textParagraph{
+        line-height: 1.5;
+        font-family: Jetbrains Mono;
+        font-size: 1rem;
+        text-align: justify;
+        margin-bottom: 0;
+    }
+
+    .aboutOthersInfo{
+        font-size: 1.8rem;
+        margin-bottom: -0.6vh;
+    }
+
+    #preTitle{
+        font-size: 0.7rem;
+        margin-bottom: 1.5vh;
+    }
+   
+    #aboutBox {
+        align-items: start;
+        display: flex;
+        flex-direction: row;
+        
+        gap: 2vh;
+
+        height: auto;
+        width: 80vw;
+    }
+
+    #topAboutBox{
+        gap: 2vh;
+        height: auto;
+        flex-direction: column;
+
+    }
+
+    #leftTopAboutBox{
+        /* height: 10vh; */
+        width: 50vw;
+    }
+
+    #rightTopAboutBox {
+        width: 100%;
+        height: auto;
+        gap: 2vh;
+    }
+
+    #aboutResume{
+        height: auto;
+    }
+
+    #bottomAboutBox{
+        height: auto;
+        gap: 1.4vh;
+    }
+
+    #languagesSpoken{
+        flex-direction: column;
+        gap: 0;
+    }
+
+    #aboutMore{
+        display: none;
+    }
+
+}
+
+/*  Skills Page */
+@media (max-width: 768px) {
+
+    #nextButton, #prevButton{
+        top: 60%;
+    }
+
+    #nextButton:focus, #prevButton:focus {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    #skillBigBox{
+        width: 80vw;
+    }
+
+    .skillBox{
+        /* min-width: 22vw; */
+        min-width: 30vw;
+        height: 9vh;
+
+        flex: 1 1 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #f5f4f4;
+        color: #131313;
+
+        padding-top: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 5px;
+
+        overflow-wrap:anywhere;
+    }
+
+    .skillBox .skillContent p.skillName{
+        display: none;
+    }
+
+}
+
+/*  Projects Page */
+@media (max-width: 768px) {
+    .slideItem{
+        width: 80vw;
+        height: auto;
+        min-height: 50vh;
+        overflow: hidden;
+    }
+
+    .projectTitle{
+        font-size: 2rem;
+        margin-bottom: 0;
+        font-weight: normal;
+    }
+
+    .midiaSlideProject{
+        display: none;
+    }
+
+    .skillsSlideProject{
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .skillBoxOnProject{
+        width: 40%;
+    }
+
+    .skillBoxOnProject .skillContent p.skillName{
+        display: none;
+    }
+
+}
 
 
 
