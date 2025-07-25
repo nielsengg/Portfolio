@@ -129,7 +129,7 @@ body{
 }
 
 .skillIconBox {
-    aspect-ratio: 9/7;
+    aspect-ratio: 10/7;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,10 +138,20 @@ body{
     height: 100%;
 }
 
-i.skillIconOnline::before {
-    font-size: 3.1em;
+img.skillIconIMG{
+    aspect-ratio: 1/1;
+    height: 100%;
 }
 
+
+i.skillIconOnline::before {
+    font-size: 3.5em;
+}
+
+
+.skillIconBox.skillIconOnline::before{
+    font-size: 30em
+}
 .contactIcon{
     width: 2em;
     height: auto;
@@ -369,7 +379,7 @@ i.skillIconOnline::before {
 
 .skillBoxOnProject, #buttonBoxOnProject{
     width: 100%;
-    height: 7vh;
+    height: 8vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -447,7 +457,7 @@ i.skillIconOnline::before {
 
 
 .shadowBox{
-    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -901,6 +911,31 @@ i.skillIconOnline::before {
 @media (max-width: 768px) {
     #skillBigBox{
         width: 80vw;
+    }
+
+    .skillBox{
+        /* min-width: 22vw; */
+        min-width: 30vw;
+        height: 9vh;
+
+        flex: 1 1 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #f5f4f4;
+        color: #131313;
+
+        padding-top: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 5px;
+
+        overflow-wrap:anywhere;
+    }
+
+    p.skillName{
+        display: none;
     }
 
 }

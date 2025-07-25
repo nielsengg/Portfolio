@@ -348,7 +348,7 @@
                         item.appendChild(buttonLink);
                 }
 
-                if(button === 0){
+                if (button == 0){
                         
                     const skillBox = document.createElement('div');
                     skillBox.classList.add('skillBoxAnimation', boxVariation, 'shadowBox', 'borderBox');
@@ -362,10 +362,17 @@
                     const skillIconBox = document.createElement('div');
                     skillIconBox.classList.add('skillIconBox');
                 
-                    const skillIconOnline = document.createElement('i');
-                    skillIconOnline.classList.add('skillIconOnline');
-                    skillIconOnline.classList.add(...icon.split(' '));
-                    
+                    let skillIconOnline;
+
+                    if (icon != '0'){
+                        skillIconOnline = document.createElement('i');
+                        skillIconOnline.classList.add('skillIconOnline');
+                        skillIconOnline.classList.add(...icon.split(' '));
+                    }else{
+                        skillIconOnline = document.createElement('img');
+                        skillIconOnline.classList.add('skillIconIMG');
+                        skillIconOnline.src = "https://www.svgrepo.com/show/373756/light-gamemaker2.svg";
+                    }
                     
                     const skillName = document.createElement('p');
                     skillName.classList.add('skillName');
@@ -660,7 +667,7 @@
                 const cIcon = 'fa-brands fa-c';
                 const apiIcon = 'fa-solid fa-cloud';
                 const gitIcon = 'fa-brands fa-github';
-                const gmlIcon = 'fa-solid fa-puzzle-piece';
+                const gmlIcon = '0';
                 const gdsIcon = 'fa-solid fa-gamepad';
                 
                 const mailIcon = 'fa-solid fa-envelope';
