@@ -168,16 +168,6 @@
             const webSite = document.getElementById('webSite');
             const wholePage = document.getElementById('wholePage');
 
-
-            // -------------------------------------------------------------------- //
-
-
-            // Set Size of The Site
-            function setWebSize() {
-                const totalHeight = wholePage.offsetHeight + contactPage.offsetHeight;
-                webSite.style.height = `${totalHeight}px`;
-            }
-
     
             // -------------------------------------------------------------------- //
 
@@ -587,9 +577,6 @@
                 window.open(link)
             }
 
-
-            
-
             // -------------------------------------------------------------------- //
 
 
@@ -654,11 +641,6 @@
 
 
             // Call functions
-                
-
-
-                // Size of the website
-                setWebSize();
 
                 
                 // Skillbox on Skills' Page
@@ -737,8 +719,6 @@
                 
                 tooltipAndBlur("academicFirst", "academicDescription-First");
                 tooltipAndBlur("academicSecond", "academicDescription-Second");
-
-            window.addEventListener('resize', setWebSize);
         </script>
     </body>
 </html>

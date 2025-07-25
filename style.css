@@ -48,8 +48,7 @@ body{
 }
 
 .webPage{
-    min-height: 80vh;
-    max-height: auto;
+    height: auto;
     background-color: #fcfbfb;
 
     width: 100%;
@@ -692,13 +691,13 @@ i.skillIconOnline::before {
 #webSite{
     display: flex;
     flex-direction:column;
-    /* height: 450vh; */
+    height: auto;
 }
 
 #wholePage{
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 130%;
     z-index: 9;
     pointer-events: none;
     /* background-color: rgba(0, 136, 255, 0.2); */
@@ -729,7 +728,7 @@ i.skillIconOnline::before {
     background: none;
     border: none;
     padding-top: 1vh;
-    font-weight:normal;
+    font-weight: normal;
     font-size: clamp(2rem, 3vw, 3rem);
     cursor:pointer;
 }
@@ -748,16 +747,15 @@ i.skillIconOnline::before {
     position: relative;
     margin-top: 10vh;
     align-items: center;
-    /* background-color:aqua; */
 }
 
 #homePage{
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #f2f5ef;
-    /* z-index: 5; */
 }
 
 #aboutPage{
@@ -766,9 +764,9 @@ i.skillIconOnline::before {
     align-items: center;
     justify-content: center;
     background-color: #f2f5ef;
-    overflow: hidden;
-    /* z-index: 4;
-    background-color: #E8EBE4; */
+
+    padding-bottom: 0.3rem;
+
 }
 
 #skillsPage{
@@ -778,20 +776,22 @@ i.skillIconOnline::before {
     align-items: center;
     justify-content: center;
     background-color: #f2f5ef;
-    /* z-index: 3;
-    background-color: #cbcdd3; */
+
+    padding-top: 5rem;
+    padding-bottom: 0.3rem;
 }
 
 #projectPage{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    /* z-index: 2;
-    background-color: #7E6B8F; */
+    justify-content: start;
     background-color: #f2f5ef;
-    height: auto;
-    overflow: hidden;
+    height: 105vh;
+    border-radius: 7px;
+
+    padding-top: 5rem;
+    overflow:visible;
 }
 
 #contactPage{
@@ -800,8 +800,8 @@ i.skillIconOnline::before {
     z-index: 1;
     display: flex;
     justify-content: center;
-    align-items: start;
-    height: 100vh;
+    align-items: center;
+    height: 100%;
 
     /* overflow:visible; */
 }
@@ -866,14 +866,16 @@ i.skillIconOnline::before {
 
 #contactBigBox{
     position: relative;
-    width: 25vw;
-    height: 90%;
+    width: 30%;
+    height: auto;
 
     display: flex;
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;
     gap: 10px;
     align-content: center;
+
+    margin-bottom: 5rem;
 
    /* background-color: aqua; */
 }
@@ -933,6 +935,10 @@ i.skillIconOnline::before {
     font-size: 3.5em;
 }
 
+#slideFather{
+    height: 100%;
+}
+
 
 #slideProjectTitle i.skillIconOnline::before{
     font-size: 1em;
@@ -974,6 +980,9 @@ i.skillIconOnline::before {
         
         gap: 2vh;
 
+        padding-top: 15px;
+        padding-bottom: 15px;
+        
         height: auto;
         width: 80vw;
     }
@@ -1018,17 +1027,12 @@ i.skillIconOnline::before {
 
 /*  Skills Page */
 @media (max-width: 768px) {
-
-    #nextButton, #prevButton{
-        top: 60%;
-    }
-
-    #nextButton:focus, #prevButton:focus {
-        -webkit-tap-highlight-color: transparent;
-    }
-
     #skillBigBox{
         width: 80vw;
+    }
+
+    #slideFather{
+        height: 55vh;
     }
 
     .skillBox{
@@ -1060,10 +1064,22 @@ i.skillIconOnline::before {
 
 /*  Projects Page */
 @media (max-width: 768px) {
+
+    #nextButton, #prevButton{
+        top: 105%;
+    }
+
+    #nextButton:focus, #prevButton:focus {
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    #projectPage{
+        height: 85vh;
+    }
+
     .slideItem{
         width: 80vw;
-        height: auto;
-        min-height: 50vh;
+        height: 50vh;
         overflow: hidden;
     }
 
@@ -1093,6 +1109,24 @@ i.skillIconOnline::before {
 
 }
 
+/*  Contact Page */
+@media (max-width: 768px) {
+    #contactPage{
+        height: 100%;
+    }
+
+    #contactBigBox{
+        width: 80%;
+        margin-bottom: 0;
+        margin-top: 10rem;
+    }
+
+    #contactMessage{
+        font-size: 5rem;
+        margin-bottom: 0;
+    }
+
+}
 
 
 body::-webkit-scrollbar {
