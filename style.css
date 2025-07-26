@@ -296,7 +296,6 @@ i.skillIconOnline::before {
     max-width: 50vw;
 
     z-index: 5;
-    
 }
 
 .tooltipTitle{
@@ -962,10 +961,6 @@ i.skillIconOnline::before {
         margin-left: 3vw;
     }
 
-    /* #mobileNavBar {
-        display: block;
-    } */
-
     #topLink {
         display: none;
         /* flex-direction: column; */
@@ -973,9 +968,21 @@ i.skillIconOnline::before {
         /* padding: 10px; */
     }
 
-    /* #topLink.active {
-        display: flex;
-    } */
+    .tooltipAbout {
+        max-width: 70vw;
+        min-height: 0;
+        height: auto;
+    }
+
+    .tooltipTitle{
+        font-size: 1.8rem;
+        line-height: 1.7rem;
+    }
+
+    .tooltipText{
+        font-size: 1rem;
+    }
+
 
 }
 
