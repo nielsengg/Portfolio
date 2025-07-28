@@ -54,7 +54,7 @@ body{
     width: 100%;
     max-width: 100vw;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: none;
     z-index: 2;
 }
 
@@ -385,7 +385,7 @@ i.skillIconOnline::before {
 
 #buttonBoxOnProject{
     height: 7vh;
-    min-width: 100%;
+    width: 85%;
 }
 
 .homeAnimation{
@@ -829,10 +829,6 @@ i.skillIconOnline::before {
     align-content: center;
 }
 
-#buttonBoxOnProject{
-    width: 85%;
-}
-
 #aboutInfo{
     width: 100%;
     display: flex;
@@ -1120,7 +1116,7 @@ i.skillIconOnline::before {
 
     .slideItem{
         width: 80vw;
-        height: 54vh;
+        height: 90%;
         overflow: hidden;
     }
 
@@ -1140,8 +1136,12 @@ i.skillIconOnline::before {
         flex-wrap: wrap;
     }
 
+    #buttonBoxOnProject{
+        width: 60%;
+    }
+
     .skillBoxOnProject{
-        width: 40%;
+        width: 25%;
     }
 
     .skillBoxOnProject .skillContent p.skillName{
