@@ -21,33 +21,33 @@
     <body id="body">
         <!-- All itens on the webpage -->
         <div id="webSite">
-            <div id="topPage">
-                <nav class="hContainer shadowBox" id="navBar">
-                    <div class="hElement">
-                        <button onclick="setScrollPercentage()" id="topTitle">Nielsen</button>         
-                    </div>
+            
+            <nav class="hContainer shadowBox" id="navBar">
+                <div class="hElement">
+                    <button onclick="setScrollPercentage()" id="topTitle">Nielsen</button>         
+                </div>
 
-                    <div id="topLink" class="hElement">
-                        <button onclick="setScrollPercentage('about')" id="linkAbout" class="link">
-                            About
-                        </button>
-                        <button onclick="setScrollPercentage('skills')" id="linkSkills" class="link">
-                            Skills
-                        </button>
-                        <button onclick="setScrollPercentage('projects')" id="linkProjects" class="link">
-                            Projects
-                        </button>
-                        <button onclick="setScrollPercentage('contact')" id="linkContact" class="link">
-                            Contact
-                        </button>
-                    </div>
-
-                    <button id="mobileNavBar" onclick="toggleMenu()">
-                        &#9776;
+                <div id="topLink" class="hElement">
+                    <button onclick="setScrollPercentage('about')" id="linkAbout" class="link">
+                        About
                     </button>
+                    <button onclick="setScrollPercentage('skills')" id="linkSkills" class="link">
+                        Skills
+                    </button>
+                    <button onclick="setScrollPercentage('projects')" id="linkProjects" class="link">
+                        Projects
+                    </button>
+                    <button onclick="setScrollPercentage('contact')" id="linkContact" class="link">
+                        Contact
+                    </button>
+                </div>
 
-                </nav>
-            </div>  
+                <button id="mobileNavBar" onclick="toggleMenu()">
+                    &#9776;
+                </button>
+
+            </nav>
+            
 
             <div id="pageBody" class="vContainer">
                 
@@ -78,7 +78,7 @@
                                         Gustavo Nielsen,
                                     </span>
 
-                                    <div class="textParagraph textParagraph finalText">
+                                    <div class="textParagraph finalText">
                                         and I've always been passionate about turning ideas into reality through development. Since 2020,
                                         I've been actively creating games, school tools, personal tools, and websites, constantly exploring new ways to solve problems and bring creativity to life.
                                     </div>
@@ -425,6 +425,7 @@
 
                 const blurBox = document.getElementById("blurBox");
 
+                // Define Tooltip position
                 item.addEventListener("mousemove", (event) => {
                     let tooltipHeight = description.offsetHeight;
         
@@ -726,9 +727,22 @@
                     - Development of leadership, negotiation, and decision-making skills in corporate environments.`, 
                     'academicDescription-Second'
                 );
+
+                createTooltip(
+                    'More About Me',
+                    `In my free time...<br><br>
+                    I am deeply drawn to grand stories, which is why I spend much of my time reading books and watching films. When it comes to cinema, I enjoy writing reviews on Letterboxd, and I often find myself reflecting through stories and essays on philosophy.<br><br>
+                    I also take great pleasure in both watching and playing basketball. <i>Mens sana in corpore sano</i>.<br><br>
+                    Above all, I cherish the joy of learning and the creative act of bringing new ideas to life.
+                    `,
+                    "moreAboutMe"
+                )
+
                 
                 tooltipAndBlur("academicFirst", "academicDescription-First");
                 tooltipAndBlur("academicSecond", "academicDescription-Second");
+                tooltipAndBlur("aboutMore", "moreAboutMe");
+
         </script>
     </body>
 </html>

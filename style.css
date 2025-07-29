@@ -308,6 +308,10 @@ i.skillIconOnline::before {
 .tooltipText{
     font-family: Jetbrains Mono;
     font-size: 1.2vw;
+    line-height: 1.5;
+
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .aboutOthersInfo{
@@ -580,6 +584,8 @@ i.skillIconOnline::before {
 }
 
 #aboutMore{
+    /* display: none; */
+
     font-family: Teko ;
     font-size: 1.5vw;
     text-decoration: underline;
@@ -706,7 +712,8 @@ i.skillIconOnline::before {
     height: 10vh;
     position: fixed;
     background-color: #131313;
-
+    width: 100%;
+    z-index: 10;
     border-radius: 0 0 7px 7px;
 }
 
@@ -731,12 +738,6 @@ i.skillIconOnline::before {
     font-weight: normal;
     font-size: clamp(2rem, 3vw, 3rem);
     cursor:pointer;
-}
-
-#topPage{
-    display: flex;
-    justify-content: center;
-    z-index: 10;
 }
 
 
@@ -767,6 +768,7 @@ i.skillIconOnline::before {
 
     padding-bottom: 0.5rem;
 
+    scrollbar-width: none;
 }
 
 #skillsPage{
@@ -779,6 +781,8 @@ i.skillIconOnline::before {
 
     padding-top: 5rem;
     padding-bottom: 0.5rem;
+
+    scrollbar-width: none;
 }
 
 #projectPage{
@@ -791,7 +795,6 @@ i.skillIconOnline::before {
     border-radius: 0 0 7px 7px;
 
     padding-top: 5rem;
-    overflow: visible;
 }
 
 #contactPage{
@@ -993,7 +996,6 @@ i.skillIconOnline::before {
     }
 
     .textParagraph{
-        line-height: 1.5;
         font-family: Jetbrains Mono;
         font-size: 1rem;
         text-align: justify;
@@ -1086,7 +1088,7 @@ i.skillIconOnline::before {
         padding-right: 10px;
         padding-bottom: 5px;
 
-        overflow-wrap:anywhere;
+        overflow-wrap: anywhere;
     }
 
     .skillBox .skillContent p.skillName{
