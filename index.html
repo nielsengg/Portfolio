@@ -22,29 +22,41 @@
         <!-- All itens on the webpage -->
         <div id="webSite">
             
-            <nav class="hContainer shadowBox" id="navBar">
-                <div class="hElement">
-                    <button onclick="setScrollPercentage()" id="topTitle">Nielsen</button>         
-                </div>
+            <nav id="navBar" class="hContainer shadowBox">
 
-                <div id="topLink" class="hElement">
-                    <button onclick="setScrollPercentage('about')" id="linkAbout" class="link">
-                        About
-                    </button>
-                    <button onclick="setScrollPercentage('skills')" id="linkSkills" class="link">
-                        Skills
-                    </button>
-                    <button onclick="setScrollPercentage('projects')" id="linkProjects" class="link">
-                        Projects
-                    </button>
-                    <button onclick="setScrollPercentage('contact')" id="linkContact" class="link">
-                        Contact
+                <div id="rightNavBar">
+                    <div class="hElement">
+                        <button onclick="setScrollPercentage()" id="topTitle">Nielsen</button>         
+                    </div>
+
+                    <div id="colorMode" class="cursorPointer">
+                        <i class="fa-solid fa-circle-half-stroke"></i>
+                    </div>
+                </div>
+                
+
+                <div id="leftNavBar">
+
+                    <div id="topLink" class="hElement">
+                        <button onclick="setScrollPercentage('about')" id="linkAbout" class="link">
+                            About
+                        </button>
+                        <button onclick="setScrollPercentage('skills')" id="linkSkills" class="link">
+                            Skills
+                        </button>
+                        <button onclick="setScrollPercentage('projects')" id="linkProjects" class="link">
+                            Projects
+                        </button>
+                        <button onclick="setScrollPercentage('contact')" id="linkContact" class="link">
+                            Contact
+                        </button>
+                    </div>
+
+                    <button id="mobileNavBar" onclick="toggleMenu()">
+                        &#9776;
                     </button>
                 </div>
-
-                <button id="mobileNavBar" onclick="toggleMenu()">
-                    &#9776;
-                </button>
+                
 
             </nav>
             
@@ -60,7 +72,6 @@
 
                 <div id="aboutPage" class="webPage">
                     <!-- <div id="aboutMessage" class="hiddenAnimation">About</div> -->
-
                     <div id="blurBox"></div>
                     <div id="aboutBox" class="borderBox shadowBox hiddenAnimation">
                         <div id="topAboutBox">
@@ -394,7 +405,7 @@
                 const item = document.getElementById('body');
 
                 const tooltip = document.createElement('span');
-                tooltip.classList.add('tooltipAbout', 'shadowBox');
+                tooltip.classList.add('tooltipAbout', 'shadowBox', 'borderBox');
                 tooltip.id = academicDescriptionOrder;
 
                 const tooltipTitle = document.createElement('div');
@@ -416,7 +427,7 @@
             
 
             //Academic & More... Blur Effect
-            function tooltipAndBlur(itemID, descriptionID){
+             function tooltipAndBlur(itemID, descriptionID){
                 const offsetX = 0.5; 
                 const offsetY = 20;
 
@@ -443,7 +454,25 @@
             }
 
 
+
             // -------------------------------------------------------------------- //
+
+            const toggleBtn = document.getElementById('colorMode');
+            const root = document.documentElement;
+            
+            if (localStorage.getItem('theme') === 'dark') {
+                root.setAttribute('data-theme', 'dark');
+            }
+
+            toggleBtn.addEventListener('click', () => {
+                if (root.getAttribute('data-theme') === 'dark') {
+                    root.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    root.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
 
 
             // Animation
@@ -709,7 +738,6 @@
 
 
                 loadShow();
-
 
                 // Tooltips
                 createTooltip(
