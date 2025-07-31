@@ -638,7 +638,7 @@ i.skillIconOnline::before {
     align-self: center;
 }
 
-#letterboxdBox:hover, .skillBox:hover, .skillBoxOnProject:hover, .contactBox:hover, #colorMode i:hover, #emailBox:hover{
+#letterboxdBox:hover, .skillBox:hover, .skillBoxOnProject:hover, .contactBox:hover, #emailBox:hover{
     filter: invert(1);
     transition: filter 0.4s ease-in-out;
 }
