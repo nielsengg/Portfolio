@@ -378,14 +378,18 @@
                 
                     let skillIconOnline;
 
-                    if (icon != '0'){
-                        skillIconOnline = document.createElement('i');
-                        skillIconOnline.classList.add('skillIconOnline');
-                        skillIconOnline.classList.add(...icon.split(' '));
-                    }else{
+                    if (icon == 'gml'){
                         skillIconOnline = document.createElement('img');
                         skillIconOnline.classList.add('skillIconIMG');
                         skillIconOnline.src = "https://www.svgrepo.com/show/373756/light-gamemaker2.svg";
+                    }else if (icon == 'ts'){
+                        skillIconOnline = document.createElement('img');
+                        skillIconOnline.classList.add('skillIconIMG');
+                        skillIconOnline.src = "https://www.svgrepo.com/show/342317/typescript.svg";
+                    }else {
+                        skillIconOnline = document.createElement('i');
+                        skillIconOnline.classList.add('skillIconOnline');
+                        skillIconOnline.classList.add(...icon.split(' '));
                     }
                     
                     const skillName = document.createElement('p');
@@ -692,7 +696,8 @@
                 const cIcon = 'fa-brands fa-c';
                 const apiIcon = 'fa-solid fa-cloud';
                 const gitIcon = 'fa-brands fa-github';
-                const gmlIcon = '0';
+                const gmlIcon = 'gml';
+                const tsIcon = 'ts';
                 const gdsIcon = 'fa-solid fa-gamepad';
                 const reactIcon = 'fa-brands fa-react';
                 
@@ -708,6 +713,7 @@
                 createSkillBox('skillBigBox', 'skills', htmlIcon, 'HTML', 0);
                 createSkillBox('skillBigBox', 'skills', cssIcon, 'CSS', 0);
                 createSkillBox('skillBigBox', 'skills', jsIcon, 'JavaScript', 0);
+                createSkillBox('skillBigBox', 'skills', tsIcon, 'TypeScript', 0);
                 createSkillBox('skillBigBox', 'skills', gmlIcon, 'GML', 0);
                 createSkillBox('skillBigBox', 'skills', reactIcon, 'React', 0);
                 createSkillBox('skillBigBox', 'skills', gitIcon, 'Git', 0);
