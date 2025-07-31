@@ -475,17 +475,17 @@
             const toggleBtn = document.getElementById('colorMode');
             const root = document.documentElement;
             
-            if (localStorage.getItem('theme') === 'dark') {
-                root.setAttribute('data-theme', 'dark');
+            if (localStorage.getItem('theme') === 'light') {
+                root.setAttribute('data-theme', 'light');
             }
 
             toggleBtn.addEventListener('click', () => {
-                if (root.getAttribute('data-theme') === 'dark') {
+                if (root.getAttribute('data-theme') === 'light') {
                     root.removeAttribute('data-theme');
                     localStorage.setItem('theme', 'light');
                 } else {
-                    root.setAttribute('data-theme', 'dark');
-                    localStorage.setItem('theme', 'dark');
+                    root.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light');
                 }
             });
 
